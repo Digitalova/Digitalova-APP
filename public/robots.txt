@@ -1,0 +1,8 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://digitalova.be/sitemap.xml
+
+User-agent: GPTBot
+Disallow: /

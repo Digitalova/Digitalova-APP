@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr-BE">
+
+<head>
+  <!-- Preload critical CSS -->
+  <link rel="preload" href="/assets/index-6dda7515.css" as="style">
+  <link rel="preload" href="/assets/index-ccbaed63.css" as="style">
+  <link rel="preload" as="image" href="https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/IMagePourPortfoliog.webp">
+<style>
+  /* On affiche le root immédiatement pour un LCP ultra-rapide */
+  #root {
+    opacity: 1;
+    transition: opacity 0.4s ease-in;
+  }
+
+  /* Optionnel : petite animation fluide au chargement sans besoin de script */
+  body {
+    background-color: #0f172a;
+    /* Ta couleur de thème pour éviter le flash blanc */
+  }
+</style>> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="Hostinger Horizons" />
+  <title>Digitalova | Création de Sites Web & Automatisation IA à Mons</title>
+
+  <!-- Preconnect for external resources -->
+  <link rel="preconnect" href="https://mzeisxseqdcxwgyjpajm.supabase.co" crossorigin>
+
+  
+  <!-- Preload critical fonts -->
+  <link rel="preload" href="https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/fonts/Poppins-Light.woff2"
+    as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/fonts/Poppins-Medium.woff2"
+    as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/fonts/Poppins-Regular.woff2"
+    as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/fonts/Poppins-Bold.woff2"
+    as="font" type="font/woff2" crossorigin="anonymous">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/index-6dda7515.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/LogoDIGITALOVAico.ico" />
+
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- ✅ Google Analytics : charge après le rendu (idle / timeout) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    // On initialise seulement, mais on charge le script après "load"
+    window.addEventListener('load', () => {
+      // Petit délai pour laisser le rendu respirer (surtout mobile)
+      setTimeout(() => {
+        const s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-DPF2CVXV71';
+        document.head.appendChild(s);
+
+        gtag('js', new Date());
+        gtag('config', 'G-DPF2CVXV71', { anonymize_ip: true });
+      }3000);
+    });
+  </script>
+</head>
+
+<body>
+  <noscript>Vous devez activer JavaScript pour voir le site de Digitalova.</noscript>
+  <div id="root">
+    <div class="pt-20">
+      <section class="relative py-24 lg:py-32 overflow-hidden bg-white/50">
+        <div class="container mx-auto px-4 relative z-10">
+          <div class="max-w-2xl mx-auto text-center lg:text-left">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.2]">
+              Création de Sites Web & Boutiques en Ligne à Mons
+            </h1>
+
+            <p class="text-lg text-slate-600 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
+              De la conception à la mise en ligne, je crée des sites web sur mesure à Mons qui captivent votre audience
+              et boostent votre croissance.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <a href="/contact"
+                 class="inline-flex items-center justify-center bg-slate-900 hover:bg-slate-800 text-white text-lg h-14 px-8 rounded-full shadow-xl">
+                Obtenir un Devis
+              </a>
+              <a href="/portfolio"
+                 class="inline-flex items-center justify-center bg-white/80 text-slate-700 border-2 border-slate-200 hover:bg-purple-50 text-lg h-14 px-8 rounded-full">
+                Voir le Portfolio
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
