@@ -233,29 +233,14 @@ const SEOOptimization = () => {
           <div className="mb-20 max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-10 items-center">
               {/* Left */}
-              <motion.div
-                initial={{ opacity: 0, x: -16 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.55, ease: 'easeOut' }}
-                className="text-center lg:text-left"
-              >
-                <motion.h1
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.55, ease: 'easeOut' }}
-                  className="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 leading-[1.05]"
-                >
+              <div className="text-center lg:text-left">
+                <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 leading-[1.05]">
                   Propulsez votre site web au top des recherches Google
-                </motion.h1>
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.12, duration: 0.45 }}
-                  className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0"
-                >
+                </h1>
+                <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   Une stratégie SEO complète : audit technique, optimisation des pages, copywriting stratégique et suivi clair des
                   performances. Idéal pour capter des clients dans votre zone et faire connaitre votre activité avec Digitalova.
-                </motion.p>
+                </p>
 
                 <motion.div
                   initial={{ opacity: 0, y: 12 }}
@@ -284,7 +269,7 @@ const SEOOptimization = () => {
                     </Button>
                   </Link>
                 </motion.div>
-              </motion.div>
+              </div>
 
               {/* Right */}
               <motion.div

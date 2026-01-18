@@ -336,7 +336,7 @@ const Services = () => {
                 </div>
 
                 <div className="relative px-6 py-10 md:px-12 md:py-12 text-center">
-                  <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, ease }}>
+                  <div>
                     <h1 className="mt-5 text-4xl md:text-5xl font-extrabold text-slate-950 tracking-tight leading-[1.12] pb-2 overflow-visible">
                       Mes solutions Web & IA
                       <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600">
@@ -366,7 +366,7 @@ const Services = () => {
                         </Button>
                       </Link>
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
               </div>
 

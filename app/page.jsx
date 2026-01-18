@@ -148,12 +148,7 @@ const ToolsMarqueeFullWidth = () => {
 ========================= */
 const MobileHeroRedesign = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 14 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.55 }}
-      className="lg:hidden mt-10"
-    >
+    <div className="lg:hidden mt-10">
       <div className="relative overflow-hidden rounded-[2.25rem] border border-slate-200 bg-white shadow-2xl">
         <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-purple-200/70 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-28 -left-28 h-64 w-64 rounded-full bg-pink-200/70 blur-3xl" />
@@ -168,9 +163,10 @@ const MobileHeroRedesign = () => {
               className="w-full h-auto object-cover"
               width="1200"
               height="800"
-              fetchPriority="high"
-              decoding="sync"
-            />
+                    fetchPriority="high"
+                    decoding="sync"
+                    loading="eager"
+                  />
             <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/20 via-transparent to-purple-900/20 pointer-events-none" />
 
             <div className="absolute bottom-3 left-3 right-3">
@@ -222,7 +218,7 @@ const MobileHeroRedesign = () => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -426,12 +422,7 @@ const Home = () => {
                 <MobileHeroRedesign />
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8, rotate: 2 }}
-                animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative hidden lg:block"
-              >
+              <div className="relative hidden lg:block">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white ring-1 ring-slate-100 transform hover:rotate-1 transition-transform duration-500">
                   <img
                     alt="Ordinateur portable affichant un tableau de bord analytique moderne avec des graphiques de données"
@@ -442,6 +433,7 @@ const Home = () => {
                     height="800"
                     decoding="sync"
                     fetchPriority="high"
+                    loading="eager"
                   />
                   <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/10 to-transparent pointer-events-none" />
                 </div>
@@ -460,7 +452,7 @@ const Home = () => {
                     <p className="text-sm font-bold text-slate-900">+80% Visibilité</p>
                   </div>
                 </motion.div>
-              </motion.div>
+              </div>
             </div>
 
             {/* ✅ IMPORTANT: banderole ICI (hors du grid), PC only, full width */}

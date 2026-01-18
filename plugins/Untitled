@@ -1,0 +1,22 @@
+import { NextResponse } from 'next/server';
+
+export async function GET() {
+  const robotsContent = `
+User-agent: *
+Disallow: /api/
+Disallow: /search
+Disallow: /*?*
+
+Sitemap: https://digitalova.be/sitemap.xml
+
+User-agent: GPTBot
+Disallow: /
+`;
+
+  return new NextResponse(robotsContent.trim(), {
+    status: 200,
+    headers: {
+      'Content-Type': 'text/plain; charset=utf-8',
+    },
+  });
+}

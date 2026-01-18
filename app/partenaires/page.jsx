@@ -170,8 +170,15 @@ const Partners = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/4df9b535-5d6b-4510-b78b-1afe0f028db0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'partenaires/page.jsx:170',message:'handleSubmit entry',data:{formData,consents,supabaseClient:!!supabase},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A,B,C'})}).catch(()=>{});
+    // #endregion
+
     // ✅ block submit if legal not accepted
     if (!validateLegal()) {
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/4df9b535-5d6b-4510-b78b-1afe0f028db0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'partenaires/page.jsx:175',message:'validation failed',data:{consents},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      // #endregion
       toast({
         title: 'Action requise',
         description: 'Veuillez cocher les cases obligatoires (RGPD + Conditions du programme).',
@@ -182,22 +189,34 @@ const Partners = () => {
 
     setIsSubmitting(true);
 
-    try {
-      const { error } = await supabase.from('partner_applications').insert([
-        {
-          name: formData.name,
-          company: formData.company || null,
-          email: formData.email,
-          phone: formData.phone || null, // ✅ téléphone non obligatoire (RGPD-friendly)
-          message: formData.message,
-          program: 'PARTENARIAT_ELITE',
-          status: 'new',
-          privacy_consent: consents.contactConsent,
-          terms_accepted: consents.termsAccepted,
-        },
-      ]);
+    const insertData = {
+      name: formData.name.trim(),
+      company: formData.company?.trim() || '', // ✅ Optionnel - chaîne vide si non rempli
+      email: formData.email.trim(),
+      phone: formData.phone?.trim() || '', // ✅ Optionnel - chaîne vide si non rempli (contrainte NOT NULL en DB)
+      message: formData.message.trim(),
+      program: 'PARTENARIAT_ELITE',
+      status: 'new',
+      privacy_consent: !!consents.contactConsent,
+      terms_accepted: !!consents.termsAccepted,
+    };
 
-      if (error) throw error;
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/4df9b535-5d6b-4510-b78b-1afe0f028db0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'partenaires/page.jsx:195',message:'before supabase insert',data:{insertData,supabaseUrl:supabase?.supabaseUrl||'undefined'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A,B,D'})}).catch(()=>{});
+    // #endregion
+
+    try {
+      console.log('Inserting data:', JSON.stringify(insertData, null, 2));
+      const { error, data } = await supabase.from('partner_applications').insert([insertData]);
+
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/4df9b535-5d6b-4510-b78b-1afe0f028db0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'partenaires/page.jsx:209',message:'supabase insert response',data:{error:error?{message:error.message,code:error.code,details:error.details,hint:error.hint}:null,hasData:!!data},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A,B,D'})}).catch(()=>{});
+      // #endregion
+
+      if (error) {
+        console.error('Supabase insert error:', error);
+        throw error;
+      }
 
       toast({
         title: 'Candidature envoyée !',
@@ -211,9 +230,12 @@ const Partners = () => {
       setFormErrors({ contactConsent: '', termsAccepted: '' });
     } catch (error) {
       console.error('Error submitting partnership:', error);
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/4df9b535-5d6b-4510-b78b-1afe0f028db0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'partenaires/page.jsx:227',message:'catch block error',data:{error:error?.message,errorCode:error?.code,errorDetails:error?.details,errorHint:error?.hint,stack:error?.stack},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A,B,D'})}).catch(()=>{});
+      // #endregion
       toast({
         title: 'Erreur',
-        description: 'Une erreur est survenue. Veuillez réessayer.',
+        description: error?.message ? `Erreur: ${error.message}` : 'Une erreur est survenue. Veuillez réessayer.',
         variant: 'destructive',
       });
     } finally {
@@ -275,7 +297,6 @@ const Partners = () => {
           "latitude": 50.4542,
           "longitude": 3.9567
         },
-        /* Horaires 24/7 pour la réception des demandes de partenariat */
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
@@ -297,21 +318,18 @@ const Partners = () => {
 
           <div className="container mx-auto px-4 relative z-10 py-10 md:py-14">
             <div className="max-w-4xl mx-auto text-center">
-              <motion.div {...fadeUp(0)}>
-                <motion.span
-                  {...fadeDown(0)}
-                  className="inline-block py-2 px-4 rounded-full bg-[#0F172A] text-white font-semibold text-sm mb-6 shadow-lg border border-slate-700"
-                >
+              <div>
+                <span className="inline-block py-2 px-4 rounded-full bg-[#0F172A] text-white font-semibold text-sm mb-6 shadow-lg border border-slate-700">
                   Programme Partenaires Élite
-                </motion.span>
+                </span>
 
-                <motion.h1 {...fadeUp(0.05)} className="text-4xl md:text-6xl font-bold mb-6 text-slate-900 leading-tight">
+                <h1 className="text-4xl md:text-6xl font-bold mb-6 text-slate-900 leading-tight">
                   Rejoignez l&apos;élite Digitalova <br /> Jusqu&apos;à 25% de commission
-                </motion.h1>
+                </h1>
 
-                <motion.p {...fadeUp(0.12)} className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+                <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
                   Un système de rémunération transparent, rapide et cumulable avec des services offerts pour votre propre activité.
-                </motion.p>
+                </p>
 
                 <motion.div {...fadeUp(0.2)} className="flex justify-center gap-4">
                   <motion.a
@@ -325,7 +343,7 @@ const Partners = () => {
                     Devenir Partenaire
                   </motion.a>
                 </motion.div>
-              </motion.div>
+              </div>
             </div>
           </div>
 

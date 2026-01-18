@@ -238,30 +238,29 @@ const PortfolioContent = () => {
    * ✅ Card titles should be H3 (as requested)
    * ✅ Before click: affiche libre + text below (like your screenshot)
    */
-  const ProjectCard = ({ project, index }) => (
+  const ProjectCard = ({ project, index }) => {
+    // Pour la première image (LCP), ne pas utiliser d'animation whileInView
+    const isLCPImage = index === 0;
+    
+    return (
     <Dialog defaultOpen={project.slug === autoOpenProject}>
       <DialogTrigger asChild>
-        <motion.article
-          variants={inViewCard}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="group cursor-pointer rounded-[28px] border border-white/10 bg-white/5 backdrop-blur overflow-hidden shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] hover:border-white/20 transition-colors"
-        >
-          {/* Affiche libre */}
-          <div className="relative bg-black/10">
-            <div className="aspect-[16/10] sm:aspect-[16/9] bg-black/10">
-              <img
-                className="w-full h-full object-contain md:object-cover"
-                alt={`Aperçu du site ${project.title}`}
-                title={project.title}
-                src={project.images[0]}
-                loading={index < 2 ? 'eager' : 'lazy'}
-                fetchPriority={index === 0 ? 'high' : 'auto'}
-                decoding={index === 0 ? 'sync' : 'async'}
-                width="1600"
-                height="1000"
-              />
+        {isLCPImage ? (
+          <article className="group cursor-pointer rounded-[28px] border border-white/10 bg-white/5 backdrop-blur overflow-hidden shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] hover:border-white/20 transition-colors">
+            {/* Affiche libre */}
+            <div className="relative bg-black/10">
+              <div className="aspect-[16/10] sm:aspect-[16/9] bg-black/10">
+                <img
+                  className="w-full h-full object-contain md:object-cover"
+                  alt={`Aperçu du site ${project.title}`}
+                  title={project.title}
+                  src={project.images[0]}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="sync"
+                  width="1600"
+                  height="1000"
+                />
             </div>
           </div>
 
@@ -287,7 +286,56 @@ const PortfolioContent = () => {
               ))}
             </div>
           </div>
-        </motion.article>
+        </article>
+        ) : (
+          <motion.article
+            variants={inViewCard}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="group cursor-pointer rounded-[28px] border border-white/10 bg-white/5 backdrop-blur overflow-hidden shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] hover:border-white/20 transition-colors"
+          >
+            {/* Affiche libre */}
+            <div className="relative bg-black/10">
+              <div className="aspect-[16/10] sm:aspect-[16/9] bg-black/10">
+                <img
+                  className="w-full h-full object-contain md:object-cover"
+                  alt={`Aperçu du site ${project.title}`}
+                  title={project.title}
+                  src={project.images[0]}
+                  loading={index < 2 ? 'eager' : 'lazy'}
+                  fetchPriority="auto"
+                  decoding="async"
+                  width="1600"
+                  height="1000"
+                />
+              </div>
+            </div>
+
+            {/* Texte sous l'affiche */}
+            <div className="p-6 sm:p-7">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+                {project.title}
+              </h3>
+              <p className="mt-2 text-slate-300 font-semibold text-lg">{project.subtitle}</p>
+
+              <div className="mt-4 border-l-2 border-purple-500/40 pl-4">
+                <p className="text-slate-200/90 leading-relaxed">{project.description}</p>
+              </div>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {project.tags.slice(0, 3).map((tag, tagIndex) => (
+                  <span
+                    key={tagIndex}
+                    className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-200 text-xs font-semibold uppercase tracking-wide"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.article>
+        )}
       </DialogTrigger>
 
       {/* ✅ Modal */}
@@ -516,7 +564,8 @@ const PortfolioContent = () => {
         </div>
       </DialogContent>
     </Dialog>
-  );
+    );
+  };
 
   // JSON-LD pour les données structurées (dynamique basé sur les projets)
   const jsonLd = [

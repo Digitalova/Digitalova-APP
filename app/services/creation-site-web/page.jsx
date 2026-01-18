@@ -196,30 +196,15 @@ const WebDevelopment = () => {
           <div className="mb-16 max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-10 items-center">
               {/* Left */}
-              <motion.div
-                initial={{ opacity: 0, x: -18 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.55, ease: 'easeOut' }}
-                className="text-center lg:text-left"
-              >
-                <motion.h1
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.55, ease: 'easeOut' }}
-                  className="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 leading-[1.05]"
-                >
+              <div className="text-center lg:text-left">
+                <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 leading-[1.05]">
                   Conçeption de site internet pour les entreprises à Mons
-                </motion.h1>
+                </h1>
 
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.12, duration: 0.45 }}
-                  className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0"
-                >
+                <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   Vous avez besoin d'un site vitrine qui présente votre business, ou d'une boutique e-commerce pour diffuser vos produits sur le web ? Je conçois des plateformes sur mesure pensées pour la conversion : vitesse, expérience utilisateur simplifié, SEO local
                   (Mons & Hainaut) et branding de qualité.
-                </motion.p>
+                </p>
 
                 <motion.div
                   initial={{ opacity: 0, y: 12 }}
@@ -250,7 +235,7 @@ const WebDevelopment = () => {
                     </Button>
                   </Link>
                 </motion.div>
-              </motion.div>
+              </div>
 
               {/* Right */}
               <motion.div

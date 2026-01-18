@@ -539,41 +539,21 @@ const AIAutomation = () => {
           {/* HERO */}
           <div className="mb-20 max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -16 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.55, ease: 'easeOut' }}
-                className="text-center lg:text-left"
-              >
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, ease: 'easeOut' }}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/85 backdrop-blur border border-slate-200 text-slate-800 font-semibold text-sm mb-6 shadow-sm"
-                >
-                </motion.div>
+              <div className="text-center lg:text-left">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/85 backdrop-blur border border-slate-200 text-slate-800 font-semibold text-sm mb-6 shadow-sm">
+                </div>
 
-                <motion.h1
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.55, ease: 'easeOut' }}
-                  className="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 leading-[1.05]"
-                >
+                <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 leading-[1.05]">
                   Création de Workflow automatisé & Agent{' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600">
                     IA
                   </span>
-                </motion.h1>
+                </h1>
 
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.12, duration: 0.45 }}
-                  className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0"
-                >
+                <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   Chatbots, workflows et agents IA pour traiter plus vite, répondre mieux, et déclencher automatiquement
                   les actions qui font avancer votre activité.
-                </motion.p>
+                </p>
 
                 <motion.div
                   initial={{ opacity: 0, y: 12 }}
@@ -591,7 +571,7 @@ const AIAutomation = () => {
                     </Button>
                   </Link>
                 </motion.div>
-              </motion.div>
+              </div>
 
               <motion.div
                 initial={{ opacity: 0, x: 16 }}

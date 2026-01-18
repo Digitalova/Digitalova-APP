@@ -214,29 +214,19 @@ const GoogleBusiness = () => {
                 transition={{ duration: 0.55, ease: 'easeOut' }}
                 className="text-center lg:text-left"
               >
-                <motion.h1
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.55, ease: 'easeOut' }}
-                  className="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 leading-[1.05]"
-                >
+                <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 leading-[1.05]">
                   La fiche{' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600">
                     Google
                   </span>{' '}
                   qui transforme les recherches en clients
-                </motion.h1>
+                </h1>
 
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.12, duration: 0.45 }}
-                  className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0"
-                >
+                <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   Avant même votre site, votre fiche Google Business est souvent votre première impression :
                   note, avis, photos, horaires, bouton “Appeler”, itinéraire… Une fiche optimisée = plus d’actions locales comme des
                   appels, messages et visites.
-                </motion.p>
+                </p>
 
                 <motion.div
                   initial={{ opacity: 0, y: 12 }}

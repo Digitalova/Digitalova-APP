@@ -228,22 +228,13 @@ const Contact = () => {
         <BackgroundBlobs />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-10">
-            <motion.h1
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-6xl font-bold mb-6 text-black"
-            >
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-black">
               Parlons de Votre <span className="gradient-text">Projet</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
-            >
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Remplissez ce formulaire pour me donner les premières informations sur votre projet. Je reviendrai vers vous
               sous 24h avec une proposition ou pour planifier un rendez-vous.
-            </motion.p>
+            </p>
           </div>
 
           {/* ✅ Formulaire */}

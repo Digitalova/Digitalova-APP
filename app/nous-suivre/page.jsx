@@ -408,17 +408,12 @@ const Social = () => {
         <BackgroundBlobs />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <motion.h1 variants={fadeUp} initial="hidden" animate="show" className="text-5xl md:text-6xl font-bold mb-6 text-black">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-black">
               Rejoignez la Communauté <span className="gradient-text">DIGITALOVA</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.15, duration: 0.6 }}
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
-            >
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Suivez-moi sur mes réseaux pour découvrir les coulisses, des astuces web, et mes dernières créations.
-            </motion.p>
+            </p>
           </div>
 
           <motion.div

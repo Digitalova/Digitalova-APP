@@ -150,25 +150,15 @@ const Method = () => {
 
         <div className="container mx-auto px-4 relative z-10 max-w-6xl">
           <div className="text-center mb-16">
-            <motion.h1
-              initial={{ opacity: 0, scale: 0.96, y: -10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-5xl md:text-6xl font-extrabold mb-6 text-white tracking-tight"
-            >
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-white tracking-tight">
               Votre Projet Web <span className="text-white">en 5 Étapes</span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed"
-            >
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
               Chaque entreprise est unique et mérite une stratégie personnalisée. Mon approche consiste en un audit
               complet suivi d&apos;un plan d&apos;action concret pour maximiser votre visibilité et convertir plus de
               clients à Mons et en Belgique.
-            </motion.p>
+            </p>
           </div>
 
           <div className="space-y-12">

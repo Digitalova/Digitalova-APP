@@ -157,6 +157,8 @@ export default function RootLayout({
     <html lang="fr-BE">
       <head>
         <link rel="preconnect" href="https://mzeisxseqdcxwgyjpajm.supabase.co" crossOrigin="anonymous" />
+        {/* Preload image hero pour améliorer le LCP */}
+        <link rel="preload" href="https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/IMagePourPortfoliog.webp" as="image" fetchPriority="high" />
         <link rel="preload" href="https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/fonts/Poppins-Medium.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
