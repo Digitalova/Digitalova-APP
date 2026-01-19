@@ -104,7 +104,7 @@ const PortfolioContent = () => {
       longDescription:
         "Une solution web professionnelle pour une fiduciaire moderne. Le site structure clairement l'offre de services (comptabilité, fiscalité, conseil social), met en avant l'équipe pour humaniser la relation, et propose un accès rapide à l'espace client sécurisé.",
       tags: ['Expertise', 'B2B', 'Fiduciaire', 'Espace Client', 'Corporate Design'],
-      url: 'digicomptabilité.digitalova.be',
+      url: 'https://digicomptabilité.digitalova.be/',
       images: [
         'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/Affiche_de_portfolio_siteweb_Comptable_5_11zon.webp',
         'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/cabinet_comptable_sectionhero.png',
