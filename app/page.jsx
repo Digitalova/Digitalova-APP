@@ -851,8 +851,8 @@ const Home = () => {
 
                 <div className="relative p-8 flex flex-col h-full">
                   <div className="text-center">
-                    <p className="text-sm font-bold text-slate-300">Landingpage</p>
-                    <h3 className="text-2xl font-extrabold text-white mt-2">Pack Landing</h3>
+                    <p className="text-sm font-bold text-slate-300">Site One Page</p>
+                    <h3 className="text-2xl font-extrabold text-white mt-2">Pack Landing Pro</h3>
                     <p className="text-sm text-slate-300 mt-2">
                       Indépendant • Professionnel • Haute conversion — Une page unique conçue pour transformer vos visiteurs en clients.
                     </p>
@@ -860,7 +860,7 @@ const Home = () => {
                     <div className="mt-6">
                       <p className="text-sm text-slate-300">À partir de</p>
                       <div className="text-4xl font-black tracking-tight text-white">
-                        997€
+                        1 397€
                       </div>
                     </div>
                   </div>
@@ -869,10 +869,12 @@ const Home = () => {
 
                   <ul className="mt-7 space-y-3 text-sm">
                     {[
-                      "Landing page premium orientée conversion",
-                      "1 mois d’hébergement + maintenance inclus",
-                      "Audit de fiche Google Business Profile (GMB)",
+                      "Site One Page orientée conversion",
+                      "Référencement SEO basique",
+                      "Formulaire, intégrations API simples",
+                      "Audit de fiche d'établissement Google",
                       "Création d’un logo incluse",
+                      "Livrable en 7 jours",
                     ].map((it, i) => (
                       <li key={i} className="flex items-start gap-3 text-slate-100">
                         <ArrowRight className="w-4 h-4 text-purple-200 mt-0.5 shrink-0" />
@@ -884,7 +886,7 @@ const Home = () => {
                       "Branding complet (couleurs, réseaux…)",
                       "Photos business incluses",
                       "Gestion GMB complète",
-                      "Accompagnement SEO (blog/stratégie)",
+                      "Hébergement et nom de domaine (1an)",
                     ].map((it, i) => (
                       <li key={`x-${i}`} className="flex items-start gap-3 text-sm text-slate-400/80">
                         <X className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
@@ -894,16 +896,16 @@ const Home = () => {
                   </ul>
 
                   {/* ✅ bouton centré */}
-                  <div className="mt-8 flex justify-center">
+                  <div className="mt-auto pt-8 flex justify-center">
                     <Link href="/contact" className="w-full max-w-[240px]" title="Aller à la page Contact - Digitalova">
                       <Button className="w-full h-12 rounded-full bg-white text-slate-900 hover:bg-slate-100 font-extrabold shadow">
                         Choisir cette offre
                       </Button>
                     </Link>
                   </div>
-
-                  {/* ✅ spacer pour égaliser visuellement */}
-                  <div className="mt-4" />
+                  <p className="mt-4 text-xs text-slate-300 text-center">
+                    Parfait pour les <span className="font-bold">indépendants</span> et <span className="font-bold">débutants</span>.
+                  </p>
                 </div>
               </motion.article>
 
@@ -928,7 +930,7 @@ const Home = () => {
                 <div className="relative p-9 flex flex-col h-full">
                   <div className="text-center">
                     <p className="text-sm font-bold text-slate-200">Site vitrine / blog</p>
-                    <h3 className="text-3xl font-extrabold text-white mt-2">Pack Croissance</h3>
+                    <h3 className="text-3xl font-extrabold text-white mt-2">Pack Business Pro</h3>
                     <p className="text-sm text-slate-200 mt-2">
                       Le standard d'excellence pour dominer votre marché local et asseoir votre autorité dans votre secteur.
                     </p>
@@ -936,7 +938,7 @@ const Home = () => {
                     <div className="mt-6">
                       <p className="text-sm text-slate-200">À partir de</p>
                       <div className="text-5xl font-black tracking-tight text-white">
-                        2 497€
+                        2 997€
                       </div>
                     </div>
                   </div>
@@ -945,11 +947,13 @@ const Home = () => {
 
                   <ul className="mt-7 space-y-3 text-sm">
                     {[
-                      "Site premium 4 à 6 pages (vitrine, blog…)",
-                      "3 mois d’hébergement + maintenance inclus",
-                      "Refonte de la fiche Google Business Profile (GMB)",
+                      "Site premium 3 à 6 pages (vitrine, blog…)",
+                      "Référencement SEO avancée",
+                      "Intégrations & API complexes",
+                      "3 mois d’hébergement + domaine inclus",
+                      "Refonte de la fiche d'établissement Google",
                       "Branding inclus (logo, couleurs, réseaux…)",
-                      "−40% sur la gestion complète GMB (posts, réponses avis…)",
+                      "−40% sur la gestion complète Google My Business (posts, réponses avis…)",
                       "Photos business incluses (menu, services, produits…)",
                     ].map((it, i) => (
                       <li key={i} className="flex items-start gap-3 text-white">
@@ -959,8 +963,8 @@ const Home = () => {
                     ))}
 
                     {[
-                      "Boutique e-commerce complète",
-                      "Accompagnement SEO développé (3 mois)",
+                      "Intégrations de paiement & boutiques e-commerce",
+                      "Accompagnement marketing personnalisé",
                     ].map((it, i) => (
                       <li key={`x2-${i}`} className="flex items-start gap-3 text-sm text-slate-300/80">
                         <X className="w-4 h-4 text-slate-300 mt-0.5 shrink-0" />
@@ -970,17 +974,17 @@ const Home = () => {
                   </ul>
 
                   {/* ✅ bouton centré */}
-                  <div className="mt-9 flex justify-center">
+                  <div className="mt-auto pt-8 flex justify-center">
                     <Link href="/contact" className="w-full max-w-[240px]" title="Aller à la page Contact - Digitalova">
                       <Button className="w-full h-12 rounded-full bg-white text-slate-900 hover:bg-slate-100 font-extrabold shadow">
-                        Choisir cette offre
+                        Choisir Pack Business Pro
                       </Button>
                     </Link>
                   </div>
 
                   {/* ✅ petit texte (optionnel) */}
                   <p className="mt-4 text-xs text-slate-300 text-center">
-                    Un équilibre parfait entre <span className="font-bold">impact</span> et <span className="font-bold">budget</span>.
+                    Idéale pour les <span className="font-bold">entreprises</span> qui veulent de la <span className="font-bold">croissance</span>.
                   </p>
                 </div>
               </motion.article>
@@ -1005,8 +1009,8 @@ const Home = () => {
 
                 <div className="relative p-8 flex flex-col h-full">
                   <div className="text-center">
-                    <p className="text-sm font-bold text-slate-300">Sur mesure + E-commerce</p>
-                    <h3 className="text-2xl font-extrabold text-white mt-2">Pack Business</h3>
+                    <p className="text-sm font-bold text-slate-300">Projet sur mesure</p>
+                    <h3 className="text-2xl font-extrabold text-white mt-2">Pack Signature</h3>
                     <p className="text-sm text-slate-300 mt-2">
                       Vente en ligne, infrastructure sur-mesure et stratégie marketing avancée pour maximiser votre chiffre d'affaires.
                     </p>
@@ -1014,7 +1018,7 @@ const Home = () => {
                     <div className="mt-6">
                       <p className="text-sm text-slate-300">À partir de</p>
                       <div className="text-4xl font-black tracking-tight text-white">
-                        3 997€
+                        4 997€
                       </div>
                     </div>
                   </div>
@@ -1024,13 +1028,15 @@ const Home = () => {
                   <ul className="mt-7 space-y-3 text-sm">
                     {[
                       "Site sur mesure + boutique e-commerce",
+                      "Référencement SEO avancée",
+                      "Intégrations & API complexes",
                       "Hébergement + maintenance : 1 an inclus",
                       "Modifications complexes à prix réduit (évolutions)",
                       "Gestion de la fiche GMB : 3 mois inclus",
                       "Branding inclus + photos incluses",
-                      "Accompagnement SEO développé (3 mois)",
+                      "Intégrations de paiement & boutiques e-commerce",
+                      "Accompagnement marketing personnalisé",
                       // ✅ lignes ajoutées pour égaliser visuellement
-                      "Stratégie mots-clés + plan éditorial (3 mois)",
                       "Rédaction & publication d’articles de blog (3 mois)",
                     ].map((it, i) => (
                       <li key={i} className="flex items-start gap-3 text-slate-100">
@@ -1041,7 +1047,7 @@ const Home = () => {
                   </ul>
 
                   {/* ✅ bouton centré */}
-                  <div className="mt-8 flex justify-center">
+                  <div className="mt-auto pt-8 flex justify-center">
                     <Link href="/contact" className="w-full max-w-[240px]" title="Aller à la page Contact - Digitalova">
                       <Button className="w-full h-12 rounded-full bg-white text-slate-900 hover:bg-slate-100 font-extrabold shadow">
                         Choisir l’excellence
@@ -1049,8 +1055,9 @@ const Home = () => {
                     </Link>
                   </div>
 
-                  {/* ✅ spacer pour égaliser */}
-                  <div className="mt-4" />
+                  <p className="mt-4 text-xs text-slate-300 text-center">
+                    Conçu pour une vision <span className="font-bold">long terme</span> et business <span className="font-bold">e-commerce</span>.
+                  </p>
                 </div>
               </motion.article>
             </div>
@@ -1093,7 +1100,7 @@ const Home = () => {
         </section>
 
         {/* 6. CTA */}
-        <section className="pb-24 pt-0 relative bg-gray-50/50" style={belowFoldStyle}>
+        <section className="pb-15 pt-0 relative bg-gray-50/50" style={belowFoldStyle}>
           <div className="container mx-auto px-4">
             <div className="text-center bg-slate-900 rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-2xl">
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">

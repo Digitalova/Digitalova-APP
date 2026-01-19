@@ -86,7 +86,7 @@ const PortfolioContent = () => {
       longDescription:
         "Une vitrine numérique moderne pour un artisan cuisiniste, conçue pour inspirer et convertir. Le site propose une galerie de réalisations filtrable par style (moderne, rustique, industriel), un outil de demande de devis détaillé pour qualifier les prospects, et une visite virtuelle du showroom pour inciter au déplacement.",
       tags: ['Cuisine', 'Sur-mesure', 'Showroom', 'Catalogue Filtrable', 'Génération de Leads'],
-      url: 'https://lightgreen-woodcock-994895.hostingersite.com/',
+      url: 'https://digikitchen.digitalova.be/',
       images: [
         'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/Affiche_de_portfolio_siteweb_cuisiniste_mons_6_11zon.webp',
         'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/Cuisiniste_Mons_sectionhero_19_11zon.webp',
@@ -96,7 +96,7 @@ const PortfolioContent = () => {
       ],
     },
      {
-      slug: 'digi-compta',
+      slug: 'digi-comptabilité',
       title: "Site web d'un Cabinet de comptable du Hainaut",
       subtitle: "Cabinet d'Expertise Comptable",
       category: 'Finance',
@@ -104,7 +104,7 @@ const PortfolioContent = () => {
       longDescription:
         "Une solution web professionnelle pour une fiduciaire moderne. Le site structure clairement l'offre de services (comptabilité, fiscalité, conseil social), met en avant l'équipe pour humaniser la relation, et propose un accès rapide à l'espace client sécurisé.",
       tags: ['Expertise', 'B2B', 'Fiduciaire', 'Espace Client', 'Corporate Design'],
-      url: 'https://lemonchiffon-frog-909359.hostingersite.com/',
+      url: 'digicomptabilité.digitalova.be',
       images: [
         'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/Affiche_de_portfolio_siteweb_Comptable_5_11zon.webp',
         'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/cabinet_comptable_sectionhero.png',
