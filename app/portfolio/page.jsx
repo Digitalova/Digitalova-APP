@@ -68,7 +68,7 @@ const PortfolioContent = () => {
       longDescription:
         "Une plateforme haut de gamme pour la location de véhicules de prestige. Le catalogue est entièrement filtrable par marque, type de véhicule et disponibilité. Chaque véhicule dispose d'une fiche détaillée avec caractéristiques techniques et photos. Le processus de demande de réservation est fluide et rapide.",
       tags: ['Luxe', 'Location', 'Catalogue', 'Booking System', 'UX Premium'],
-      url: 'https://aquamarine-hyena-715747.hostingersite.com/',
+      url: 'https://digilocation.digitalova.be/',
       images: [
         'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/Affiche_de_portfolio_siteweb_agence_de_location_voiture_2_11zon%20(1).webp',
         'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/Affiche_de_portfolio_siteweb_agence_de_location_voiture_2_11zon%20(1).webp',
