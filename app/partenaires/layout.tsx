@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Programme Partenaires Élite Mons | DIGITALOVA - Commissions 24/7',
+  title: 'Devenir partenaire - Programme de commission',
   description: 'Devenez partenaire DIGITALOVA à Mons. Jusqu\'à 25% de commission, paiement sous 72h et support 24/7. Transformez votre réseau en revenus dès aujourd\'hui.',
   robots: {
     index: true,

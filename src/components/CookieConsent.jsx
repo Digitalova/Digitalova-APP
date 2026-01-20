@@ -67,7 +67,8 @@ const CookieConsent = () => {
               </span>
               <span className="sm:hidden">Cookies essentiels.</span>
               <a
-                href="/rgpd"
+                href="/rgpd" 
+                title="Voir la page sur le RGPD de Digitalova - Agence Web"
                 className="ml-2 font-semibold underline underline-offset-2 text-slate-900 hover:text-purple-700"
               >
                 RGPD

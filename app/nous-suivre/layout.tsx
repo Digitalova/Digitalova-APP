@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Soutenir DIGITALOVA | Réseaux sociaux & Avis clients',
+  title: 'Réseaux sociaux & Avis clients',
   description: 'Suivez DIGITALOVA sur LinkedIn, Instagram, Facebook, TikTok et WhatsApp. Laissez un avis Google ou un avis directement sur le site : votre soutien booste notre visibilité locale à Mons et en Hainaut.',
   robots: {
     index: true,

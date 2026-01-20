@@ -115,7 +115,7 @@ const WebDevelopment = () => {
       image:
         'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/Affiche_de_portfolio_siteweb_agence_de_location_voiture_2_11zon%20(1).webp',
       url: '/portfolio?project=digi-location',
-      seoTitle: 'Voir le projet Digi-Location : site agence de location',
+      seoTitle: 'Voir le projet Digi-Location : site agence de location du Hainaut',
     },
   ];
 
@@ -126,9 +126,9 @@ const WebDevelopment = () => {
         "Un site vitrine classique prend généralement 1 à 2 semaines, tandis qu'un site e-commerce ou une plateforme complexe nécessite 2 à 6 semaines. Je vous fournis un planning précis dès le début du projet.",
     },
     {
-      question: "Quel est le coût d'un site web professionnel ?",
+      question: "Quel est le coût d'un site internet professionnel à Mons ?",
       answer:
-        "Les tarifs varient selon la complexité. Une landing page commence à seulement 997€, un site vitrine démarre à partir de 2497€, tandis qu'un e-commerce se situe entre 3997€ et 10000€. Je vous propose toujours une solution adapté à votre problématique.",
+        "Les tarifs varient selon la complexité. Une landing page commence à seulement 1200€, un site vitrine démarre à partir de 2500€, tandis qu'un e-commerce se situe entre 5000€ et 3000€. Je vous propose toujours une solution adapté à votre problématique.",
     },
     {
       question: 'Le site sera-t-il optimisé pour les mobiles ?',
@@ -136,7 +136,7 @@ const WebDevelopment = () => {
         "Absolument ! Tous mes sites sont 100% responsive et optimisés pour offrir une expérience parfaite sur mobile ( avec souvent quelques différences technique) et ordinateurs. C'est un standard incontournable aujourd'hui avec envrion 80% du trafic qui provinet des appareils mobiles",
     },
     {
-      question: 'Comment se passe la livraison du site internet ?',
+      question: 'Comment se passe la livraison du site internet avec Digitalova ?',
       answer:
         "Une fois le projet réalisé, 2 choix sont possibles : j'héberge le projet via mes solutions d'hébergement tout en vous délèguant l'accés, ou je vous transfère le code complet afin de le publier de votre coté (déconseillé si vous n'etes pas à l'aise avec le numérique).",
     },
@@ -198,12 +198,11 @@ const WebDevelopment = () => {
               {/* Left */}
               <div className="text-center lg:text-left">
                 <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 leading-[1.05]">
-                  Conçeption de site internet pour les entreprises à Mons
+                  Réalisation de sites internet à Mons
                 </h1>
 
                 <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  Vous avez besoin d'un site vitrine qui présente votre business, ou d'une boutique e-commerce pour diffuser vos produits sur le web ? Je conçois des plateformes sur mesure pensées pour la conversion : vitesse, expérience utilisateur simplifié, SEO local
-                  (Mons & Hainaut) et branding de qualité.
+                  Vous avez besoin d'un site vitrine qui présente votre business, ou d'une boutique e-commerce pour diffuser vos produits sur le web ? Je conçois des plateformes sur mesure pensées pour la conversion : vitesse, expérience utilisateur simplifié, SEO local et branding de qualité.
                 </p>
 
                 <motion.div
@@ -218,7 +217,7 @@ const WebDevelopment = () => {
                       className="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white text-lg h-14 px-8 rounded-full shadow-xl transition-transform hover:scale-[1.03]"
                       title="Demander un devis gratuit"
                     >
-                      Demander un devis gratuit
+                      Rentrer en contact
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   </Link>
@@ -230,7 +229,7 @@ const WebDevelopment = () => {
                       className="w-full sm:w-auto bg-white/80 text-slate-900 border-2 border-slate-200 hover:bg-slate-100 text-lg h-14 px-8 rounded-full transition-transform hover:scale-[1.03]"
                       title="Voir des exemples"
                     >
-                      Voir des exemples
+                      Portfolio
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   </Link>

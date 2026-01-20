@@ -10,10 +10,10 @@ import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Création de Sites Web à Mons - DIGITALOVA',
-    template: '%s | Digitalova - Agence Web à Mons',
+    default: 'Création de Sites Internet à Mons - DIGITALOVA',
+    template: '%s - DIGITALOVA',
   },
-  description: "Besoin d'un site web ? Je crée votre site internet, blog ou boutique en ligne. Design adapté aux mobiles et gestion simplifiée. Devis gratuit sans engagement à Mons.",
+  description: "Augmentez votre visibilité locale avec un site internet performant ? Je crée votre site web, blog ou boutique en ligne. Design adapté à votre image de marque et UX intuitif. Devis gratuit sans engagement à Mons.",
   authors: [{ name: 'Digitalova - Agence Web Mons' }],
   creator: 'DIGITALOVA',
   publisher: 'Digitalova',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     locale: 'fr_BE',
     url: 'https://digitalova.be/',
     siteName: 'Digitalova',
-    title: 'Digitalova | Création de Sites Web & Automatisation IA à Mons',
+    title: 'Digitalova | Création de Sites Internet & Marketing Digitale à Mons',
     description: 'Agence web en Hainaut : création de sites vitrine, e-commerce, SEO et automatisations IA.',
     images: [
       {
@@ -91,8 +91,8 @@ const jsonLdOrganization = {
   "telephone": "+32471586708",
   "sameAs": [
     "https://www.instagram.com/digitalova.be",
-    "https://www.facebook.com/DigitalovaBE?locale=fr_FR",
-    "https://www.tiktok.com/@digitalova.be?is_from_webapp=1&sender_device=pc",
+    "https://www.facebook.com/DigitalovaBE",
+    "https://www.tiktok.com/@digitalova.be",
     "https://wa.me/32471586708"
   ]
 };
@@ -116,7 +116,7 @@ const jsonLdBusiness = {
   "url": "https://digitalova.be/",
   "telephone": "+32471586708",
   "priceRange": "997€ - 10000€",
-  "description": "Agence web en Hainaut : création de sites vitrine, e-commerce, SEO et automatisations IA. Intervention à Mons et alentours.",
+  "description": "Digitalova est une agence web à Mons spécialisée en création de sites internet performants, référencement SEO local et et gestion de fiches google my business.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Pl. de la Gare 1",

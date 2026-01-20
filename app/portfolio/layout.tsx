@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Portfolio - Réalisations de Sites Web à Mons | DIGITALOVA',
+  title: 'Portfolio - Réalisations de Sites Web à Mons',
   description: 'Découvrez les créations de Sites Web par DIGITALOVA à Mons : e-commerce, sites vitrines, plateformes d\'automatisation IA sur mesure pour les entreprises en Hainaut.',
   robots: {
     index: true,

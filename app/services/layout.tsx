@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 const HERO_IMG = 'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/IMagePourPortfoliog.jpeg';
 
 export const metadata: Metadata = {
-  title: 'Mes Solutions Web & Marketing à Mons | DIGITALOVA',
-  description: 'Découvrez mes solutions : création de sites web, SEO, Google Business Profile et automatisation IA. Des outils concrets pour faire grandir votre activité.',
+  title: 'Mes Solutions Digitales & Marketing à Mons',
+  description: "Découvrez mes solutions : création de sites internet, référencement SEO et gestion de fiche d'établissement Google Business. Des outils concrets pour faire grandir votre activité.",
   robots: {
     index: true,
     follow: true,
@@ -35,20 +35,20 @@ export const metadata: Metadata = {
     locale: 'fr_BE',
     siteName: 'DIGITALOVA',
     url: 'https://digitalova.be/services',
-    title: 'Mes Solutions Web & IA | DIGITALOVA',
-    description: 'Site web, SEO, Google Business Profile et automatisation IA : découvrez la solution adaptée à votre projet.',
+    title: 'Mes Solutions Web & Marketing Digitale | DIGITALOVA',
+    description: 'Site web, référencement SEO, Google Business Profile et automatisation IA : découvrez la solution adaptée à votre projet.',
     images: [
       {
         url: HERO_IMG,
         width: 1200,
         height: 630,
-        alt: 'Solutions Web & IA DIGITALOVA',
+        alt: 'Solutions Web & Marketing Digitale - DIGITALOVA',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mes Solutions Web & IA | DIGITALOVA',
+    title: 'Mes Solutions Web & Marketing digitales | DIGITALOVA',
     description: 'Site web, SEO, Google Business Profile et automatisation IA : découvrez la solution adaptée à votre projet.',
     images: [HERO_IMG],
   },

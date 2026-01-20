@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 const HERO_IMAGE = 'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/referencement-local-seo.webp';
 
 export const metadata: Metadata = {
-  title: 'Optimisation SEO à Mons | Référencement Naturel - DIGITALOVA',
+  title: 'Optimisation SEO et Référencement Naturel à Mons - DIGITALOVA',
   description: 'Boostez votre visibilité sur Google avec DIGITALOVA à Mons. Audit SEO technique, recherche de mots-clés stratégiques et optimisation de contenu pour dominer votre marché local.',
   robots: {
     index: true,

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'RGPD - Politique de Protection des Données | DIGITALOVA',
+  title: 'RGPD - Politique de Protection des Données',
   description: 'Découvrez la politique RGPD de DIGITALOVA : données collectées, finalités, base légale, durée de conservation, cookies, sécurité et droits des utilisateurs.',
   robots: {
     index: true,

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Ma méthode Freelance Web à Mons | DIGITALOVA',
+  title: 'Ma méthode de conception Web à Mons',
   description: 'Découvrez les 5 étapes de votre projet web à Mons : Audit, Analyse concurrentielle, Diagnostic, Solutions sur-mesure et Plan d\'action. La méthode Digitalova pour booster votre CA.',
   robots: {
     index: true,

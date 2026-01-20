@@ -454,7 +454,7 @@ const Contact = () => {
                 Réserver un appel pour discuter de votre projet
               </h2>
               <p className="text-slate-600 mt-3 max-w-xl mx-auto">
-                Choisissez directement un créneau de 30 minutes via mon agenda en ligne.
+                Choisissez directement un créneau d'appel via mon agenda en ligne.
               </p>
 
               <div className="mt-6">
@@ -462,8 +462,8 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full px-8 h-14 font-bold bg-slate-900 text-white hover:bg-slate-800 transition-transform hover:scale-105 shadow-lg"
-                 title="En savoir plus - Digitalova">
-                  Ouvrir le calendrier
+                 title="Choisir un créneau d'appel avec Digitalova sur Calendly">
+                  Ouvrir Calendly
                 </a>
               </div>
             </div>

@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 const HERO_IMAGE = 'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/1637335605565.webp';
 
 export const metadata: Metadata = {
-  title: 'Gestion de fiche Google Business à Mons | DIGITALOVA',
+  title: 'Gestion de fiche Google Business à Mons - DIGITALOVA',
   description: 'Optimisation et gestion Google Business Profile : visibilité Maps, avis, posts, appels et itinéraires. Audit gratuit et plan d\'action local.',
   robots: {
     index: true,

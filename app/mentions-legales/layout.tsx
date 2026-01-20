@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Mentions Légales - Informations Juridiques | DIGITALOVA',
+  title: 'Mentions Légales - Informations Juridiques',
   description: 'Consultez les mentions légales et informations juridiques de DIGITALOVA, votre freelance en création de sites web en Belgique.',
   robots: {
     index: true,

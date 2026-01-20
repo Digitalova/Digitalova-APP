@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact & Devis Gratuit | DIGITALOVA Agence Marketing',
-  description: 'Besoin d\'un site web à Mons ? DIGITALOVA est disponible 24/7. Devis gratuit pour site vitrine, e-commerce, SEO et automatisation IA. Réponse rapide garantie.',
+  title: 'Contact & Devis sur mesure',
+  description: 'Remplissez le formualaire de contact ici ou choisissez un créneau d\'appel avec Digitalova sur Calendly. Devis gratuit pour site vitrine, e-commerce et référencementSEO. Réponse rapide garantie.',
   robots: {
     index: true,
     follow: true,

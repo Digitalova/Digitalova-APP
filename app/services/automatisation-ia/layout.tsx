@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 const HERO_IMAGE = 'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/AutoN8N.webp';
 
 export const metadata: Metadata = {
-  title: 'Automatisation IA & Chatbots à Mons | DIGITALOVA',
+  title: 'Automatisation IA & Chatbots à Mons - DIGITALOVA',
   description: 'Automatisation intelligente : chatbots, workflows et agents IA. Gagnez du temps, augmentez votre productivité et connectez vos outils.',
   robots: {
     index: true,

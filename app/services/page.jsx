@@ -163,8 +163,7 @@ const ServiceCardWF = ({
           </div>
 
           <div className="hidden sm:flex items-center gap-2 text-slate-300 text-xs font-semibold">
-            <Stars className="w-4 h-4" />
-            <span>Webflow-like</span>
+            <span>Solution</span>
           </div>
         </div>
 
@@ -277,7 +276,7 @@ const Services = () => {
               url: 'https://digitalova.be/services',
               name: 'Solutions Web & IA à Mons | DIGITALOVA',
               description:
-                'Création de sites web, SEO, Google Business Profile et automatisation IA pour les entreprises à Mons.',
+                'Création de sites web, référencement SEO et gestion Google Business Profile pour les entreprises locales à Mons.',
               breadcrumb: {
                 '@type': 'BreadcrumbList',
                 itemListElement: [
@@ -290,7 +289,7 @@ const Services = () => {
             {
               '@context': 'https://schema.org',
               '@type': 'Service',
-              serviceType: 'Création de site web et Marketing Digital',
+              serviceType: 'Création de site internet et Marketing Digital',
               provider: {
                 '@type': 'LocalBusiness',
                 name: 'DIGITALOVA',
@@ -338,14 +337,11 @@ const Services = () => {
                 <div className="relative px-6 py-10 md:px-12 md:py-12 text-center">
                   <div>
                     <h1 className="mt-5 text-4xl md:text-5xl font-extrabold text-slate-950 tracking-tight leading-[1.12] pb-2 overflow-visible">
-                      Mes solutions Web & IA
-                      <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600">
-                        pour faire grandir votre activité
-                      </span>
+                      Mes solutions de création & marketing digitales
                     </h1>
 
                     <p className="mt-4 text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-                      Sites web, SEO, Google Business Profile et automatisations IA — des services concrets, orientés résultats.
+                      Sites web, référencement SEO, Google Business Profile et accompagnement digitale pour les entreprises locales à Mons — des services concrets, orientés résultats.
                     </p>
 
                     <div className="mt-7 flex flex-col sm:flex-row gap-4 justify-center">
@@ -386,16 +382,16 @@ const Services = () => {
           iconTone="purple"
           gradient="from-purple-600/16 via-pink-600/10 to-transparent"
           title="Création de sites vitrine & boutiques e-commerce"
-          description="Un site élégant et rapide, pensé pour guider vos visiteurs vers l’action : demandes de devis, appels, ventes, réservations."
+          description="Un site internet élégant et rapide, pensé pour guider vos visiteurs vers l’action : demandes de devis, appels, ventes, formulaires de contact, réservations, etc."
           featuresTitle="Inclus"
           benefitsTitle="Résultats"
           features={[
             'Structure pensée pour convertir',
-            'Design premium (mobile-first)',
-            'Intégrations (form, réservation, paiement)',
-            'Performances (Core Web Vitals)',
+            'Design premium adapté à votre image de marque',
+            'Intégrations (formulaires de contact, réservation, paiement, etc.)',
+            'Présentation claire et concise de votre activité',
           ]}
-          benefits={['Image de marque premium', 'Disponibilité 24h/24', 'Crédibilité immédiate']}
+          benefits={['Crédibilité locale immédiate', 'Beaucoup + de clients locaux', 'Présence sur le web 24h/24']}
           detailsLink="/services/creation-site-web"
           delay={0}
         />
@@ -405,7 +401,7 @@ const Services = () => {
           label="SEO"
           iconTone="pink"
           gradient="from-pink-600/16 via-purple-600/10 to-transparent"
-          title="Optimisation SEO avancée"
+          title="Référencement SEO avancée"
           description="Audit, stratégie et optimisation : pour obtenir une visibilité durable et attirer des clients réellement intéressés."
           featuresTitle="Inclut"
           benefitsTitle="Pourquoi"
@@ -425,8 +421,8 @@ const Services = () => {
           label="Local"
           iconTone="emerald"
           gradient="from-emerald-600/16 via-purple-600/8 to-transparent"
-          title="Gestion de fiche Google My Business"
-          description="Optimisation et gestion pour apparaître sur Google Maps, capter plus d’appels et contrôler votre réputation."
+          title="Gestion de fiche d'établissement Google My Business"
+          description="Optimisation et gestion de la fiche d'établissement pour apparaître en premier sur Google Maps, capter plus d’appels et contrôler votre réputation."
           featuresTitle="Actions"
           benefitsTitle="Impact"
           features={[
@@ -479,21 +475,17 @@ const Services = () => {
           </div>
 
           <div className="relative p-10 md:p-14 text-center">
-            <Badge tone="dark" icon={<Sparkles className="w-4 h-4" />}>
-              Audit rapide • Reco claires • Plan d’action
-            </Badge>
-
             <h2 className="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight">
               Prêt à passer à l’action ?
             </h2>
             <p className="mt-4 text-lg md:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
-              J'identifie le bloc le plus rentable pour vous, puis je construis une feuille de route simple et efficace.
+              Discutons ensemble de votre projet web qui vous permettra de gagner en visibilité et en clients qualifiés
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" title="Aller à la page Contact - Digitalova">
                 <Button className="h-14 px-10 rounded-full text-lg font-extrabold bg-white text-slate-900 hover:bg-slate-100 shadow-xl">
-                  Demander un devis gratuit
+                  Remplir le formulaire de contact
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>

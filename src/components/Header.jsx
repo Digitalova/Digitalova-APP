@@ -67,11 +67,14 @@ const Header = () => {
     []
   );
 
-  // ✅ Mobile : seulement les 4 services (sans "Toutes les Solutions")
-  const mobileServicesItems = useMemo(
-    () => servicesDropdownItems.filter((it) => it.path !== '/services'),
-    [servicesDropdownItems]
-  );
+  // ✅ Mobile : tous les services avec "Toutes les Solutions" en premier
+  const mobileServicesItems = useMemo(() => {
+    const allServices = [...servicesDropdownItems];
+    // Mettre "Toutes les Solutions" en premier pour mobile
+    const toutesLesSolutions = allServices.find((it) => it.path === '/services');
+    const autresServices = allServices.filter((it) => it.path !== '/services');
+    return toutesLesSolutions ? [toutesLesSolutions, ...autresServices] : autresServices;
+  }, [servicesDropdownItems]);
 
   const isServicePath = pathname.startsWith('/services');
   const isSupportPath = ['/partenaires', '/nous-suivre'].includes(pathname);
@@ -164,6 +167,7 @@ const Header = () => {
             <img
               src="https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/LogoDIGITALOVAico.ico"
               alt="Logo Digitalova"
+              title="Logo Digitalova - Agence Web" 
               width={502}
               height={497}
               loading="eager"
@@ -293,7 +297,7 @@ const Header = () => {
           </div>
 
           <div className="hidden md:block">
-            <Link href="/contact">
+            <Link href="/contact" title="Remplir le formualaire de devis gratuit - Digitalova Agence Web Mons">
               <Button className="bg-slate-900/90 hover:bg-slate-900 backdrop-blur-sm text-white rounded-full px-6 shadow-xl shadow-purple-900/10 transition-all hover:scale-105 border border-white/10">
                 Devis Gratuit
               </Button>

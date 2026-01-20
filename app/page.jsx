@@ -285,27 +285,27 @@ const Home = () => {
   const services = [
     {
       icon: <Code className="w-12 h-12" />,
-      title: 'Conception de Site Web sur Mesure',
+      title: 'Conception de Site Internet sur Mesure',
       description:
-        "Du site Web vitrine élégant à la boutique e-commerce performante pour vendre 24h/24, je conçois la solution sur-mesure qui s'adapte parfaitement à vos ambitions.",
+        "Du site Web vitrine élégant à la boutique e-commerce performante pour vendre 24h/24, je conçois la solution digitale sur-mesure qui s'adapte parfaitement à vos ambitions.",
     },
     {
       icon: <Building2 className="w-12 h-12" />,
-      title: 'Gestion de ficheGoogle My Business',
+      title: 'Gestion de fiche Google My Business',
       description:
-        "Gestion complète de votre fiche Google. J'optimise votre référencement local pour attirer les clients qui cherchent vos services maintenant. Gain de temps : Je gère les avis et les posts pour vous. Résultat : Une présence pro et rassurante dès la première recherche.",
+        "Gestion complète de votre fiche d'établissement Google. J'optimise la fichepour attirer les clients qui cherchent vos services maintenant. Gain de temps : Je gère les avis google et les posts pour vous.",
     },
     {
       icon: <TrendingUp className="w-12 h-12" />,
       title: 'Optimisation SEO Avancée',
       description:
-        "Une visibilité maximale sur Google pour attirer les bons clients : j'optimise votre site web et votre fiche GoogleMyBusiness pour qu'ils soient trouvés par ceux qui ont besoin de vous.",
+        "Une visibilité maximale sur Google pour attirer les bons clients : j'optimise le SEO de votre site web et votre fiche GoogleMyBusiness pour qu'ils soient trouvés par ceux qui ont le plus besoin de vous.",
     },
     {
       icon: <Bot className="w-12 h-12" />,
       title: 'Intégrations & Systèmes Intelligents',
       description:
-        "De la constitution de votre base de données à l'envoi d'emails transactionnels, je connecte les meilleurs outils pour que vous restiez proche de vos clients.",
+        "De la constitution de votre base de données à l'envoi d'emails transactionnels, je connecte les meilleurs outils pour que vous restiez proche de vos clients. Le tout automatisé pour vous libérer du temps.",
     },
   ];
 
@@ -314,55 +314,55 @@ const Home = () => {
       number: '01',
       title: 'Audit & Stratégie',
       description:
-        'Nous analysons votre marché, vos concurrents et vos objectifs pour définir une stratégie digitale gagnante dès le départ.',
+        "J'analyse votre marché, vos concurrents et vos objectifs pour définir une stratégie digitale gagnante dès le départ.",
     },
     {
       number: '02',
       title: 'Design & Maquettage',
       description:
-        "Je conçois une interface moderne et intuitive qui reflète votre identité de marque et guide vos visiteurs vers l'action.",
+        "Je conçois une maquette de votre site intenet avec une interface moderne et intuitive qui reflète votre identité de marque et guide vos visiteurs vers l'action.",
     },
     {
       number: '03',
       title: 'Développement & SEO',
       description:
-        'Intégration technique propre, rapide et optimisée pour le référencement naturel (SEO) afin de plaire à Google.',
+        'Personnalisation, conception technique, rédaction du contenu et optimisisation pour le référencement naturel (SEO) afin de vous placer dans les premiers résultats et gagner en visibilité.',
     },
     {
       number: '04',
       title: 'Lancement & Accompagnement',
       description:
-        "Mise en ligne de votre site web sécurisé et après ? Je vous accompagne dans votre présence digitale dans l'intérêt de maximiser vos résultats.",
+        "Mise en ligne de votre site web sécurisé et après ? Je vous accompagne dans votre présence digitale dans l'intérêt de faire grandir votre activité.",
     },
   ];
 
   const featuredProjects = [
     {
-      title: 'Site Vitrine pour un Restaurant Italien',
+      title: 'Site internet Vitrine pour un Restaurant',
       category: 'Gastronomie',
       image:
         'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/Affiche_de_portfolio_siteweb_restaurant_italien_9_11zon.webp',
-      tags: ['Site Vitrine', 'Réservation'],
+      tags: ['Site Vitrine', 'Réservation', 'Mons'],
       url: '/portfolio?project=digi-gustavo',
-      seoTitle: 'Voir le projet Digi-Gustavo : Site vitrine restaurant à Mons',
+      seoTitle: 'Voir le projet Digi-Gustavo : Site vitrine restaurant',
     },
     {
       title: 'Site web pour un Cuisiniste à Mons',
-      category: 'Artisanat & Design',
+      category: 'Artisanat',
       image:
         'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/Affiche_de_portfolio_siteweb_cuisiniste_mons_6_11zon.webp',
-      tags: ['Catalogue', 'Showroom 3D'],
+      tags: ['Catalogue', 'Showroom 3D', 'local'],
       url: '/portfolio?project=digi-kitchen',
-      seoTitle: 'Voir le projet Digi-Kitchen : Site catalogue pour cuisiniste',
+      seoTitle: 'Voir le projet Digi-Kitchen : Site web catalogue pour cuisiniste à Mons',
     },
     {
-      title: "Site internet d'une Agence de location à Mons",
+      title: "Site internet d'une Agence de location de voiture",
       category: 'Automobile',
       image:
         'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/Affiche_de_portfolio_siteweb_agence_de_location_voiture_2_11zon%20(1).webp',
-      tags: ['E-commerce', 'Booking'],
+      tags: ['Location', 'Booking', 'Hainaut'],
       url: '/portfolio?project=digi-location',
-      seoTitle: 'Voir le projet Digi-Location : Site de réservation en ligne',
+      seoTitle: 'Voir le projet Digi-Location Hainaut : Site internet de réservation en ligne',
     },
   ];
 
@@ -387,13 +387,13 @@ const Home = () => {
                 className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
               >
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.2]">
-                  Création de Sites Web & Boutiques en Ligne à Mons
+                Agence web à Mons spécialisée en création de sites internet
                   <br className="hidden lg:block" />
                 </h1>
 
                 <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
                   De la conception à la mise en ligne, je crée des sites web sur mesure à Mons qui captivent votre audience
-                  et boostent votre croissance.
+                  et convertissent vos visiteurs en clients.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -499,7 +499,7 @@ const Home = () => {
                 </span>
               </motion.h2>
               <p className="text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                Identifions ce qui freine votre croissance digitale et mettons en place les leviers pour décoller.
+                Identifions les éléments qui freinent votre croissance digitale et mettons en place les leviers pour décoller.
               </p>
             </div>
 
@@ -564,7 +564,7 @@ const Home = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
-                Explorez <span className="text-black">mes Services de</span> Création Web
+                Decouvrez <span className="text-black">mes solutions </span>digitales
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Je vous propose des solutions complètes et sur mesure à Mons pour construire et propulser votre présence en
@@ -646,8 +646,7 @@ const Home = () => {
                 </span>
               </h2>
               <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-                Pas de jargon, pas de flou. Juste un processus structuré pour vous livrer un site web performant dans les
-                temps.
+                Voici un aperçu de ma méthode de création web pour vous livrer un site web performant qui convient à vos besoins
               </p>
             </motion.div>
 
@@ -711,12 +710,11 @@ const Home = () => {
                 <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
                   Mes Dernières{' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
-                    Réalisations
+                    Réalisations Web
                   </span>
                 </h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                  Chaque projet est unique. Découvrez comment j&apos;aide mes clients à se démarquer avec des solutions web
-                  performantes et élégantes.
+                 Découvrez comment j&apos;aide mes clients à Mons à se démarquer avec la création d'un site internet qui présente leur activité de manière claire et efficace.
                 </p>
               </motion.div>
             </div>
@@ -1117,15 +1115,14 @@ const Home = () => {
                   ?
                 </h2>
                 <p className="text-xl text-slate-300 mb-10 leading-relaxed">
-                  Ne laissez plus vos concurrents prendre l&apos;avantage. Recevez votre estimation gratuite et sans engagement
-                  afin de démarrer votre transformation digitale dès maintenant.
+                  Ne laissez plus vos concurrents prendre l&apos;avantage. Remplissez le formulaire de contact et réalisons ensemble votre futur site internet selon vos besoins.
                 </p>
                 <Link href="/contact" title="Aller à la page Contact - Digitalova">
                   <Button
                     size="lg"
                     className="bg-white text-slate-900 hover:bg-slate-100 text-lg px-10 h-14 rounded-full shadow-xl transition-transform hover:scale-105 font-bold"
                   >
-                    Demander Mon Devis Gratuit
+                    Remplir le formulaire de contact
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>

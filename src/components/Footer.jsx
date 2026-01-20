@@ -109,14 +109,16 @@ const Footer = () => {
               <img
                 src="https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/LogoDIGITALOVAico.ico"
                 alt="Digitalova"
+                title='Logo Digitalova - Agence Web'
                 className="h-10 w-auto"
               />
               <p className="mt-4 text-sm text-slate-300">
                 Agence web freelance à Mons. Création de sites, SEO local & automatisation IA.
               </p>
               <p className="mt-4 text-sm text-slate-300">
-                📞 Appels : 09h30–20h00 <br />
-                💬 Messages : 24h/24 • 7j/7
+                 Appels : 09h30–20h00 <br />
+                 Messages : 24h/24 • 7j/7
+                
               </p>
             </div>
 
@@ -125,19 +127,19 @@ const Footer = () => {
               <div>
                 <p className="text-lg font-bold text-white mb-4">Navigation</p>
                 <nav className="space-y-2 text-sm">
-                  <Link href="/" className="block text-slate-300 hover:text-purple-300 transition-colors">
+                  <Link href="/" title="Retour à l'accueil - Digitalova Agence Web Mons" className="block text-slate-300 hover:text-purple-300 transition-colors">
                     Accueil
                   </Link>
-                  <Link href="/services" className="block text-slate-300 hover:text-purple-300 transition-colors">
+                  <Link href="/services" title="Voir la page sur les solutions de Digitalova - Agence Web " className="block text-slate-300 hover:text-purple-300 transition-colors">
                     Solutions
                   </Link>
-                  <Link href="/portfolio" className="block text-slate-300 hover:text-purple-300 transition-colors">
+                  <Link href="/portfolio" title="Voir le portfolio de Digitalova - Agence Web " className="block text-slate-300 hover:text-purple-300 transition-colors">
                     Portfolio
                   </Link>
-                  <Link href="/methode" className="block text-slate-300 hover:text-purple-300 transition-colors">
+                  <Link href="/methode" title="Voir la page sur la méthode de Digitalova - Agence Web " className="block text-slate-300 hover:text-purple-300 transition-colors">
                     Notre Méthode
                   </Link>
-                  <Link href="/contact" className="block text-slate-300 hover:text-purple-300 transition-colors">
+                  <Link href="/contact" title="Voir la page de contact de Digitalova - Agence Web" className="block text-slate-300 hover:text-purple-300 transition-colors">
                     Contact
                   </Link>
                 </nav>
@@ -146,16 +148,16 @@ const Footer = () => {
               <div>
                 <p className="text-sm font-bold text-purple-200 uppercase tracking-wider mb-4">Nos Services</p>
                 <nav className="space-y-2 text-sm">
-                  <Link href="/services/creation-site-web" className="block text-slate-300 hover:text-purple-300 transition-colors">
+                  <Link href="/services/creation-site-web" title="Voir la page sur la solution de Création de Site Internet à Mons" className="block text-slate-300 hover:text-purple-300 transition-colors">
                     Création de Site Web
                   </Link>
-                  <Link href="/services/google-business" className="block text-slate-300 hover:text-purple-300 transition-colors">
+                  <Link href="/services/google-business" title="Voir la page sur lagestion de la fiche d'établissement Google My Business" className="block text-slate-300 hover:text-purple-300 transition-colors">
                     Google My Business
                   </Link>
-                  <Link href="/services/seo-referencement" className="block text-slate-300 hover:text-purple-300 transition-colors">
+                  <Link href="/services/seo-referencement" title="Voir la page sur la solutionSEO & Référencement" className="block text-slate-300 hover:text-purple-300 transition-colors">
                     SEO & Référencement
                   </Link>
-                  <Link href="/services/automatisation-ia" className="block text-slate-300 hover:text-purple-300 transition-colors">
+                  <Link href="/services/automatisation-ia" title="Voir la page sur la solution d'Automatisation IA" className="block text-slate-300 hover:text-purple-300 transition-colors">
                     Automatisation IA
                   </Link>
                 </nav>
@@ -177,7 +179,7 @@ const Footer = () => {
                 </p>
                 <div className="pt-2">
                   <a
-                    href="/sitemap.xml"
+                    href="/sitemap.xml" title="Voir le sitemap de Digitalova - Agence Web"
                     className="inline-flex items-center gap-1 text-slate-400 hover:text-white transition-colors text-xs"
                   >
                     Sitemap.xml <ArrowUpRight className="w-3 h-3" />
@@ -198,7 +200,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="p-2 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all shadow-sm"
                   aria-label="Suivre Digitalova sur LinkedIn"
-                  title="LinkedIn"
+                  title="Visiter le profil LinkedIn de Digitalova - Agence Web"
                 >
                   <LinkedInBrandIcon className="w-5 h-5" />
                 </a>
@@ -209,7 +211,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="p-2 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all shadow-sm"
                   aria-label="Suivre Digitalova sur Facebook"
-                  title="Facebook"
+                  title="Visiter le profil Facebook de Digitalova - Agence Web"
                 >
                   <FacebookBrandIcon className="w-5 h-5" />
                 </a>
@@ -220,7 +222,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="p-2 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all shadow-sm"
                   aria-label="Suivre Digitalova sur Instagram"
-                  title="Instagram"
+                  title="Visiter le profil Instagram de Digitalova - Agence Web"
                 >
                   <InstagramBrandIcon gradientId={igGradientId} className="w-5 h-5" />
                 </a>
@@ -231,7 +233,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="p-2 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all shadow-sm"
                   aria-label="Contacter Digitalova sur WhatsApp"
-                  title="WhatsApp"
+                  title="Contacter Digitalova sur WhatsApp"
                 >
                   <WhatsAppBrandIcon className="w-5 h-5" />
                 </a>
@@ -242,17 +244,17 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="p-2 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all shadow-sm"
                   aria-label="Suivre Digitalova sur TikTok"
-                  title="TikTok"
+                  title="Visiter le profil TikTok de Digitalova - Agence Web"
                 >
                   <TikTokBrandIcon className="w-5 h-5" />
                 </a>
               </div>
 
               <div className="mt-6 pt-4 border-t border-white/10 space-y-2 text-sm">
-                <Link href="/partenaires" className="flex items-center gap-2 text-purple-200 hover:text-purple-100 transition-colors">
+                <Link href="/partenaires" title="Voir la page sur les partenaires de Digitalova - Agence Web" className="flex items-center gap-2 text-purple-200 hover:text-purple-100 transition-colors">
                   <HeartHandshake className="w-4 h-4" /> Devenir Partenaire
                 </Link>
-                <Link href="/nous-suivre" className="flex items-center gap-2 text-slate-300 hover:text-purple-300 transition-colors">
+                <Link href="/nous-suivre" title="Voir la page sur la façon de nous suivre de Digitalova - Agence Web" className="flex items-center gap-2 text-slate-300 hover:text-purple-300 transition-colors">
                   <Heart className="w-4 h-4" /> Nous suivre
                 </Link>
               </div>
@@ -264,10 +266,10 @@ const Footer = () => {
             <p>© 2026 DIGITALOVA</p>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
               <span className="inline-flex items-center">TVA : BE1028.668.667</span>
-              <Link href="/mentions-legales" className="hover:text-purple-300 transition-colors">
+              <Link href="/mentions-legales" title="Voir la page sur les mentions légales de Digitalova - Agence Web" className="hover:text-purple-300 transition-colors">
                 Mentions légales
               </Link>
-              <Link href="/rgpd" className="hover:text-purple-300 transition-colors">
+              <Link href="/rgpd" title="Voir la page sur le RGPD de Digitalova - Agence Web" className="hover:text-purple-300 transition-colors">
                 RGPD
               </Link>
             </div>
