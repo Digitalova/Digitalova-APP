@@ -61,20 +61,21 @@ const Contact = () => {
   }, []);
 
   const projectTypes = [
-    'Site Vitrine',
-    'Boutique E-commerce',
-    'Blog / Newsletter',
-    "Outils d'Automatisation & Interfaces sur Mesure",
+    'Site One Page (Landing Pro)',
+    'Site Vitrine (Business Pro)',
+    'Site internet complexe (Signature)',
+    'Boutique E-commerce (Signature)',
     'Gestion de fiche Google My Business',
     'Gestion & optimisation avancée du SEO',
+    "Outils d'Automatisation & Interfaces sur Mesure",
     'Autre (projet sur mesure)',
   ];
 
   const budgets = [
     'Moins de 500 € (SEO/GMB uniquement)',
-    '997 € - 2 000 €',
-    '2 000 € - 4 000 €',
-    '4 000 € - 10 000 €',
+    '1 397€ - 3 000 €',
+    '3 000 € - 5 000 €',
+    '5 000 € - 10 000 €',
     'Plus de 10 000 €',
     'Je ne sais pas',
   ];

@@ -470,55 +470,36 @@ const Social = () => {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch relative z-10">
-                <motion.div
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.6 }}
-                  className="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm h-full flex flex-col"
-                >
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold mb-3 flex items-center gap-3 text-white">
-                      <GoogleIcon className="w-7 h-7" /> Laisser un avis sur Google
-                    </h3>
-                    <p className="text-slate-300 mb-5 leading-relaxed">
-                      C&apos;est le moyen le plus efficace pour soutenir mon activité et améliorer ma visibilité locale.
-                      Un grand merci !
-                    </p>
+              <motion.div
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6 }}
+                className="bg-white/5 p-8 md:p-12 rounded-2xl border border-white/10 backdrop-blur-sm relative z-10"
+              >
+                {/* Section Google Review */}
+                <div className="mb-10 pb-10 border-b border-white/10">
+                  <h3 className="text-2xl font-bold mb-3 flex items-center gap-3 text-white">
+                    <GoogleIcon className="w-7 h-7" /> Laisser un avis sur Google
+                  </h3>
+                  <p className="text-slate-300 mb-6 leading-relaxed">
+                    C&apos;est le moyen le plus efficace pour soutenir mon activité et améliorer ma visibilité locale.
+                    Un grand merci !
+                  </p>
 
-                    <a href="https://g.page/r/Cdfk326zr4htEBM/review" target="_blank" rel="noopener noreferrer" title="Visiter https://g.page/r/Cdfk326zr4htEBM/review">
-                      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-lg py-6 h-14 rounded-full text-white shadow-lg">
-                        Évaluer sur Google
-                      </Button>
-                    </a>
-                  </div>
+                  <a href="https://g.page/r/Cdfk326zr4htEBM/review" target="_blank" rel="noopener noreferrer" title="Visiter https://g.page/r/Cdfk326zr4htEBM/review">
+                    <Button className="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-lg py-6 h-14 rounded-full text-white shadow-lg transition-transform hover:scale-[1.02]">
+                      Évaluer sur Google
+                    </Button>
+                  </a>
+                </div>
 
-                  <motion.div
-                    className="mt-5 flex justify-center"
-                    animate={{ y: [0, -3, 0] }}
-                    transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
-                  >
-                    <img
-                      src="https://horizons-cdn.hostinger.com/63fc4be4-0345-4e91-b9b7-ba4da148182f/d298dc6aa082ae2e336c4d18c3d2bee6.png"
-                      alt="Scanner le QR Code pour laisser un avis Google sur Digitalova"
-                      className="w-full max-w-[220px] rounded-xl shadow-lg border-4 border-white/20"
-                      loading="lazy"
-                     title="Scanner le QR Code pour laisser un avis Google sur Digitalova" />
-                  </motion.div>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.6, delay: 0.05 }}
-                  className="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm h-full"
-                >
+                {/* Section Formulaire */}
+                <div>
                   <h3 className="text-2xl font-bold mb-6 text-white">Ou laissez un avis ici</h3>
                   <ReviewForm />
-                </motion.div>
-              </div>
+                </div>
+              </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: 14 }}

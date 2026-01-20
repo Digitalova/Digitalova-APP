@@ -436,7 +436,7 @@ const Partners = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-6xl mx-auto">
               <motion.div {...fadeUp(0)} className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-slate-900 mb-4">Votre Évolution</h2>
+                <h2 className="text-3xl font-bold text-slate-900 mb-4">Les commissions</h2>
                 <p className="text-slate-600">Plus vous performez, plus votre part augmente.</p>
               </motion.div>
 
@@ -469,7 +469,7 @@ const Partners = () => {
               >
                 <Gift className="w-4 h-4 text-pink-300" />
                 <span>
-                  <strong className="text-white">Bonus de performance :</strong> +2% supplémentaire sur votre CA annuel si objectifs dépassés.
+                  <strong className="text-white">Bonus de performance :</strong> +2% supplémentaire si vous dépassez les 10 projets apportés.
                 </span>
               </motion.div>
             </div>
@@ -548,7 +548,7 @@ const Partners = () => {
                   <div className="p-3 bg-white/10 rounded-xl mb-4">
                     <Clock className="w-6 h-6 text-green-300" />
                   </div>
-                  <h3 className="font-bold text-lg mb-2">Paiement Éclair 72h</h3>
+                  <h3 className="font-bold text-lg mb-2">Paiement Rapide 72h</h3>
                   <p className="text-slate-300 text-sm">
                     Vos commissions sont versées sous 3 jours ouvrés dès réception de l&apos;acompte client. Pas d&apos;attente de fin de mois.
                   </p>
@@ -594,7 +594,7 @@ const Partners = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <motion.div {...fadeUp(0.05)} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold text-[#1E293B]">Nom complet *</label>
+                    <label className="text-sm font-semibold text-[#1E293B]">Nom complet du partenaire *</label>
                     <input
                       type="text"
                       name="name"
