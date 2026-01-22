@@ -502,7 +502,7 @@ const SEOOptimization = () => {
                   size="lg"
                   className="bg-white text-slate-900 hover:bg-slate-100 text-lg px-10 h-14 rounded-full font-bold"
                 >
-                  Demander un Audit SEO Gratuit
+                  Demander un audit
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>

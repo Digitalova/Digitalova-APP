@@ -293,7 +293,7 @@ const Home = () => {
       icon: <Building2 className="w-12 h-12" />,
       title: 'Gestion de fiche Google My Business',
       description:
-        "Gestion complète de votre fiche d'établissement Google. J'optimise la fichepour attirer les clients qui cherchent vos services maintenant. Gain de temps : Je gère les avis google et les posts pour vous.",
+        "Gestion complète de votre fiche d'établissement Google. J'optimise la fiche pour attirer les clients qui cherchent vos services maintenant. Gain de temps : Je gère les avis google et les posts pour vous.",
     },
     {
       icon: <TrendingUp className="w-12 h-12" />,
@@ -1122,7 +1122,7 @@ const Home = () => {
                     size="lg"
                     className="bg-white text-slate-900 hover:bg-slate-100 text-lg px-10 h-14 rounded-full shadow-xl transition-transform hover:scale-105 font-bold"
                   >
-                    Remplir le formulaire de contact
+                    Remplir le formulaire
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>

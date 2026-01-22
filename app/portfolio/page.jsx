@@ -711,7 +711,7 @@ const PortfolioContent = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href="/contact" title="Aller à la page Contact - Digitalova">
                     <Button className="h-14 px-10 rounded-full text-lg font-extrabold bg-white text-slate-900 hover:bg-slate-100 shadow-xl">
-                      Démarrer mon projet
+                      Contactez-moi
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                   </Link>
