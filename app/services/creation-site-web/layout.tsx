@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 const HERO_IMAGE = 'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/IMagePourPortfoliog.webp';
 
 export const metadata: Metadata = {
- title: 'Création de Web à Mons - DIGITALOVA',
+ title: 'Création de Sites Web à Mons - DIGITALOVA',
   description: 'Création de sites web professionnels à Mons : vitrine, e-commerce, sur mesure. Design moderne, performance optimale et SEO intégré. Devis gratuit.',
   robots: {
     index: true,
