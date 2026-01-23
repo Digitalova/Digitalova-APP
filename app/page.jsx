@@ -386,8 +386,10 @@ const Home = () => {
                 transition={{ duration: 0.8 }}
                 className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
               >
-                
-
+                                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.15]">
+  Agence web à Mons spécialisée en{" "}
+  <span className="block lg:inline">création de sites internet</span>
+</h1>
 
                 <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
                   De la conception à la mise en ligne, je crée des sites web sur mesure à Mons qui captivent votre audience
@@ -740,10 +742,6 @@ const Home = () => {
                           width="1200"
                           height="800"
                         />
-                                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.15]">
-  Agence web à Mons spécialisée en{" "}
-  <span className="block lg:inline">création de sites internet</span>
-</h1>
                         <div className="absolute inset-0 bg-black/55 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                           <div className="bg-white text-slate-900 px-6 py-2 rounded-full font-bold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                             <MousePointerClick className="w-4 h-4" />
