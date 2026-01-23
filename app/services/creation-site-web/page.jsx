@@ -99,7 +99,7 @@ const WebDevelopment = () => {
       image:
         'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/Affiche_de_portfolio_siteweb_restaurant_italien_9_11zon.webp',
       url: '/portfolio?project=digi-gustavo',
-      seoTitle: 'Voir le projet Digi-Gustavo : site vitrine restaurant italien',
+      seoTitle: 'Voir le projet de site web pour Digi-Gustavo : site vitrine restaurant italien',
     },
     {
       title: 'Site web pour un Cuisiniste à Mons',
@@ -107,7 +107,7 @@ const WebDevelopment = () => {
       image:
         'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/Affiche_de_portfolio_siteweb_cuisiniste_mons_6_11zon.webp',
       url: '/portfolio?project=digi-kitchen',
-      seoTitle: 'Voir le projet Digi-Kitchen : site web cuisiniste à Mons',
+      seoTitle: 'Voir le projet de site internet pour Digi-Kitchen : site web cuisiniste à Mons',
     },
     {
       title: "Site d'Agence de location",
@@ -115,7 +115,7 @@ const WebDevelopment = () => {
       image:
         'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/Affiche_de_portfolio_siteweb_agence_de_location_voiture_2_11zon%20(1).webp',
       url: '/portfolio?project=digi-location',
-      seoTitle: 'Voir le projet Digi-Location : site agence de location du Hainaut',
+      seoTitle: "Voir le projet de site internet pour Digi-Location : site d'une agence de location du Hainaut",
     },
   ];
 
@@ -169,7 +169,7 @@ const WebDevelopment = () => {
         description: 'Création de sites internet vitrines et e-commerce sur mesure à Mons.',
         offers: {
           '@type': 'Offer',
-          price: '997.00',
+          price: '1397.00',
           priceCurrency: 'EUR',
           availability: 'https://schema.org/InStock'
         },
@@ -252,11 +252,12 @@ const WebDevelopment = () => {
                   <div className="relative aspect-[16/10] bg-slate-100 overflow-hidden">
                     <img
                       src={HERO_IMAGE}
-                      alt="Aperçu d'un site web moderne créé par Digitalova"
+                      alt="Aperçu des réalisations de sites web de l'agence web Digitalova Mons"
                       title="Aperçu d'un site web moderne créé par Digitalova"
                       className="w-full h-full object-cover"
                       loading="eager"
                       decoding="async"
+                      fetchPriority="high"
                       width="1600"
                       height="1000"
                     />
@@ -315,7 +316,7 @@ const WebDevelopment = () => {
                     <div className="relative aspect-[3/2] overflow-hidden">
                       <img
                         src={project.image}
-                        alt={`Aperçu : ${project.title}`}
+                        alt={`Aperçu de la réalistation de site internet : ${project.title} créé par l'agence web Digitalova Mons`}
                         title={project.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"

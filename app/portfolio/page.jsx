@@ -225,7 +225,7 @@ const PortfolioContent = () => {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             src={image}
-            alt="Full screen project view"
+            alt="Image du site web en plein écran"
             className="max-h-full max-w-full object-contain rounded-lg shadow-2xl select-none"
             onClick={(e) => e.stopPropagation()}
           />
@@ -582,7 +582,7 @@ const PortfolioContent = () => {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
       '@id': 'https://digitalova.be/portfolio/#projectlist',
-      name: 'Projets Web réalisés par DIGITALOVA',
+      name: "Projets de Sites Web réalisés par l'agence DIGITALOVA",
       itemListElement: projects.map((project, index) => ({
         '@type': 'ListItem',
         position: index + 1,
@@ -649,7 +649,8 @@ const PortfolioContent = () => {
               </h2>
 
               <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                Des projets concrets, pensés pour la conversion : design premium, structure claire et performances.
+              Découvrez le portfolio Digitalova, agence spécialisée dans la création de sites web professionnels à Mons et en Belgique.
+              Sites vitrines et e-commerce conçus pour les entreprises souhaitant développer leur visibilité et leurs performances en ligne.
               </p>
             </motion.div>
           </div>

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         url: HERO_IMAGE,
         width: 1200,
         height: 630,
-        alt: 'Google Business DIGITALOVA',
+        alt: "Gestion de fiche d\'établissement Google Business par l'agence web Digitalova Mons",
       },
     ],
   },

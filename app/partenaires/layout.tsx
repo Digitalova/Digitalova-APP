@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         url: 'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/IMagePourPortfoliog.jpeg',
         width: 1200,
         height: 630,
-        alt: 'Programme Partenaires DIGITALOVA',
+        alt: 'Programme Partenaires de l\'agence web Digitalova Mons',
       },
     ],
   },

@@ -233,8 +233,8 @@ const Contact = () => {
               Parlons de Votre <span className="gradient-text">Projet</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Remplissez ce formulaire pour me donner les premières informations sur votre projet. Je reviendrai vers vous
-              sous 24h avec une proposition ou pour planifier un rendez-vous.
+            Contactez Digitalova pour votre projet de création de site web, référencement SEO ou optimisation Google Business en Belgique.
+            Demandez un devis gratuit pour un site vitrine, e-commerce ou une solution digitale sur mesure, avec réponse rapide garantie.
             </p>
           </div>
 

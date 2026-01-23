@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Portfolio - Réalisations de Sites Web à Mons',
-  description: 'Découvrez les créations de Sites Web par DIGITALOVA à Mons : e-commerce, sites vitrines, plateformes d\'automatisation IA sur mesure pour les entreprises en Hainaut.',
-  robots: {
+  description: "Portfolio Digitalova : créations de sites intennet professionnels à Mons et en Belgique. Sites vitrines, Landing page et e-commerce sur mesure pour les entreprises.",
+robots: {
     index: true,
     follow: true,
     'max-image-preview': 'large',
@@ -24,13 +24,13 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://www.digitalova.be/portfolio',
     title: 'Portfolio DIGITALOVA | Nos réalisations Web à Mons',
-    description: 'Explorez nos derniers projets : du restaurant italien au cabinet d\'avocat. Design premium et performance SEO.',
+    description: 'Explorez mes derniers projets : du restaurant italien au cabinet d\'avocat. Design premium et performance SEO.',
     images: [
       {
         url: 'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/IMagePourPortfoliog.jpeg',
         width: 1200,
         height: 630,
-        alt: 'Portfolio DIGITALOVA',
+        alt: "Portfolio de création de sites internet réalisés par l'agence web DIGITALOVA",
       },
     ],
     locale: 'fr_BE',

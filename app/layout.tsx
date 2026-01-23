@@ -41,7 +41,7 @@ export const metadata: Metadata = {
         url: 'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/LogoDIGITALOVA2026D.webp',
         width: 1200,
         height: 630,
-        alt: 'Logo Digitalova',
+        alt: 'Logo de l\'agence web Digitalova Mons',
       },
     ],
   },
@@ -93,7 +93,8 @@ const jsonLdOrganization = {
     "https://www.instagram.com/digitalova.be",
     "https://www.facebook.com/DigitalovaBE",
     "https://www.tiktok.com/@digitalova.be",
-    "https://wa.me/32471586708"
+    "https://wa.me/32471586708",
+    "https://www.linkedin.com/company/digitalova-mons/"
   ]
 };
 
@@ -115,7 +116,7 @@ const jsonLdBusiness = {
   "image": "https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/LogoDIGITALOVA2026D.webp",
   "url": "https://digitalova.be/",
   "telephone": "+32471586708",
-  "priceRange": "997€ - 10000€",
+  "priceRange": "1397€ - 10000€",
   "description": "Digitalova est une agence web à Mons spécialisée en création de sites internet performants, référencement SEO local et et gestion de fiches google my business.",
   "address": {
     "@type": "PostalAddress",

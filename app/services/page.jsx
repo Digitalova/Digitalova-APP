@@ -98,7 +98,8 @@ const Services = () => {
                     </h1>
 
                     <p className="mt-4 text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-                      Sites web, référencement SEO, Google Business Profile et accompagnement digitale pour les entreprises locales à Mons — des services concrets, orientés résultats.
+                    Digitalova vous accompagne avec des services complets de création de site web, référencement SEO et optimisation Google Business en Belgique.
+                    Je concois des solutions digitales performantes pour développer votre visibilité et attirer plus de clients.
                     </p>
 
                     <div className="mt-7 flex flex-col sm:flex-row gap-4 justify-center">

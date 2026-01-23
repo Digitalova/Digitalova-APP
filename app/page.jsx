@@ -157,7 +157,7 @@ const MobileHeroRedesign = () => {
         <div className="relative p-5">
           <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
             <img
-              alt="Aperçu d'un site web moderne"
+              alt="Aperçu des réalisations de sites web de l'agence web Digitalova Mons"
               title="Aperçu d'un site web moderne - Digitalova"
               src="https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/IMagePourPortfoliog.webp"
               className="w-full h-auto object-cover"
@@ -386,10 +386,8 @@ const Home = () => {
                 transition={{ duration: 0.8 }}
                 className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
               >
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.2]">
-                Agence web à Mons spécialisée en création de sites internet
-                  <br className="hidden lg:block" />
-                </h1>
+                
+
 
                 <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
                   De la conception à la mise en ligne, je crée des sites web sur mesure à Mons qui captivent votre audience
@@ -424,14 +422,14 @@ const Home = () => {
 
               <div className="relative hidden lg:block">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white ring-1 ring-slate-100 transform hover:rotate-1 transition-transform duration-500">
-                  <img
-                    alt="Ordinateur portable affichant un tableau de bord analytique moderne avec des graphiques de données"
+                  <img                    alt="Image de plusieurs sites internet réalisés par l'agence web Digitalova Mons"
                     className="w-full h-auto object-cover"
                     title="Taux de conversion en croissance grace à un site web optimisé"
                     src="https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/IMagePourPortfoliog.webp"
                     width="1200"
                     height="800"
-                    decoding="sync"
+
+                    decoding="async"
                     fetchPriority="high"
                     loading="eager"
                   />
@@ -734,7 +732,7 @@ const Home = () => {
                       <div className="relative aspect-[3/2] overflow-hidden bg-slate-900">
                         <img
                           src={project.image}
-                          alt={`Aperçu du site ${project.title}`}
+                          alt={`Aperçu d'un site internet : ${project.title} Projet créé par l'agence web Digitalova Mons`}
                           title={project.seoTitle}
                           className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                           loading="lazy"
@@ -742,6 +740,10 @@ const Home = () => {
                           width="1200"
                           height="800"
                         />
+                                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.15]">
+  Agence web à Mons spécialisée en{" "}
+  <span className="block lg:inline">création de sites internet</span>
+</h1>
                         <div className="absolute inset-0 bg-black/55 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                           <div className="bg-white text-slate-900 px-6 py-2 rounded-full font-bold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                             <MousePointerClick className="w-4 h-4" />

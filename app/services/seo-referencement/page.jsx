@@ -366,10 +366,11 @@ const SEOOptimization = () => {
                   <div className="relative aspect-[4/5] bg-slate-100">
                     <img
                       src={HERO_IMAGE}
-                      alt="Illustration référencement naturel"
+                      alt="Illustration du référencement naturel (SEO) par l'agence web Digitalova Mons"
                       className="w-full h-full object-cover"
                       loading="lazy"
                       decoding="async"
+                      fetchPriority="high"
                       width="1200"
                       height="1500"
                      title="Illustration référencement naturel" />

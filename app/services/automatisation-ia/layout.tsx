@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         url: HERO_IMAGE,
         width: 1200,
         height: 630,
-        alt: 'Automatisation IA DIGITALOVA',
+        alt: 'Exemple d\'un workflow automatisé par l\'agence web Digitalova Mons',
       },
     ],
   },

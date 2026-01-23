@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Contact & Devis sur mesure',
-  description: 'Remplissez le formualaire de contact ici ou choisissez un créneau d\'appel avec Digitalova sur Calendly. Devis gratuit pour site vitrine, e-commerce et référencementSEO. Réponse rapide garantie.',
+  description: 'Contactez Digitalova à Mons pour votre création de site web, SEO ou Google Business. Devis gratuit, appel Calendly et réponse rapide pour votre projet digital.',
   robots: {
     index: true,
     follow: true,
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: 'DIGITALOVA',
     url: 'https://digitalova.be/contact',
     title: 'Contactez DIGITALOVA à Mons | Disponible 24h/24 & 7j/7',
-    description: 'Projet de site web, SEO ou automatisation à Mons ? Obtenez votre devis gratuit immédiatement. Nous sommes à votre écoute 24/7.',
+    description: "Projet de site web, SEO ou fiche d'établissement Google Business à Mons ? Obtenez votre devis gratuit immédiatement. Nous sommes à votre écoute 24/7.",
     images: [
       {
         url: 'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/IMagePourPortfoliog.jpeg',

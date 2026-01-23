@@ -268,10 +268,11 @@ const GoogleBusiness = () => {
                   <div className="relative aspect-[16/10] bg-slate-100">
                     <img
                       src={HERO_IMAGE}
-                      alt="Illustration Google Business Profile"
+                      alt="Illustration de la gestion de fiche d'établissement Google Business par l'agence web Digitalova Mons"
                       className="w-full h-full object-cover"
                       loading="eager"
                       decoding="async"
+                      fetchPriority="high"
                       width="1600"
                       height="1000"
                      title="Illustration Google Business Profile" />

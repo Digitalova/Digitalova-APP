@@ -587,6 +587,7 @@ const AIAutomation = () => {
                       className="w-full h-full object-cover"
                       loading="eager"
                       decoding="async"
+                      fetchPriority="high"
                       width="1600"
                       height="1000"
                      title="Illustration automatisation IA" />

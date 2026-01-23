@@ -412,7 +412,8 @@ const Social = () => {
               Rejoignez la Communauté <span className="gradient-text">DIGITALOVA</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Suivez-moi sur mes réseaux pour découvrir les coulisses, des astuces web, et mes dernières créations.
+            Suivez Digitalova sur les réseaux sociaux pour découvrir mes créations de sites web, conseils SEO et actualités digitales en Belgique.
+            LinkedIn, Instagram, Facebook, TikTok et avis Google : restez connecté à votre agence web à Mons.
             </p>
           </div>
 

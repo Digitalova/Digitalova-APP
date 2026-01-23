@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Réseaux sociaux & Avis clients',
-  description: 'Suivez DIGITALOVA sur LinkedIn, Instagram, Facebook, TikTok et WhatsApp. Laissez un avis Google ou un avis directement sur le site : votre soutien booste notre visibilité locale à Mons et en Hainaut.',
+  description:"Suivez Digitalova à Mons sur LinkedIn, Instagram, Facebook et TikTok. Avis Google, actualités web et projets digitaux pour booster votre visibilité locale.",
   robots: {
     index: true,
     follow: true,
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     description: 'Découvrez les coulisses de l\'agence, nos astuces web et laissez votre avis pour soutenir l\'entrepreneuriat à Mons.',
     images: [
       {
-        url: 'https://digitalova.be/og-image-social.jpg',
+        url: 'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/IMagePourPortfoliog.webp',
         width: 1200,
         height: 630,
         alt: 'Communauté DIGITALOVA',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Soutenir DIGITALOVA à Mons',
     description: 'Suivez l\'agence et laissez votre avis sur nos solutions Web & IA.',
-    images: ['https://digitalova.be/og-image-social.jpg'],
+    images: ['https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/IMagePourPortfoliog.webp'],
   },
 };
 
