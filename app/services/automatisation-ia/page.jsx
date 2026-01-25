@@ -115,15 +115,15 @@ const ToolsMarquee = () => {
   return (
     <section className="mb-20">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-6">
-          <p className="text-sm font-semibold text-slate-600">
-            Intégrations & automatisations avec vos outils préférés
-          </p>
-        </div>
+          <div className="text-center mb-6">
+            <p className="text-sm font-semibold text-slate-300">
+              Intégrations & automatisations avec vos outils préférés
+            </p>
+          </div>
 
-        <div className="relative rounded-3xl border border-slate-200 bg-white/70 backdrop-blur overflow-hidden shadow-sm">
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white/95 to-transparent z-10" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white/95 to-transparent z-10" />
+        <div className="relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur overflow-hidden shadow-sm">
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#070B16]/95 to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#070B16]/95 to-transparent z-10" />
 
           <div className="py-6">
             <div className="marquee">
@@ -131,20 +131,20 @@ const ToolsMarquee = () => {
                 {track.map((it, idx) => (
                   <div
                     key={`${it.name}-${idx}`}
-                    className="flex items-center gap-3 px-5 py-3 rounded-2xl border border-slate-200 bg-white shadow-sm mx-3"
+                    className="flex items-center gap-3 px-5 py-3 rounded-2xl border border-white/10 bg-white/5 shadow-sm mx-3"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 overflow-hidden flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/10 overflow-hidden flex items-center justify-center">
                       <img
                         src={it.img}
                         alt={`Logo ${it.name}`}
-                        className="w-7 h-7 object-contain"
+                        className="w-7 h-7 object-contain invert"
                         loading="lazy"
                         decoding="async"
                         width="28"
                         height="28"
                       />
                     </div>
-                    <span className="text-sm font-semibold text-slate-800 whitespace-nowrap">
+                    <span className="text-sm font-semibold text-slate-200 whitespace-nowrap">
                       {it.name}
                     </span>
                   </div>
@@ -219,7 +219,7 @@ const AgentExample = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="text-3xl md:text-4xl font-bold text-slate-900"
+            className="text-3xl md:text-4xl font-bold text-white"
           >
             Exemple concret d&apos;agent IA : tri intelligent des retours clients
           </motion.h2>
@@ -228,7 +228,7 @@ const AgentExample = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ delay: 0.08, duration: 0.45 }}
-            className="mt-4 text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
+            className="mt-4 text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed"
           >
             Vous recevez beaucoup d’emails : la plupart sont juste positifs, mais certains cachent un vrai problème.
             L’IA lit tout, priorise, et vous laisse uniquement ce qui nécessite une réponse humaine.
@@ -242,7 +242,7 @@ const AgentExample = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="bg-[#0F172A] rounded-3xl border border-slate-700 shadow-sm overflow-hidden"
+            className="bg-[#0F172A] rounded-3xl border border-slate-700 shadow-sm overflow-hidden transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
           >
             <div className="h-1.5 bg-gradient-to-r from-purple-600 to-pink-600" />
             <div className="p-7 md:p-8">
@@ -292,7 +292,7 @@ const AgentExample = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="rounded-3xl border border-slate-200 bg-white/80 backdrop-blur shadow-sm overflow-hidden"
+            className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur shadow-sm overflow-hidden transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
           >
             <div className="p-7 md:p-8">
               {/* Header */}
@@ -303,22 +303,22 @@ const AgentExample = () => {
                 </div>
 
                 <div className="flex flex-wrap gap-2 sm:justify-end">
-                  <span className="text-xs font-semibold text-slate-700 bg-slate-100 border border-slate-200 px-3 py-1 rounded-full whitespace-nowrap">
+                  <span className="text-xs font-semibold text-slate-200 bg-white/5 border border-white/10 px-3 py-1 rounded-full whitespace-nowrap">
                     Tri + priorisation
                   </span>
-                  <span className="text-xs font-semibold text-slate-700 bg-white border border-slate-200 px-3 py-1 rounded-full whitespace-nowrap">
+                  <span className="text-xs font-semibold text-slate-200 bg-white/5 border border-white/10 px-3 py-1 rounded-full whitespace-nowrap">
                     Gmail → IA → Sheets / Notion
                   </span>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="rounded-2xl border border-slate-200 bg-white overflow-hidden">
+              <div className="rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
                 {/* ✅ Desktop/Table */}
                 <div className="hidden md:block overflow-x-auto">
                   <table className="w-full min-w-[820px] border-collapse">
                     <thead>
-                      <tr className="text-xs font-bold text-slate-600 bg-slate-50 border-b border-slate-200">
+                      <tr className="text-xs font-bold text-slate-300 bg-white/5 border-b border-white/10">
                         <th className="text-left px-4 py-3 w-[140px]">Priorité</th>
                         <th className="text-left px-4 py-3">Sujet</th>
                         <th className="text-left px-4 py-3 w-[280px]">Action</th>
@@ -329,7 +329,7 @@ const AgentExample = () => {
                       {mockRows.map((r, idx) => (
                         <tr
                           key={idx}
-                          className="text-sm text-slate-800 border-b border-slate-100 last:border-b-0 align-top"
+                          className="text-sm text-slate-200 border-b border-white/10 last:border-b-0 align-top"
                         >
                           <td className="px-4 py-3">
                             <span
@@ -346,10 +346,10 @@ const AgentExample = () => {
 
                           <td className="px-4 py-3 font-semibold break-words">{r.subject}</td>
 
-                          <td className="px-4 py-3 text-slate-600 break-words">{r.action}</td>
+                          <td className="px-4 py-3 text-slate-400 break-words">{r.action}</td>
 
                           <td className="px-4 py-3">
-                            <span className="inline-flex text-xs font-semibold text-slate-700 bg-slate-100 border border-slate-200 px-2 py-1 rounded-full whitespace-nowrap">
+                            <span className="inline-flex text-xs font-semibold text-slate-200 bg-white/5 border border-white/10 px-2 py-1 rounded-full whitespace-nowrap">
                               {r.tag}
                             </span>
                           </td>
@@ -362,7 +362,7 @@ const AgentExample = () => {
                 {/* ✅ Mobile/Cards */}
                 <div className="md:hidden p-4 space-y-3">
                   {mockRows.map((r, idx) => (
-                    <div key={idx} className="rounded-2xl border border-slate-200 bg-white p-4">
+                    <div key={idx} className="rounded-2xl border border-white/10 bg-white/5 p-4">
                       <div className="flex items-start justify-between gap-3">
                         <span
                           className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border whitespace-nowrap ${r.priority === 'Haute'
@@ -375,13 +375,13 @@ const AgentExample = () => {
                           {r.priority}
                         </span>
 
-                        <span className="inline-flex text-[11px] font-semibold text-slate-700 bg-slate-100 border border-slate-200 px-2 py-1 rounded-full whitespace-nowrap">
+                        <span className="inline-flex text-[11px] font-semibold text-slate-200 bg-white/5 border border-white/10 px-2 py-1 rounded-full whitespace-nowrap">
                           {r.tag}
                         </span>
                       </div>
 
-                      <p className="mt-3 text-sm font-extrabold text-slate-900 leading-snug">{r.subject}</p>
-                      <p className="mt-1 text-sm text-slate-600 leading-relaxed">{r.action}</p>
+                      <p className="mt-3 text-sm font-extrabold text-white leading-snug">{r.subject}</p>
+                      <p className="mt-1 text-sm text-slate-400 leading-relaxed">{r.action}</p>
                     </div>
                   ))}
                 </div>
@@ -399,17 +399,17 @@ const AgentExample = () => {
                 </div>
 
                 <div className="lg:col-span-3 grid sm:grid-cols-3 gap-3">
-                  <div className="rounded-2xl border border-slate-200 bg-white p-4">
-                    <p className="text-xs font-bold uppercase text-slate-500">Temps gagné</p>
-                    <p className="text-lg font-extrabold text-slate-900 mt-1">-70% tri</p>
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <p className="text-xs font-bold uppercase text-slate-400">Temps gagné</p>
+                    <p className="text-lg font-extrabold text-white mt-1">-70% tri</p>
                   </div>
-                  <div className="rounded-2xl border border-slate-200 bg-white p-4">
-                    <p className="text-xs font-bold uppercase text-slate-500">Réponses</p>
-                    <p className="text-lg font-extrabold text-slate-900 mt-1">24/7</p>
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <p className="text-xs font-bold uppercase text-slate-400">Réponses</p>
+                    <p className="text-lg font-extrabold text-white mt-1">24/7</p>
                   </div>
-                  <div className="rounded-2xl border border-slate-200 bg-white p-4">
-                    <p className="text-xs font-bold uppercase text-slate-500">Qualité</p>
-                    <p className="text-lg font-extrabold text-slate-900 mt-1">Priorités claires</p>
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <p className="text-xs font-bold uppercase text-slate-400">Qualité</p>
+                    <p className="text-lg font-extrabold text-white mt-1">Priorités claires</p>
                   </div>
                 </div>
               </div>
@@ -532,8 +532,16 @@ const AIAutomation = () => {
     ]) }}
       />
 
-      <div className="pt-28 pb-20 bg-slate-50 min-h-screen relative overflow-hidden">
+      <div className="pt-28 pb-20 min-h-screen relative overflow-hidden bg-[#070B16]">
         <BackgroundBlobs />
+
+        <div className="absolute inset-0 pointer-events-none opacity-[0.7]">
+          <div className="absolute -top-24 -left-24 w-[520px] h-[520px] rounded-full bg-purple-600/10 blur-3xl" />
+          <div className="absolute -bottom-24 -right-24 w-[520px] h-[520px] rounded-full bg-pink-600/10 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.22]">
+            <div className="h-full w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:56px_56px]" />
+          </div>
+        </div>
 
         <div className="container mx-auto px-4 relative z-10">
           {/* HERO */}
@@ -543,14 +551,14 @@ const AIAutomation = () => {
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/85 backdrop-blur border border-slate-200 text-slate-800 font-semibold text-sm mb-6 shadow-sm">
                 </div>
 
-                <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 leading-[1.05]">
+                <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-white leading-[1.05]">
                   Création de Workflow automatisé & Agent{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">
                     IA
                   </span>
                 </h1>
 
-                <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                <p className="text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   Chatbots, workflows et agents IA pour traiter plus vite, répondre mieux, et déclencher automatiquement
                   les actions qui font avancer votre activité.
                 </p>
@@ -564,7 +572,7 @@ const AIAutomation = () => {
                   <Link href="/contact" title="Aller à la page Contact - Digitalova">
                     <Button
                       size="lg"
-                      className="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white text-lg h-14 px-8 rounded-full shadow-xl transition-transform hover:scale-[1.03]"
+                      className="w-full sm:w-auto bg-white hover:bg-slate-100 text-slate-900 text-lg h-14 px-8 rounded-full shadow-xl transition-transform hover:scale-[1.03]"
                     >
                       Demander une démo
                       <ArrowRight className="ml-2 h-5 w-5" />
@@ -579,7 +587,7 @@ const AIAutomation = () => {
                 transition={{ duration: 0.6, ease: 'easeOut' }}
                 className="relative"
               >
-                <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-2xl bg-white">
+                <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-white/5 backdrop-blur transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20">
                   <div className="relative aspect-[16/10] bg-slate-100">
                     <img
                       src={HERO_IMAGE}
@@ -597,10 +605,10 @@ const AIAutomation = () => {
                   <div className="p-5 md:p-6">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <p className="text-sm font-semibold text-slate-900">Orchestration & intégrations</p>
-                        <p className="text-xs text-slate-500">Gmail • Sheets • Notion • Supabase • Webhooks</p>
+                        <p className="text-sm font-semibold text-white">Orchestration & intégrations</p>
+                        <p className="text-xs text-slate-400">Gmail • Sheets • Notion • Supabase • Webhooks</p>
                       </div>
-                      <span className="text-xs font-semibold text-purple-700 bg-purple-50 border border-purple-100 px-3 py-1 rounded-full">
+                      <span className="text-xs font-semibold text-purple-200 bg-purple-500/20 border border-purple-500/30 px-3 py-1 rounded-full">
                         DIGITALOVA
                       </span>
                     </div>
@@ -611,14 +619,14 @@ const AIAutomation = () => {
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.25, duration: 0.5 }}
-                  className="hidden md:flex absolute -bottom-6 left-6 bg-white rounded-2xl shadow-xl border border-slate-200 p-4 items-center gap-3"
+                  className="hidden md:flex absolute -bottom-6 left-6 bg-white/10 backdrop-blur rounded-2xl shadow-xl border border-white/10 p-4 items-center gap-3"
                 >
-                  <div className="p-2 rounded-xl bg-slate-900">
+                  <div className="p-2 rounded-xl bg-purple-600">
                     <Wand2 className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase text-slate-500">Workflow</p>
-                    <p className="text-sm font-semibold text-slate-900">Déclenchements automatiques</p>
+                    <p className="text-xs font-bold uppercase text-slate-400">Workflow</p>
+                    <p className="text-sm font-semibold text-white">Déclenchements automatiques</p>
                   </div>
                 </motion.div>
 
@@ -626,14 +634,14 @@ const AIAutomation = () => {
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.33, duration: 0.5 }}
-                  className="hidden md:flex absolute -top-6 right-6 bg-white rounded-2xl shadow-xl border border-slate-200 p-4 items-center gap-3"
+                  className="hidden md:flex absolute -top-6 right-6 bg-white/10 backdrop-blur rounded-2xl shadow-xl border border-white/10 p-4 items-center gap-3"
                 >
                   <div className="p-2 rounded-xl bg-purple-600">
                     <ShieldCheck className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase text-slate-500">Fiabilité</p>
-                    <p className="text-sm font-semibold text-slate-900">Logs & contrôle</p>
+                    <p className="text-xs font-bold uppercase text-slate-400">Fiabilité</p>
+                    <p className="text-sm font-semibold text-white">Logs & contrôle</p>
                   </div>
                 </motion.div>
               </motion.div>
@@ -653,7 +661,7 @@ const AIAutomation = () => {
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ delay: index * 0.08, duration: 0.45, ease: 'easeOut' }}
                 whileHover={{ y: -6 }}
-                className="rounded-3xl border border-slate-700 bg-[#0F172A] shadow-sm hover:shadow-xl transition-all overflow-hidden"
+                className="rounded-3xl border border-slate-700 bg-[#0F172A] shadow-sm overflow-hidden transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
               >
                 <div className="h-1.5 bg-gradient-to-r from-purple-600 to-pink-600" />
                 <div className="p-6">
@@ -674,7 +682,7 @@ const AIAutomation = () => {
 
           {/* Use Cases */}
           <div className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
               Solutions d&apos;Automatisation IA
             </h2>
 
@@ -687,7 +695,7 @@ const AIAutomation = () => {
                   viewport={{ once: true, margin: '-60px' }}
                   transition={{ delay: index * 0.08, duration: 0.45, ease: 'easeOut' }}
                   whileHover={{ y: -8 }}
-                  className="bg-[#0F172A] p-8 rounded-3xl border border-slate-700 shadow-sm hover:shadow-xl transition-all"
+                  className="bg-[#0F172A] p-8 rounded-3xl border border-slate-700 shadow-sm transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
                 >
                   <div className="flex items-start justify-between gap-4 mb-6">
                     <div className="p-3 rounded-2xl bg-white/5 border border-white/10 inline-flex">
@@ -748,7 +756,7 @@ const AIAutomation = () => {
 
           {/* ✅ FAQ (MAINTENANT APRÈS CTA) */}
           <div className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
               Questions Fréquentes
             </h2>
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">

@@ -16,6 +16,9 @@ import {
   MousePointerClick,
   Building2,
   Bot,
+  HeartHandshake,
+  Gift,
+  Users,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -25,28 +28,32 @@ const LazyBackgroundBlobs = React.lazy(() => import('@/components/BackgroundBlob
 const LazyFAQSection = React.lazy(() => import('@/components/FAQSection'));
 
 /* =========================
-   Logos outils (simple-icons)
+   Logos outils avec couleurs de marque
 ========================= */
 const TOOL_LOGOS = {
-  n8n: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/n8n.svg',
-  ChatGPT: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/openai.svg',
-  Gemini: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/googlegemini.svg',
-  Claude: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/anthropic.svg',
-  Supabase: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/supabase.svg',
-  Notion: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/notion.svg',
-  'Google Sheets': 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/googlesheets.svg',
-  Gmail: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/gmail.svg',
-  Hostinger: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/hostinger.svg',
-
-  // ✅ ajouts demandés
-  'Google Analytics': 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/googleanalytics.svg',
-  Canva: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/canva.svg',
-  'Google PageSpeed': 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/pagespeedinsights.svg',
-  'Google Maps': 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/googlemaps.svg',
-  Webflow: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/webflow.svg',
-  WhatsApp: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/whatsapp.svg',
-  Stripe: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/stripe.svg',
-  Shopify: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/shopify.svg',
+  n8n: { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/n8n.svg', color: '#EA4B71' },
+  ChatGPT: { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/openai.svg', color: '#412991' },
+  Gemini: { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/googlegemini.svg', color: '#4285F4' },
+  NodeJS: { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/nodedotjs.svg', color: '#339933' },
+  React: { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/react.svg', color: '#61DAFB', lightBg: true },
+  Claude: { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/anthropic.svg', color: '#D97757' },
+  Supabase: { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/supabase.svg', color: '#3FCF8E' },
+  Notion: { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/notion.svg', color: '#000000' },
+  'Google Sheets': { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/googlesheets.svg', color: '#34A853' },
+  Gmail: { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/gmail.svg', color: '#EA4335' },
+  Hostinger: { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/hostinger.svg', color: '#673DE6' },
+  'Google Analytics': { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/googleanalytics.svg', color: '#E37400' },
+  Canva: { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/canva.svg', color: '#00C4CC' },
+  'Google PageSpeed': { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/pagespeedinsights.svg', color: '#4285F4' },
+  'Google Maps': { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/googlemaps.svg', color: '#4285F4' },
+  Webflow: { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/webflow.svg', color: '#146EF5' },
+  'WhatsApp Business': { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/whatsapp.svg', color: '#25D366' },
+  Stripe: { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/stripe.svg', color: '#635BFF' },
+  Shopify: { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/shopify.svg', color: '#7AB55C' },
+  Framer: { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/framer.svg', color: '#0055FF' },
+  Cloudflare: { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/cloudflare.svg', color: '#F38020' },
+  LinkedIn: { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/linkedin.svg', color: '#0A66C2' },
+  Calendly: { url: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/calendly.svg', color: '#006BFF' },
 };
 
 /* =========================
@@ -54,23 +61,29 @@ const TOOL_LOGOS = {
 ========================= */
 const ToolsMarqueeFullWidth = () => {
   const items = [
-    { name: 'n8n', img: TOOL_LOGOS.n8n },
-    { name: 'ChatGPT', img: TOOL_LOGOS.ChatGPT },
-    { name: 'Gemini', img: TOOL_LOGOS.Gemini },
-    { name: 'Claude', img: TOOL_LOGOS.Claude },
-    { name: 'Supabase', img: TOOL_LOGOS.Supabase },
-    { name: 'Notion', img: TOOL_LOGOS.Notion },
-    { name: 'Google Sheets', img: TOOL_LOGOS['Google Sheets'] },
-    { name: 'Gmail', img: TOOL_LOGOS.Gmail },
-    { name: 'Google Analytics', img: TOOL_LOGOS['Google Analytics'] },
-    { name: 'Google PageSpeed', img: TOOL_LOGOS['Google PageSpeed'] },
-    { name: 'Google Maps', img: TOOL_LOGOS['Google Maps'] },
-    { name: 'Webflow', img: TOOL_LOGOS.Webflow },
-    { name: 'Canva', img: TOOL_LOGOS.Canva },
-    { name: 'WhatsApp', img: TOOL_LOGOS.WhatsApp },
-    { name: 'Stripe', img: TOOL_LOGOS.Stripe },
-    { name: 'Shopify', img: TOOL_LOGOS.Shopify },
-    { name: 'Hostinger', img: TOOL_LOGOS.Hostinger },
+    { name: 'n8n', img: TOOL_LOGOS.n8n.url, color: TOOL_LOGOS.n8n.color },
+    { name: 'ChatGPT', img: TOOL_LOGOS.ChatGPT.url, color: TOOL_LOGOS.ChatGPT.color },
+    { name: 'Gemini', img: TOOL_LOGOS.Gemini.url, color: TOOL_LOGOS.Gemini.color },
+    { name: 'React', img: TOOL_LOGOS.React.url, color: TOOL_LOGOS.React.color, lightBg: TOOL_LOGOS.React.lightBg },
+    { name: 'Claude', img: TOOL_LOGOS.Claude.url, color: TOOL_LOGOS.Claude.color },
+    { name: 'Supabase', img: TOOL_LOGOS.Supabase.url, color: TOOL_LOGOS.Supabase.color },
+    { name: 'Notion', img: TOOL_LOGOS.Notion.url, color: TOOL_LOGOS.Notion.color },
+    { name: 'Google Sheets', img: TOOL_LOGOS['Google Sheets'].url, color: TOOL_LOGOS['Google Sheets'].color },
+    { name: 'Node.js', img: TOOL_LOGOS.NodeJS.url, color: TOOL_LOGOS.NodeJS.color },
+    { name: 'Gmail', img: TOOL_LOGOS.Gmail.url, color: TOOL_LOGOS.Gmail.color },
+    { name: 'Google Analytics', img: TOOL_LOGOS['Google Analytics'].url, color: TOOL_LOGOS['Google Analytics'].color },
+    { name: 'Google PageSpeed', img: TOOL_LOGOS['Google PageSpeed'].url, color: TOOL_LOGOS['Google PageSpeed'].color },
+    { name: 'Google Maps', img: TOOL_LOGOS['Google Maps'].url, color: TOOL_LOGOS['Google Maps'].color },
+    { name: 'Webflow', img: TOOL_LOGOS.Webflow.url, color: TOOL_LOGOS.Webflow.color },
+    { name: 'Framer', img: TOOL_LOGOS.Framer.url, color: TOOL_LOGOS.Framer.color },
+    { name: 'Canva', img: TOOL_LOGOS.Canva.url, color: TOOL_LOGOS.Canva.color },
+    { name: 'WhatsApp Business', img: TOOL_LOGOS['WhatsApp Business'].url, color: TOOL_LOGOS['WhatsApp Business'].color },
+    { name: 'Stripe', img: TOOL_LOGOS.Stripe.url, color: TOOL_LOGOS.Stripe.color },
+    { name: 'Shopify', img: TOOL_LOGOS.Shopify.url, color: TOOL_LOGOS.Shopify.color },
+    { name: 'Cloudflare', img: TOOL_LOGOS.Cloudflare.url, color: TOOL_LOGOS.Cloudflare.color },
+    { name: 'LinkedIn', img: TOOL_LOGOS.LinkedIn.url, color: TOOL_LOGOS.LinkedIn.color },
+    { name: 'Calendly', img: TOOL_LOGOS.Calendly.url, color: TOOL_LOGOS.Calendly.color },
+    { name: 'Hostinger', img: TOOL_LOGOS.Hostinger.url, color: TOOL_LOGOS.Hostinger.color },
   ];
 
   const track = [...items, ...items];
@@ -79,40 +92,45 @@ const ToolsMarqueeFullWidth = () => {
     <section className="hidden lg:block">
       {/* ✅ full width même si le parent est en container */}
       <div className="relative w-screen left-1/2 -translate-x-1/2">
-        <div className="px-4">
+          <div className="px-4">
           <div className="text-center mb-5">
-            <p className="text-sm font-semibold text-slate-600">
-              Intégrations & automatisations avec vos outils préférés
+            <p className="text-sm font-semibold text-slate-300">
+              Des solutions digitales avec vos outils préférés
             </p>
           </div>
 
-          <div className="relative rounded-3xl border border-slate-200 bg-white/80 backdrop-blur overflow-hidden shadow-sm">
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white/95 to-transparent z-10" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white/95 to-transparent z-10" />
+          <div className="relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur overflow-hidden shadow-sm">
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#070B16]/95 to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#070B16]/95 to-transparent z-10" />
 
-            <div className="py-6">
+            <div className="py-4">
               <div className="marquee">
                 <div className="marquee__track" aria-label="Outils compatibles">
                   {track.map((it, idx) => (
                     <div
                       key={`${it.name}-${idx}`}
-                      className="flex items-center gap-3 px-5 py-3 rounded-2xl border border-slate-200 bg-white shadow-sm mx-3"
+                      className="flex items-center gap-2.5 px-4 py-2 rounded-xl border border-white/10 bg-white/5 shadow-sm mx-2.5"
                     >
-                      <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 overflow-hidden flex items-center justify-center">
+                      <div 
+                        className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center shadow-sm transition-transform duration-200 hover:scale-110"
+                        style={{ backgroundColor: it.lightBg ? '#0f172a' : it.color }}
+                      >
                         <img
                           src={it.img}
                           alt={`Logo ${it.name}`}
                           title={`Logo ${it.name} - Digitalova`}
-                          className="w-8 h-8 object-contain"
+                          className="w-5 h-5 object-contain"
+                          style={{ filter: it.lightBg 
+                            ? 'invert(83%) sepia(26%) saturate(1095%) hue-rotate(152deg) brightness(103%) contrast(96%)' 
+                            : 'brightness(0) invert(1)' 
+                          }}
                           loading="lazy"
                           decoding="async"
-                          width="32"
-                          height="32"
-                          // ✅ évite "logo invisible" si ton CSS global applique des filtres
-                          style={{ filter: 'none' }}
+                          width="20"
+                          height="20"
                         />
                       </div>
-                      <span className="text-sm font-semibold text-slate-800 whitespace-nowrap">{it.name}</span>
+                      <span className="text-xs font-semibold text-slate-200 whitespace-nowrap">{it.name}</span>
                     </div>
                   ))}
                 </div>
@@ -126,7 +144,7 @@ const ToolsMarqueeFullWidth = () => {
                 align-items: center;
                 width: max-content;
                 will-change: transform;
-                animation: marqueeScroll 26s linear infinite;
+                animation: marqueeScroll 14s linear infinite;
               }
               @keyframes marqueeScroll {
                 from { transform: translateX(0); }
@@ -148,73 +166,41 @@ const ToolsMarqueeFullWidth = () => {
 ========================= */
 const MobileHeroRedesign = () => {
   return (
-    <div className="lg:hidden mt-10">
-      <div className="relative overflow-hidden rounded-[2.25rem] border border-slate-200 bg-white shadow-2xl">
-        <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-purple-200/70 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-28 -left-28 h-64 w-64 rounded-full bg-pink-200/70 blur-3xl" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/60 via-white to-white/60" />
+    <div className="lg:hidden mt-14">
+      {/* Design créatif - Cadre asymétrique */}
+      <div className="relative">
+        {/* Accent vertical coloré */}
+        <div className="absolute -left-4 top-8 bottom-8 w-1 rounded-full bg-gradient-to-b from-purple-500 via-pink-500 to-purple-500" />
+        
+        {/* Cercle décoratif flottant */}
+        <div className="absolute -top-6 right-8 w-20 h-20 rounded-full border border-purple-500/20 bg-purple-500/5 blur-sm" />
+        <div className="absolute -bottom-4 left-12 w-14 h-14 rounded-full border border-pink-500/20 bg-pink-500/5 blur-sm" />
 
-        <div className="relative p-5">
-          <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+        {/* Image avec effet de perspective */}
+        <div className="relative ml-3">
+          <div className="relative rounded-[1.75rem] overflow-hidden shadow-[0_25px_80px_-30px_rgba(139,92,246,0.3)]">
             <img
-              alt="Aperçu des réalisations de sites web de l'agence web Digitalova Mons"
-              title="Aperçu d'un site web moderne - Digitalova"
+              alt="Aperçu des réalisations de sites web Digitalova"
+              title="Sites web modernes - Digitalova"
               src="https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/IMagePourPortfoliog.webp"
               className="w-full h-auto object-cover"
               width="1200"
               height="800"
-                    fetchPriority="high"
-                    decoding="sync"
-                    loading="eager"
-                  />
-            <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/20 via-transparent to-purple-900/20 pointer-events-none" />
+              fetchPriority="high"
+              decoding="sync"
+              loading="eager"
+            />
+            {/* Overlay avec dégradé créatif */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/40 via-transparent to-pink-900/20 pointer-events-none" />
+            
+            {/* Ligne lumineuse en bas */}
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-400/60 to-transparent" />
+          </div>
 
-            <div className="absolute bottom-3 left-3 right-3">
-              <div className="rounded-2xl bg-white/90 backdrop-blur border border-slate-200 px-4 py-3 shadow-sm">
-                <div className="flex items-center justify-between gap-3">
-                  <div className="min-w-0">
-                    <p className="text-xs font-extrabold tracking-wide text-slate-900 uppercase">
-                      Digitalova • Mons
-                    </p>
-                    <p className="text-sm font-semibold text-slate-700 truncate">
-                      Sites Web & Boutiques optimisés
-                    </p>
-                  </div>
-
-                  <div className="flex items-center gap-2 shrink-0">
-                    <div className="rounded-xl bg-slate-900 text-white px-3 py-1.5 text-xs font-extrabold shadow">
-                      + Visibilité
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-3 grid grid-cols-3 gap-2">
-                  <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">
-                    <div className="flex items-center gap-2">
-                      <Zap className="w-4 h-4 text-slate-900" />
-                      <p className="text-[11px] font-extrabold text-slate-900">Perf</p>
-                    </div>
-                    <p className="text-[11px] text-slate-600 mt-1">Rapide</p>
-                  </div>
-
-                  <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">
-                    <div className="flex items-center gap-2">
-                      <Search className="w-4 h-4 text-slate-900" />
-                      <p className="text-[11px] font-extrabold text-slate-900">SEO</p>
-                    </div>
-                    <p className="text-[11px] text-slate-600 mt-1">Local</p>
-                  </div>
-
-                  <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">
-                    <div className="flex items-center gap-2">
-                      <MousePointerClick className="w-4 h-4 text-slate-900" />
-                      <p className="text-[11px] font-extrabold text-slate-900">UX</p>
-                    </div>
-                    <p className="text-[11px] text-slate-600 mt-1">Convertit</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Badge créatif - style "pill" moderne */}
+          <div className="absolute -bottom-5 right-4 flex items-center gap-2 px-4 py-2 rounded-full bg-white text-slate-900 shadow-xl shadow-purple-500/20">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-xs font-bold">+80% visibilité</span>
           </div>
         </div>
       </div>
@@ -373,47 +359,65 @@ const Home = () => {
 
   return (
     <>
-      <div className="pt-20">
-        {/* 1. HERO SECTION */}
-        <section className="relative py-24 lg:py-32 overflow-hidden bg-white/50">
-          <Suspense fallback={null}>{showDecor && <LazyBackgroundBlobs />}</Suspense>
+      <div className="pt-20 relative bg-[#070B16] overflow-hidden">
+        <Suspense fallback={null}>{showDecor && <LazyBackgroundBlobs />}</Suspense>
 
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="absolute inset-0 pointer-events-none opacity-[0.7]">
+          <div className="absolute -top-24 -left-24 w-[520px] h-[520px] rounded-full bg-purple-600/10 blur-3xl" />
+          <div className="absolute -bottom-24 -right-24 w-[520px] h-[520px] rounded-full bg-pink-600/10 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.22]">
+            <div className="h-full w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:56px_56px]" />
+          </div>
+        </div>
+
+        {/* 1. HERO SECTION — Premium & Sobre */}
+        <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+          {/* Ligne décorative subtile */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+
+          <div className="container mx-auto px-4 relative z-10 py-20 lg:py-28">
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+              {/* Contenu texte */}
               <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className="lg:col-span-6 text-center lg:text-left"
               >
-                                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.15]">
-  Agence web à Mons spécialisée en{" "}
-  <span className="block lg:inline">création de sites internet</span>
-</h1>
+                <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-bold tracking-tight text-white mb-8 leading-[1.1]">
+                  Création de{' '}
+                  <span className="relative inline-block">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-purple-300 to-pink-200">
+                      sites internet 
+                    </span>
+                    <span className="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-purple-400/50 to-pink-400/50" />
+                  </span>
+                  <br className="hidden sm:block" />
+                  {' '}sur mesure
+                </h1>
 
-                <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                  De la conception à la mise en ligne, je crée des sites web sur mesure à Mons qui captivent votre audience
-                  et convertissent vos visiteurs en clients.
+                <p className="text-lg lg:text-xl text-slate-400 mb-10 leading-relaxed max-w-lg mx-auto lg:mx-0 font-light">
+                  De la conception à la mise en ligne, je crée des sites web qui captivent votre audience et convertissent vos visiteurs en clients.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Link href="/contact" title="Aller à la page Contact - Digitalova">
                     <Button
                       size="lg"
-                      className="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white text-lg h-14 px-8 rounded-full shadow-xl transition-transform hover:scale-105"
+                      className="w-full sm:w-auto bg-white hover:bg-white/90 text-slate-900 text-base font-semibold h-13 px-7 rounded-xl shadow-lg shadow-white/10 transition-all duration-300 hover:shadow-xl hover:shadow-white/20"
                     >
-                      <div className="cta-button">Obtenir un Devis</div>
-                      <ArrowRight className="ml-2 h-5 w-5" />
+                      <span className="cta-button">Demander un devis</span>
+                      <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
 
                   <Link href="/portfolio" title="Aller à la page Portfolio - Digitalova">
                     <Button
                       size="lg"
-                      variant="outline"
-                      className="w-full sm:w-auto bg-slate-900 text-white border-2 border-slate-800 hover:border-slate-700 hover:bg-slate-800 text-lg h-14 px-8 rounded-full transition-transform hover:scale-105"
+                      variant="ghost"
+                      className="w-full sm:w-auto text-white/80 hover:text-white hover:bg-white/[0.05] text-base font-medium h-13 px-7 rounded-xl border border-white/[0.08] transition-all duration-300"
                     >
-                      Voir le Portfolio
+                      Voir mes réalisations
                     </Button>
                   </Link>
                 </div>
@@ -422,68 +426,89 @@ const Home = () => {
                 <MobileHeroRedesign />
               </motion.div>
 
-              <div className="relative hidden lg:block">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white ring-1 ring-slate-100 transform hover:rotate-1 transition-transform duration-500">
-                  <img                    alt="Image de plusieurs sites internet réalisés par l'agence web Digitalova Mons"
-                    className="w-full h-auto object-cover"
-                    title="Taux de conversion en croissance grace à un site web optimisé"
-                    src="https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/IMagePourPortfoliog.webp"
-                    width="1200"
-                    height="800"
+              {/* Image avec effet premium */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                className="lg:col-span-6 relative hidden lg:block"
+              >
+                {/* Cadre extérieur subtil */}
+                <div className="relative group">
+                  {/* Glow effect derrière l'image - animé au hover */}
+                  <div className="absolute -inset-4 bg-gradient-to-tr from-purple-500/15 via-transparent to-pink-500/15 rounded-3xl blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
+                  
+                  {/* Cercles décoratifs animés */}
+                  <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full border border-white/[0.05] opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-110" />
+                  <div className="absolute -bottom-6 -left-6 w-24 h-24 rounded-full border border-purple-500/10 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-100 group-hover:scale-110" />
+                  
+                  {/* Container image principal */}
+                  <div className="relative rounded-2xl overflow-hidden border border-white/[0.08] bg-slate-900/50 shadow-2xl shadow-black/40 transition-all duration-500 group-hover:shadow-purple-500/10 group-hover:border-white/[0.12]">
+                    <motion.img
+                      alt="Image de plusieurs sites internet réalisés par l'agence web Digitalova Mons"
+                      className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                      title="Sites web modernes créés par Digitalova"
+                      src="https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/IMagePourPortfoliog.webp"
+                      width="1200"
+                      height="800"
+                      decoding="async"
+                      fetchPriority="high"
+                      loading="eager"
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ duration: 0.5 }}
+                    />
+                    {/* Overlay subtil avec effet au hover */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-purple-900/5 pointer-events-none transition-opacity duration-500 group-hover:opacity-70" />
+                    
+                    {/* Reflet lumineux qui se déplace au hover */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                  </div>
 
-                    decoding="async"
-                    fetchPriority="high"
-                    loading="eager"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/10 to-transparent pointer-events-none" />
+                  {/* Badge flottant — discret */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8, duration: 0.6 }}
+                    className="absolute -bottom-3 -left-3 xl:-left-6"
+                  >
+                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 backdrop-blur-md border border-white/[0.08]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                      <span className="text-xs text-slate-300 font-medium">+80% visibilité</span>
+                    </div>
+                  </motion.div>
+
+                  {/* Indicateur discret en haut à droite */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.2 }}
+                    className="absolute -top-3 -right-3 xl:-right-6"
+                  >
+                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 backdrop-blur-md border border-white/[0.08]">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                      <span className="text-xs text-slate-400 font-medium">Mons</span>
+                    </div>
+                  </motion.div>
                 </div>
+              </motion.div>
+            </div>
 
-                <motion.div
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 1 }}
-                  className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl flex items-center gap-3 border border-slate-100"
-                >
-                  <div className="bg-green-100 p-2 rounded-full">
-                    <TrendingUp className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-slate-500 font-semibold uppercase">Croissance</p>
-                    <p className="text-sm font-bold text-slate-900">+80% Visibilité</p>
-                  </div>
-                </motion.div>
+            {/* Séparateur élégant avant la banderole */}
+            <div className="mt-20 lg:mt-24 mb-8">
+              <div className="flex items-center gap-4">
+                <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                <span className="text-xs text-slate-500 font-medium uppercase tracking-widest">Outils</span>
+                <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
               </div>
             </div>
 
-            {/* ✅ IMPORTANT: banderole ICI (hors du grid), PC only, full width */}
-            <div className="mt-20">
-              <ToolsMarqueeFullWidth />
-            </div>
-          </div>
-
-          {/* Wave */}
-          <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180 -mb-[1px] translate-y-[1px]">
-            <svg
-              className="relative block w-[calc(100%+1.3px)] h-[50px] md:h-[100px]"
-              data-name="Layer 1"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1200 120"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                className="fill-slate-900"
-              />
-            </svg>
+            {/* ✅ Banderole d'outils */}
+            <ToolsMarqueeFullWidth />
           </div>
         </section>
 
         {/* 2. CHALLENGES / SOLUTIONS */}
-        <section className="py-24 relative bg-slate-900 text-white overflow-hidden" style={belowFoldStyle}>
-          <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
-            <div className="absolute top-1/2 right-0 w-[520px] h-[520px] bg-purple-600/10 rounded-full blur-[110px] transform translate-x-1/3 -translate-y-1/2" />
-            <div className="absolute bottom-0 left-0 w-[420px] h-[420px] bg-pink-600/10 rounded-full blur-[110px] transform -translate-x-1/3 translate-y-1/3" />
-          </div>
+        <section className="py-24 relative text-white overflow-hidden" style={belowFoldStyle}>
 
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-18">
@@ -503,7 +528,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-10">
+            <div className="grid md:grid-cols-3 gap-10 mt-14">
               {challenges.map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -512,7 +537,7 @@ const Home = () => {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.15 }}
                   whileHover={{ y: -12 }}
-                  className="bg-white/5 rounded-3xl p-10 shadow-xl border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors relative overflow-hidden group"
+                  className="bg-white/5 rounded-3xl p-10 shadow-xl border border-white/10 backdrop-blur-sm transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20 relative overflow-hidden group"
                 >
                   <div className="relative z-10">
                     <div className="mb-7 p-4 bg-white/5 rounded-2xl inline-block border border-white/10">
@@ -535,25 +560,10 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180 -mb-[1px] translate-y-[1px]">
-            <svg
-              className="relative block w-[calc(100%+1.3px)] h-[50px] md:h-[100px]"
-              data-name="Layer 1"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1200 120"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                className="fill-slate-50"
-              />
-            </svg>
-          </div>
         </section>
 
         {/* 3. SERVICES */}
-        <section className="py-20 relative bg-white/50" style={belowFoldStyle}>
-          <Suspense fallback={null}>{showDecor && <LazyBackgroundBlobs />}</Suspense>
+        <section className="py-20 relative" style={belowFoldStyle}>
 
           <div className="container mx-auto px-4 relative z-10">
             <motion.div
@@ -563,10 +573,10 @@ const Home = () => {
               variants={itemVariants}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
-                Decouvrez <span className="text-black">mes solutions </span>digitales
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+                Decouvrez <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">mes solutions </span>digitales
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <p className="text-xl text-slate-300 max-w-2xl mx-auto">
                 Je vous propose des solutions complètes et sur mesure à Mons pour construire et propulser votre présence en
                 ligne.
               </p>
@@ -581,7 +591,7 @@ const Home = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
-                  className="rounded-2xl p-8 hover:shadow-2xl cursor-default group backdrop-blur-sm border border-white/10 bg-[#0F172A]"
+                  className="rounded-2xl p-8 cursor-default group backdrop-blur-sm border border-white/10 bg-[#0F172A] transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20"
                 >
                   <div className="text-purple-200 mb-4 group-hover:scale-110 transition-transform duration-300">
                     {service.icon}
@@ -599,7 +609,7 @@ const Home = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-purple-200 text-purple-900 hover:bg-purple-100 text-lg px-8 py-6 hover:text-purple-950 transition-all hover:scale-105 bg-purple-50"
+                  className="border-2 border-white/20 text-white hover:bg-white/10 text-lg px-8 py-6 transition-all hover:scale-105 bg-white/5"
                 >
                   Découvrir les Solutions
                   <ArrowRight className="ml-2" />
@@ -608,28 +618,10 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180 -mb-[1px] translate-y-[1px]">
-            <svg
-              className="relative block w-[calc(100%+1.3px)] h-[50px] md:h-[100px]"
-              data-name="Layer 1"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1200 120"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                className="fill-slate-900"
-              />
-            </svg>
-          </div>
         </section>
 
         {/* 4. MÉTHODE */}
-        <section className="py-20 relative bg-slate-900 text-white overflow-hidden" style={belowFoldStyle}>
-          <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
-            <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[100px] transform translate-x-1/3 -translate-y-1/2" />
-            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-pink-600/10 rounded-full blur-[100px] transform -translate-x-1/3 translate-y-1/3" />
-          </div>
+        <section className="py-20 relative text-white overflow-hidden" style={belowFoldStyle}>
 
           <div className="container mx-auto px-4 relative z-10">
             <motion.div
@@ -658,7 +650,7 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="relative p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors"
+                  className="relative p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20 group"
                 >
                   <span className="text-5xl font-black text-white/5 absolute top-2 right-4 pointer-events-none select-none">
                     {step.number}
@@ -684,36 +676,21 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180 -mb-[1px] translate-y-[1px]">
-            <svg
-              className="relative block w-[calc(100%+1.3px)] h-[50px] md:h-[100px]"
-              data-name="Layer 1"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1200 120"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                className="fill-gray-50"
-              />
-            </svg>
-          </div>
         </section>
 
         {/* 5. PORTFOLIO */}
-        <section className="py-24 relative bg-gray-50/50" style={belowFoldStyle}>
-          <Suspense fallback={null}>{showDecor && <LazyBackgroundBlobs />}</Suspense>
+        <section className="py-24 relative" style={belowFoldStyle}>
 
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={itemVariants}>
-                <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+                <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
                   Mes Dernières{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">
                     Réalisations Web
                   </span>
                 </h2>
-                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                <p className="text-xl text-slate-300 max-w-2xl mx-auto">
                  Découvrez comment j&apos;aide mes clients à Mons à se démarquer avec la création d'un site internet qui présente leur activité de manière claire et efficace.
                 </p>
               </motion.div>
@@ -730,7 +707,7 @@ const Home = () => {
                   whileHover={{ y: -15, scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Link href={project.url} className="group block h-full" title={project.seoTitle}>
-                    <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full bg-[#0F172A] border border-white/10 flex flex-col">
+                    <div className="relative rounded-2xl overflow-hidden shadow-lg h-full bg-[#0F172A] border border-white/10 flex flex-col transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">
                       <div className="relative aspect-[3/2] overflow-hidden bg-slate-900">
                         <img
                           src={project.image}
@@ -781,7 +758,7 @@ const Home = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-slate-700 text-white hover:bg-slate-800 hover:border-slate-600 px-8 py-6 text-lg font-semibold bg-slate-900 shadow-sm"
+                  className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg font-semibold bg-white/5 shadow-sm"
                 >
                   Voir tous les projets
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -792,7 +769,7 @@ const Home = () => {
         </section>
 
         {/* ✅ 2) REMPLACE ta section OFFRES par celle-ci (entre Réalisations et CTA) */}
-        <section className="py-24 relative bg-slate-900 text-white overflow-hidden" style={belowFoldStyle}>
+        <section className="py-24 relative text-white overflow-hidden" style={belowFoldStyle}>
           {/* ✅ BG SECTION = EXACTEMENT le “mood” du footer (blobs + grid) */}
           <div className="absolute inset-0 pointer-events-none opacity-[0.85]">
             <div className="absolute -top-24 -left-24 w-[520px] h-[520px] rounded-full bg-purple-600/10 blur-3xl" />
@@ -836,7 +813,7 @@ const Home = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 whileHover={{ y: -10 }}
-                className="relative rounded-[2.25rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm shadow-[0_28px_90px_-70px_rgba(0,0,0,0.8)]"
+                className="relative rounded-[2.25rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm shadow-[0_28px_90px_-70px_rgba(0,0,0,0.8)] transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20"
               >
                 {/* ✅ BG CARD = extrait du footer */}
                 <div className="absolute inset-0 pointer-events-none opacity-[0.9]">
@@ -856,9 +833,8 @@ const Home = () => {
                     </p>
 
                     <div className="mt-6">
-                      <p className="text-sm text-slate-300">À partir de</p>
-                      <div className="text-4xl font-black tracking-tight text-white">
-                        1 397€
+                      <div className="text-3xl font-black tracking-tight text-white">
+                        Sur devis
                       </div>
                     </div>
                   </div>
@@ -914,7 +890,7 @@ const Home = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.06 }}
                 whileHover={{ y: -12 }}
-                className="relative rounded-[2.6rem] overflow-hidden border border-white/20 bg-gradient-to-b from-white/10 via-white/5 to-white/5 shadow-[0_40px_120px_-80px_rgba(0,0,0,0.9)]"
+                className="relative rounded-[2.6rem] overflow-hidden border border-white/20 bg-gradient-to-b from-white/10 via-white/5 to-white/5 shadow-[0_40px_120px_-80px_rgba(0,0,0,0.9)] transition-all duration-500 hover:shadow-purple-500/25 hover:border-purple-500/30"
               >
                 {/* ✅ BG CARD = extrait du footer */}
                 <div className="absolute inset-0 pointer-events-none opacity-[0.95]">
@@ -934,9 +910,8 @@ const Home = () => {
                     </p>
 
                     <div className="mt-6">
-                      <p className="text-sm text-slate-200">À partir de</p>
-                      <div className="text-5xl font-black tracking-tight text-white">
-                        2 997€
+                      <div className="text-4xl font-black tracking-tight text-white">
+                        Sur devis
                       </div>
                     </div>
                   </div>
@@ -994,7 +969,7 @@ const Home = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.12 }}
                 whileHover={{ y: -10 }}
-                className="relative rounded-[2.25rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm shadow-[0_28px_90px_-70px_rgba(0,0,0,0.8)]"
+                className="relative rounded-[2.25rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm shadow-[0_28px_90px_-70px_rgba(0,0,0,0.8)] transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20"
               >
                 {/* ✅ BG CARD = extrait du footer */}
                 <div className="absolute inset-0 pointer-events-none opacity-[0.9]">
@@ -1014,9 +989,8 @@ const Home = () => {
                     </p>
 
                     <div className="mt-6">
-                      <p className="text-sm text-slate-300">À partir de</p>
-                      <div className="text-4xl font-black tracking-tight text-white">
-                        4 997€
+                      <div className="text-3xl font-black tracking-tight text-white">
+                        Sur devis
                       </div>
                     </div>
                   </div>
@@ -1080,27 +1054,12 @@ const Home = () => {
             </div>
           </div>
 
-          {/* ✅ Wave bottom (comme tes sections dark) */}
-          <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180 -mb-[1px] translate-y-[1px]">
-            <svg
-              className="relative block w-[calc(100%+1.3px)] h-[50px] md:h-[100px]"
-              data-name="Layer 1"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1200 120"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                className="fill-gray-50"
-              />
-            </svg>
-          </div>
         </section>
 
         {/* 6. CTA */}
-        <section className="pb-15 pt-0 relative bg-gray-50/50" style={belowFoldStyle}>
+        <section className="pb-15 pt-0 relative" style={belowFoldStyle}>
           <div className="container mx-auto px-4">
-            <div className="text-center bg-slate-900 rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-2xl">
+            <div className="text-center bg-white/5 border border-white/10 rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20 group">
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl -translate-y-1/2" />
                 <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-600/20 rounded-full blur-3xl translate-y-1/2" />
@@ -1131,7 +1090,118 @@ const Home = () => {
           </div>
         </section>
 
-        {/* 7. FAQ (lazy + idle) */}
+        {/* 7. PROGRAMME PARTENAIRES */}
+        <section className="py-20 relative text-white overflow-hidden" style={belowFoldStyle}>
+          <div className="container mx-auto px-4 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="max-w-5xl mx-auto bg-gradient-to-br from-purple-900/20 via-slate-900/40 to-pink-900/20 rounded-[2.5rem] p-8 md:p-12 border border-white/10 backdrop-blur-sm shadow-2xl relative overflow-hidden transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20 group"
+            >
+              {/* Décoration de fond */}
+              <div className="absolute inset-0 pointer-events-none opacity-60">
+                <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-purple-600/15 blur-3xl" />
+                <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-pink-600/15 blur-3xl" />
+              </div>
+
+              <div className="relative z-10">
+                {/* En-tête */}
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="p-3 bg-white/10 rounded-xl border border-white/10">
+                        <HeartHandshake className="w-6 h-6 text-purple-300" />
+                      </div>
+                      <span className="text-sm font-bold text-purple-300 uppercase tracking-wider">
+                        Programme Partenaires
+                      </span>
+                    </div>
+                    
+                    <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+                      Gagnez jusqu&apos;à{' '}
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">
+                        25% de commission
+                      </span>
+                    </h2>
+                    
+                    <p className="text-slate-300 text-lg leading-relaxed max-w-xl">
+                      Recommandez Digitalova à votre entourage et soyez récompensé pour chaque client apporté. 
+                      Un système transparent, rapide et ouvert à tous.
+                    </p>
+                  </div>
+
+                  {/* CTA */}
+                  <div className="flex-shrink-0">
+                    <Link href="/partenaires" title="Découvrir le programme partenaires - Digitalova">
+                      <Button
+                        size="lg"
+                        className="bg-white text-slate-900 hover:bg-slate-100 text-lg px-8 h-14 rounded-full shadow-xl transition-transform hover:scale-105 font-bold flex items-center gap-2"
+                      >
+                        <HeartHandshake className="w-5 h-5" />
+                        Devenir Partenaire
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Avantages clés */}
+                <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-lg hover:border-purple-500/20"
+                  >
+                    <div className="p-2 bg-green-500/20 rounded-lg">
+                      <Gift className="w-5 h-5 text-green-300" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-white mb-1">Commissions + Crédits</h3>
+                      <p className="text-sm text-slate-400">Argent + services offerts pour votre activité</p>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                    className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-lg hover:border-purple-500/20"
+                  >
+                    <div className="p-2 bg-blue-500/20 rounded-lg">
+                      <Clock className="w-5 h-5 text-blue-300" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-white mb-1">Paiement en 72h</h3>
+                      <p className="text-sm text-slate-400">Dès réception de l&apos;acompte client</p>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 }}
+                    className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-lg hover:border-purple-500/20"
+                  >
+                    <div className="p-2 bg-amber-500/20 rounded-lg">
+                      <Users className="w-5 h-5 text-amber-300" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-white mb-1">Ouvert à tous</h3>
+                      <p className="text-sm text-slate-400">Clients, indépendants, amis, étudiants…</p>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* 8. FAQ (lazy + idle) */}
         <section style={belowFoldStyle}>
           <Suspense fallback={null}>{showFAQ ? <LazyFAQSection /> : null}</Suspense>
         </section>

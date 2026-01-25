@@ -223,8 +223,16 @@ const SEOOptimization = () => {
     ]) }}
       />
 
-      <div className="pt-28 pb-20 bg-slate-50 min-h-screen relative overflow-hidden">
+      <div className="pt-28 pb-20 min-h-screen relative overflow-hidden bg-[#070B16]">
         <BackgroundBlobs />
+
+        <div className="absolute inset-0 pointer-events-none opacity-[0.7]">
+          <div className="absolute -top-24 -left-24 w-[520px] h-[520px] rounded-full bg-purple-600/10 blur-3xl" />
+          <div className="absolute -bottom-24 -right-24 w-[520px] h-[520px] rounded-full bg-pink-600/10 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.22]">
+            <div className="h-full w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:56px_56px]" />
+          </div>
+        </div>
 
         <div className="container mx-auto px-4 relative z-10">
           {/* =========================
@@ -234,10 +242,10 @@ const SEOOptimization = () => {
             <div className="grid lg:grid-cols-2 gap-10 items-center">
               {/* Left */}
               <div className="text-center lg:text-left">
-                <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 leading-[1.05]">
+                <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-white leading-[1.05]">
                   Propulsez votre site web au top des recherches Google
                 </h1>
-                <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                <p className="text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   Une stratégie SEO complète : audit technique, optimisation des pages, copywriting stratégique et suivi clair des
                   performances. Idéal pour capter des clients dans votre zone et faire connaitre votre activité avec Digitalova.
                 </p>
@@ -251,7 +259,7 @@ const SEOOptimization = () => {
                   <Link href="/contact" title="Aller à la page Contact - Digitalova">
                     <Button
                       size="lg"
-                      className="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white text-lg h-14 px-8 rounded-full shadow-xl transition-transform hover:scale-[1.03]"
+                      className="w-full sm:w-auto bg-white hover:bg-slate-100 text-slate-900 text-lg h-14 px-8 rounded-full shadow-xl transition-transform hover:scale-[1.03]"
                     >
                       Demander un audit gratuit
                       <ArrowRight className="ml-2 h-5 w-5" />
@@ -262,7 +270,7 @@ const SEOOptimization = () => {
                     <Button
                       size="lg"
                       variant="outline"
-                      className="w-full sm:w-auto bg-white/80 text-slate-900 border-2 border-slate-200 hover:bg-slate-100 text-lg h-14 px-8 rounded-full transition-transform hover:scale-[1.03]"
+                      className="w-full sm:w-auto bg-white/5 text-white border-2 border-white/20 hover:bg-white/10 text-lg h-14 px-8 rounded-full transition-transform hover:scale-[1.03]"
                     >
                       Voir les services
                       <ArrowRight className="ml-2 h-5 w-5" />
@@ -278,7 +286,7 @@ const SEOOptimization = () => {
                 transition={{ duration: 0.6, ease: 'easeOut' }}
                 className="relative"
               >
-                <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-2xl bg-white">
+                <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-white/5 backdrop-blur transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20">
                   <div className="absolute inset-0 pointer-events-none">
                     <div className="absolute -top-16 -right-20 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl" />
                     <div className="absolute -bottom-24 -left-16 w-72 h-72 bg-pink-500/20 rounded-full blur-3xl" />
@@ -300,10 +308,10 @@ const SEOOptimization = () => {
                   <div className="p-5 md:p-6">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <p className="text-sm font-semibold text-slate-900">Optimisation SEO</p>
-                        <p className="text-xs text-slate-500">Audit • Mots-clés • Optimisation • copywriting • Reporting</p>
+                        <p className="text-sm font-semibold text-white">Optimisation SEO</p>
+                        <p className="text-xs text-slate-400">Audit • Mots-clés • Optimisation • copywriting • Reporting</p>
                       </div>
-                      <span className="text-xs font-semibold text-purple-700 bg-purple-50 border border-purple-100 px-3 py-1 rounded-full">
+                      <span className="text-xs font-semibold text-purple-200 bg-purple-500/20 border border-purple-500/30 px-3 py-1 rounded-full">
                         DIGITALOVA
                       </span>
                     </div>
@@ -313,14 +321,14 @@ const SEOOptimization = () => {
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.33, duration: 0.5 }}
-                  className="hidden md:flex absolute -top-6 -right-6 bg-white rounded-2xl shadow-xl border border-slate-200 p-4 items-center gap-3"
+                  className="hidden md:flex absolute -top-6 -right-6 bg-white/10 backdrop-blur rounded-2xl shadow-xl border border-white/10 p-4 items-center gap-3"
                 >
                   <div className="p-2 rounded-xl bg-purple-600">
                     <Search className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase text-slate-500">Focus</p>
-                    <p className="text-sm font-semibold text-slate-900">Positions Google</p>
+                    <p className="text-xs font-bold uppercase text-slate-400">Focus</p>
+                    <p className="text-sm font-semibold text-white">Positions Google</p>
                   </div>
                 </motion.div>
               </motion.div>
@@ -339,7 +347,7 @@ const SEOOptimization = () => {
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ delay: index * 0.08, duration: 0.45, ease: 'easeOut' }}
                 whileHover={{ y: -6 }}
-                className="bg-slate-900 p-8 rounded-3xl text-center border border-white/10 shadow-lg"
+                className="bg-slate-900 p-8 rounded-3xl text-center border border-white/10 shadow-lg transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20"
               >
                 <div className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-3">
                   {stat.number}
@@ -362,7 +370,7 @@ const SEOOptimization = () => {
                 transition={{ duration: 0.5 }}
                 className="lg:col-span-4"
               >
-                <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-white h-full">
+                <div className="rounded-3xl overflow-hidden border border-white/10 shadow-xl bg-white/5 backdrop-blur h-full transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20">
                   <div className="relative aspect-[4/5] bg-slate-100">
                     <img
                       src={HERO_IMAGE}
@@ -375,9 +383,9 @@ const SEOOptimization = () => {
                       height="1500"
                      title="Illustration référencement naturel" />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/35 to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4 bg-white/85 backdrop-blur border border-slate-200 rounded-2xl p-4">
-                      <p className="text-sm font-semibold text-slate-900">SEO = trafic durable</p>
-                      <p className="text-xs text-slate-600">
+                    <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur border border-white/10 rounded-2xl p-4">
+                      <p className="text-sm font-semibold text-white">SEO = trafic durable</p>
+                      <p className="text-xs text-slate-300">
                         Une stratégie propre, mesurable, et alignée sur votre business.
                       </p>
                     </div>
@@ -396,7 +404,7 @@ const SEOOptimization = () => {
                       viewport={{ once: true, margin: '-60px' }}
                       transition={{ delay: index * 0.08, duration: 0.45, ease: 'easeOut' }}
                       whileHover={{ y: -6 }}
-                      className="rounded-3xl border border-slate-700 bg-[#0F172A] shadow-sm hover:shadow-xl transition-all overflow-hidden"
+                      className="rounded-3xl border border-slate-700 bg-[#0F172A] shadow-sm overflow-hidden transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
                     >
                       <div className="h-1.5 bg-gradient-to-r from-purple-600 to-pink-600" />
                       <div className="p-6">
@@ -419,9 +427,9 @@ const SEOOptimization = () => {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true, margin: '-60px' }}
                   transition={{ delay: 0.12, duration: 0.45 }}
-                  className="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                  className="mt-6 rounded-3xl border border-white/10 bg-white/5 backdrop-blur p-6 shadow-sm transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
                 >
-                  <p className="text-slate-700">
+                  <p className="text-slate-300">
                     Besoin de renforcer votre visibilité locale (ex. <span className="font-semibold">Mons</span>) ? On
                     structure les pages et le contenu pour capter des recherches “près de moi”, sans sur-optimisation.
                   </p>
@@ -433,7 +441,7 @@ const SEOOptimization = () => {
           {/* Process */}
           <div className="mb-20">
             {/* ✅ (déjà en H2) */}
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
               Ma Méthode SEO en 4 Étapes
             </h2>
 
@@ -446,7 +454,7 @@ const SEOOptimization = () => {
                   viewport={{ once: true, margin: '-60px' }}
                   transition={{ duration: 0.45, ease: 'easeOut', delay: index * 0.06 }}
                   whileHover={{ y: -6 }}
-                  className="bg-[#0F172A] p-8 rounded-3xl border border-slate-700 shadow-sm hover:shadow-xl transition-all"
+                  className="bg-[#0F172A] p-8 rounded-3xl border border-slate-700 shadow-sm transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
                 >
                   <div className="mb-6">{step.icon}</div>
 
@@ -468,25 +476,13 @@ const SEOOptimization = () => {
             </div>
           </div>
 
-          {/* FAQ */}
-          <div className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">
-              Questions Fréquentes
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              {faqData.map((faq, index) => (
-                <FAQItem key={index} faq={faq} index={index} />
-              ))}
-            </div>
-          </div>
-
           {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="text-center bg-slate-900 rounded-3xl p-12 md:p-20 relative overflow-hidden"
+            className="mb-20 text-center bg-white/5 border border-white/10 backdrop-blur rounded-3xl p-12 md:p-20 relative overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
               <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl -translate-y-1/2" />
@@ -509,6 +505,18 @@ const SEOOptimization = () => {
               </Link>
             </div>
           </motion.div>
+
+          {/* FAQ */}
+          <div className="mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
+              Questions Fréquentes
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {faqData.map((faq, index) => (
+                <FAQItem key={index} faq={faq} index={index} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </>

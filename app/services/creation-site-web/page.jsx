@@ -188,8 +188,16 @@ const WebDevelopment = () => {
     ]) }}
       />
 
-      <div className="pt-28 pb-20 bg-slate-50 min-h-screen relative overflow-hidden">
+      <div className="pt-28 pb-20 min-h-screen relative overflow-hidden bg-[#070B16]">
         <BackgroundBlobs />
+
+        <div className="absolute inset-0 pointer-events-none opacity-[0.7]">
+          <div className="absolute -top-24 -left-24 w-[520px] h-[520px] rounded-full bg-purple-600/10 blur-3xl" />
+          <div className="absolute -bottom-24 -right-24 w-[520px] h-[520px] rounded-full bg-pink-600/10 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.22]">
+            <div className="h-full w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:56px_56px]" />
+          </div>
+        </div>
 
         <div className="container mx-auto px-4 relative z-10">
           {/* 1) HERO */}
@@ -197,11 +205,11 @@ const WebDevelopment = () => {
             <div className="grid lg:grid-cols-2 gap-10 items-center">
               {/* Left */}
               <div className="text-center lg:text-left">
-                <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 leading-[1.05]">
+                <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-white leading-[1.05]">
                   Réalisation de sites internet à Mons
                 </h1>
 
-                <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                <p className="text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   Vous avez besoin d'un site vitrine qui présente votre business, ou d'une boutique e-commerce pour diffuser vos produits sur le web ? Je conçois des plateformes sur mesure pensées pour la conversion : vitesse, expérience utilisateur simplifié, SEO local et branding de qualité.
                 </p>
 
@@ -214,7 +222,7 @@ const WebDevelopment = () => {
                   <Link href="/contact" title="Demander un devis gratuit" aria-label="Demander un devis gratuit">
                     <Button
                       size="lg"
-                      className="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white text-lg h-14 px-8 rounded-full shadow-xl transition-transform hover:scale-[1.03]"
+                      className="w-full sm:w-auto bg-white hover:bg-slate-100 text-slate-900 text-lg h-14 px-8 rounded-full shadow-xl transition-transform hover:scale-[1.03]"
                       title="Demander un devis gratuit"
                     >
                       Rentrer en contact
@@ -226,7 +234,7 @@ const WebDevelopment = () => {
                     <Button
                       size="lg"
                       variant="outline"
-                      className="w-full sm:w-auto bg-white/80 text-slate-900 border-2 border-slate-200 hover:bg-slate-100 text-lg h-14 px-8 rounded-full transition-transform hover:scale-[1.03]"
+                      className="w-full sm:w-auto bg-white/5 text-white border-2 border-white/20 hover:bg-white/10 text-lg h-14 px-8 rounded-full transition-transform hover:scale-[1.03]"
                       title="Voir des exemples"
                     >
                       Portfolio
@@ -243,7 +251,7 @@ const WebDevelopment = () => {
                 transition={{ duration: 0.6, ease: 'easeOut' }}
                 className="relative"
               >
-                <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-2xl bg-white">
+                <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-white/5 backdrop-blur transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20">
                   <div className="absolute inset-0 pointer-events-none">
                     <div className="absolute -top-16 -right-20 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl" />
                     <div className="absolute -bottom-24 -left-16 w-72 h-72 bg-pink-500/20 rounded-full blur-3xl" />
@@ -267,10 +275,10 @@ const WebDevelopment = () => {
                   <div className="p-5 md:p-6">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <p className="text-sm font-semibold text-slate-900">Création de site web à Mons</p>
-                        <p className="text-xs text-slate-500">Design • SEO • Performance • Conversion</p>
+                        <p className="text-sm font-semibold text-white">Création de site web à Mons</p>
+                        <p className="text-xs text-slate-400">Design • SEO • Performance • Conversion</p>
                       </div>
-                      <span className="text-xs font-semibold text-purple-700 bg-purple-50 border border-purple-100 px-3 py-1 rounded-full">
+                      <span className="text-xs font-semibold text-purple-200 bg-purple-500/20 border border-purple-500/30 px-3 py-1 rounded-full">
                         DIGITALOVA
                       </span>
                     </div>
@@ -281,14 +289,14 @@ const WebDevelopment = () => {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.33, duration: 0.5 }}
-                  className="hidden md:flex absolute -top-6 -right-6 bg-white rounded-2xl shadow-xl border border-slate-200 p-4 items-center gap-3"
+                  className="hidden md:flex absolute -top-6 -right-6 bg-white/10 backdrop-blur rounded-2xl shadow-xl border border-white/10 p-4 items-center gap-3"
                 >
                   <div className="p-2 rounded-xl bg-purple-600">
                     <Globe className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase text-slate-500">SEO local</p>
-                    <p className="text-sm font-semibold text-slate-900">Visibilité à Mons</p>
+                    <p className="text-xs font-bold uppercase text-slate-400">SEO local</p>
+                    <p className="text-sm font-semibold text-white">Visibilité à Mons</p>
                   </div>
                 </motion.div>
               </motion.div>
@@ -298,8 +306,8 @@ const WebDevelopment = () => {
           {/* 2) Exemples de Réalisations */}
           <div className="mb-20 max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Exemples de Réalisations</h2>
-              <p className="text-xl text-slate-600">Découvrez quelques sites web que j&apos;ai créés pour des clients types à Mons</p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Exemples de Réalisations</h2>
+              <p className="text-xl text-slate-300">Découvrez quelques sites web que j&apos;ai créés pour des clients types à Mons</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -311,7 +319,7 @@ const WebDevelopment = () => {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ y: -8 }}
-                    className="group bg-[#0F172A] rounded-2xl overflow-hidden border border-slate-700 shadow-lg hover:shadow-2xl transition-all"
+                    className="group bg-[#0F172A] rounded-2xl overflow-hidden border border-slate-700 shadow-lg transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20"
                   >
                     <div className="relative aspect-[3/2] overflow-hidden">
                       <img
@@ -360,8 +368,8 @@ const WebDevelopment = () => {
           {/* 3) Pourquoi choisir Digitalova ? */}
           <div className="mb-20 max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Pourquoi choisir Digitalova ?</h2>
-              <p className="text-xl text-slate-600">Un site premium, rapide et pensé pour convertir.</p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Pourquoi choisir Digitalova ?</h2>
+              <p className="text-xl text-slate-300">Un site premium, rapide et pensé pour convertir.</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -373,19 +381,19 @@ const WebDevelopment = () => {
                   viewport={{ once: true, margin: '-60px' }}
                   transition={{ delay: index * 0.08, duration: 0.45, ease: 'easeOut' }}
                   whileHover={{ y: -6 }}
-                  className="rounded-3xl border border-slate-200 bg-white shadow-sm hover:shadow-xl transition-all overflow-hidden"
+                  className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur shadow-sm overflow-hidden transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
                 >
                   <div className="h-1.5 bg-gradient-to-r from-purple-600 to-pink-600" />
                   <div className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="p-3 rounded-2xl bg-slate-900/95 border border-slate-800">
-                        {React.cloneElement(benefit.icon, { className: benefit.icon.props.className + ' !text-white' })}
+                      <div className="p-3 rounded-2xl bg-white/5 border border-white/10">
+                        {benefit.icon}
                       </div>
                       <div className="min-w-0">
                         {/* ✅ H3 -> H2 */}
-                        <h3 className="text-lg font-extrabold text-slate-900 mb-2">{benefit.title}</h3>
-                        <p className="text-slate-600 text-sm leading-relaxed">{benefit.description}</p>
-                        <p className="mt-3 text-xs text-slate-500">
+                        <h3 className="text-lg font-extrabold text-white mb-2">{benefit.title}</h3>
+                        <p className="text-slate-300 text-sm leading-relaxed">{benefit.description}</p>
+                        <p className="mt-3 text-xs text-slate-400">
                           Pensé pour des entreprises avec qui cherchent la croissance
                         </p>
                       </div>
@@ -400,9 +408,9 @@ const WebDevelopment = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ delay: 0.15, duration: 0.45 }}
-              className="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+              className="mt-6 rounded-3xl border border-white/10 bg-white/5 backdrop-blur p-6 shadow-sm transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
             >
-              <p className="text-slate-700">
+              <p className="text-slate-300">
                 Vous ciblez la ville de  <span className="font-semibold">Mons</span> ? Je structure vos pages (titres, contenus, vitesse,
                 balisage) pour renforcer la pertinence locale !
               </p>
@@ -471,7 +479,7 @@ const WebDevelopment = () => {
 
           {/* 6) Questions Fréquentes */}
           <div className="mb-10 max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">Questions Fréquentes</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">Questions Fréquentes</h2>
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {faqData.map((faq, index) => (
                 <FAQItem key={index} faq={faq} />

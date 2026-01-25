@@ -23,9 +23,6 @@ import { useToast } from '@/components/ui/use-toast';
 import { Loader2 } from 'lucide-react';
 import BackgroundBlobs from '@/components/BackgroundBlobs';
 
-const DARK = '#0F172A';
-const LIGHT = '#F8FAFC';
-
 const PROGRAM_TERMS_PDF =
   'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Docs/Condition_utilisation_programme_partenaire%20(1).pdf';
 
@@ -56,46 +53,7 @@ const item = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
 };
 
-const hoverLift = {
-  whileHover: { y: -8, scale: 1.01 },
-  transition: { type: 'spring', stiffness: 260, damping: 18 },
-};
-
-const WaveDivider = ({ color = LIGHT, heightClass = 'h-[60px] md:h-[110px]' }) => (
-  <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none rotate-180 pointer-events-none">
-    <svg
-      className={`block w-[calc(100%+1.3px)] ${heightClass}`}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1200 120"
-      preserveAspectRatio="none"
-    >
-      <path
-        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-        fill={color}
-      />
-    </svg>
-  </div>
-);
-
-const DarkGlow = () => (
-  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    <motion.div
-      className="absolute top-1/2 right-0 w-[560px] h-[560px] bg-purple-600/12 rounded-full blur-[110px] translate-x-1/3 -translate-y-1/2"
-      animate={{ opacity: [0.7, 1, 0.7], scale: [1, 1.06, 1] }}
-      transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-    />
-    <motion.div
-      className="absolute bottom-0 left-0 w-[460px] h-[460px] bg-pink-600/10 rounded-full blur-[110px] -translate-x-1/3 translate-y-1/3"
-      animate={{ opacity: [0.65, 0.95, 0.65], scale: [1, 1.05, 1] }}
-      transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
-    />
-    <motion.div
-      className="absolute top-0 left-1/3 w-[420px] h-[420px] bg-indigo-600/8 rounded-full blur-[120px] -translate-y-1/2"
-      animate={{ opacity: [0.55, 0.85, 0.55], scale: [1, 1.04, 1] }}
-      transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-    />
-  </div>
-);
+const hoverLift = {};
 
 /* -------------------- Page -------------------- */
 const Partners = () => {
@@ -309,32 +267,41 @@ const Partners = () => {
     ]) }}
       />
 
-      <div className="pt-32 pb-0 bg-white">
-        {/* SECTION 1 — HERO */}
-        <section className="relative overflow-hidden bg-white">
-          <div className="absolute inset-0 pointer-events-none opacity-70">
-            <BackgroundBlobs />
+      <div className="pt-32 pb-0 relative bg-[#070B16] overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none opacity-70">
+          <BackgroundBlobs />
+        </div>
+
+        <div className="absolute inset-0 pointer-events-none opacity-[0.7]">
+          <div className="absolute -top-24 -left-24 w-[520px] h-[520px] rounded-full bg-purple-600/10 blur-3xl" />
+          <div className="absolute -bottom-24 -right-24 w-[520px] h-[520px] rounded-full bg-pink-600/10 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.22]">
+            <div className="h-full w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:56px_56px]" />
           </div>
+        </div>
+
+        {/* SECTION 1 — HERO */}
+        <section className="relative overflow-hidden">
 
           <div className="container mx-auto px-4 relative z-10 py-10 md:py-14">
             <div className="max-w-4xl mx-auto text-center">
               <div>
-                <span className="inline-block py-2 px-4 rounded-full bg-[#0F172A] text-white font-semibold text-sm mb-6 shadow-lg border border-slate-700">
+                <span className="inline-block py-2 px-4 rounded-full bg-white/10 text-white font-semibold text-sm mb-6 shadow-lg border border-white/20">
                   Programme Partenaires Élite
                 </span>
 
-                <h1 className="text-4xl md:text-6xl font-bold mb-6 text-slate-900 leading-tight">
+                <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
                   Rejoignez l&apos;élite Digitalova <br /> Jusqu&apos;à 25% de commission
                 </h1>
 
-                <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+                <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
                   Un système de rémunération transparent, rapide et cumulable avec des services offerts pour votre propre activité.
                 </p>
 
                 <motion.div {...fadeUp(0.2)} className="flex justify-center gap-4">
                   <motion.a
                     href="#partner-form"
-                    className="px-8 py-4 bg-[#0F172A] text-white rounded-xl font-bold hover:bg-slate-800 transition-all shadow-xl hover:shadow-slate-900/30 flex items-center gap-2"
+                    className="px-8 py-4 bg-white text-slate-900 rounded-xl font-bold hover:bg-slate-100 transition-all shadow-xl flex items-center gap-2"
                     whileHover={{ y: -4 }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ type: 'spring', stiffness: 280, damping: 18 }}
@@ -347,25 +314,15 @@ const Partners = () => {
             </div>
           </div>
 
-          <WaveDivider color={DARK} />
         </section>
 
-        {/* SECTION 2 — EXPLICATION PROGRAMME (SOMBRE) */}
-        <section className="relative overflow-hidden py-20 text-white bg-[#0F172A]">
-          <DarkGlow />
+        {/* SECTION 2 — EXPLICATION PROGRAMME */}
+        <section className="relative overflow-hidden py-12 text-white">
 
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-14">
-                <motion.span
-                  {...fadeUp(0)}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-200 text-sm font-semibold"
-                >
-                  <Sparkles className="w-4 h-4 text-purple-300" />
-                  Un programme gagnant-gagnant
-                </motion.span>
-
-                <motion.h2 {...fadeUp(0.08)} className="text-3xl md:text-4xl font-bold mt-6">
+                <motion.h2 {...fadeUp(0.08)} className="text-3xl md:text-4xl font-bold">
                   Développons Digitalova,{' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">ensemble</span>
                 </motion.h2>
@@ -384,7 +341,7 @@ const Partners = () => {
                 viewport={{ once: true, amount: 0.2 }}
                 className="grid grid-cols-1 md:grid-cols-3 gap-8"
               >
-                <motion.div variants={item} {...hoverLift} className="bg-white/5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm">
+                <motion.div variants={item} {...hoverLift} className="bg-white/5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">
                   <div className="p-3 bg-white/10 rounded-xl w-fit mb-5">
                     <Megaphone className="w-6 h-6 text-purple-300" />
                   </div>
@@ -392,7 +349,7 @@ const Partners = () => {
                   <p className="text-slate-300">Vous recommandez Digitalova aux personnes qui ont un besoin réel. Vous mettez en relation, on s’occupe du reste.</p>
                 </motion.div>
 
-                <motion.div variants={item} {...hoverLift} className="bg-white/5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm">
+                <motion.div variants={item} {...hoverLift} className="bg-white/5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">
                   <div className="p-3 bg-white/10 rounded-xl w-fit mb-5">
                     <Gift className="w-6 h-6 text-pink-300" />
                   </div>
@@ -400,7 +357,7 @@ const Partners = () => {
                   <p className="text-slate-300">Commission + Crédits Élite cumulables : gagnez de l’argent et échangez vos crédits contre des services.</p>
                 </motion.div>
 
-                <motion.div variants={item} {...hoverLift} className="bg-white/5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm">
+                <motion.div variants={item} {...hoverLift} className="bg-white/5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">
                   <div className="p-3 bg-white/10 rounded-xl w-fit mb-5">
                     <BadgeCheck className="w-6 h-6 text-green-300" />
                   </div>
@@ -424,20 +381,16 @@ const Partners = () => {
             </div>
           </div>
 
-          <WaveDivider color={LIGHT} />
         </section>
 
         {/* SECTION 3 — COMMISSIONS */}
-        <section className="relative overflow-hidden bg-slate-50 py-20">
-          <div className="absolute inset-0 pointer-events-none opacity-70">
-            <BackgroundBlobs />
-          </div>
+        <section className="relative overflow-hidden py-12">
 
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-6xl mx-auto">
               <motion.div {...fadeUp(0)} className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-slate-900 mb-4">Les commissions</h2>
-                <p className="text-slate-600">Plus vous performez, plus votre part augmente.</p>
+                <h2 className="text-3xl font-bold text-white mb-4">Les commissions</h2>
+                <p className="text-slate-300">Plus vous performez, plus votre part augmente.</p>
               </motion.div>
 
               <motion.div
@@ -452,7 +405,7 @@ const Partners = () => {
                     key={idx}
                     variants={item}
                     {...hoverLift}
-                    className="rounded-2xl p-6 border border-white/10 shadow-xl transition-all relative overflow-hidden group bg-[#0F172A]"
+                    className="rounded-2xl p-6 border border-white/10 shadow-xl relative overflow-hidden group bg-[#0F172A] transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20"
                   >
                     <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">{tier.icon}</div>
                     <div className="mb-4 p-3 bg-white/10 rounded-xl w-fit border border-white/10">{tier.icon}</div>
@@ -475,12 +428,10 @@ const Partners = () => {
             </div>
           </div>
 
-          <WaveDivider color={LIGHT} />
         </section>
 
         {/* SECTION 4 — CRÉDITS */}
-        <section className="relative overflow-hidden text-white bg-[#0F172A] pt-14 pb-20 md:pt-16 md:pb-24">
-          <DarkGlow />
+        <section className="relative overflow-hidden text-white pt-10 pb-12 md:pt-12 md:pb-16">
 
           <div className="container mx-auto px-4 relative z-10">
             <motion.div {...fadeUp(0)} className="text-center mb-12 md:mb-14">
@@ -504,7 +455,7 @@ const Partners = () => {
                   key={idx}
                   variants={item}
                   {...hoverLift}
-                  className="bg-white rounded-2xl p-8 border border-slate-200 relative shadow-2xl"
+                  className="bg-white rounded-2xl p-8 border border-slate-200 relative shadow-2xl transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20"
                 >
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
                     {credit.cost} Crédits
@@ -519,17 +470,13 @@ const Partners = () => {
             </motion.div>
           </div>
 
-          <WaveDivider color={LIGHT} />
         </section>
 
         {/* SECTION 5 — LÉGAL & PAIEMENT */}
-        <section className="relative overflow-hidden bg-slate-50 py-20">
-          <div className="absolute inset-0 pointer-events-none opacity-70">
-            <BackgroundBlobs />
-          </div>
+        <section className="relative overflow-hidden py-12">
 
           <div className="container mx-auto px-4 relative z-10 pb-10 md:pb-14">
-            <motion.div {...fadeUp(0)} className="max-w-5xl mx-auto bg-[#0F172A] rounded-3xl p-7 md:p-10 shadow-2xl text-white relative overflow-hidden">
+            <motion.div {...fadeUp(0)} className="max-w-5xl mx-auto bg-[#0F172A] rounded-3xl p-7 md:p-10 shadow-2xl text-white relative overflow-hidden border border-white/10 transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">
               <motion.div
                 aria-hidden
                 className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"
@@ -577,12 +524,10 @@ const Partners = () => {
             </motion.div>
           </div>
 
-          <WaveDivider color={DARK} />
         </section>
 
         {/* SECTION 6 — FORMULAIRE */}
-        <section id="partner-form" className="relative overflow-hidden py-20 text-white bg-[#0F172A]">
-          <DarkGlow />
+        <section id="partner-form" className="relative overflow-hidden py-12 text-white">
 
           <div className="container mx-auto px-4 relative z-10">
             <motion.div {...fadeUp(0)} className="max-w-2xl mx-auto text-center mb-10">
@@ -590,7 +535,7 @@ const Partners = () => {
               <p className="text-slate-300">Remplissez ce formulaire pour activer votre compte Partenaire.</p>
             </motion.div>
 
-            <motion.div {...fadeUp(0.08)} className="max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl p-8 md:p-12 border border-slate-100">
+            <motion.div {...fadeUp(0.08)} className="max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl p-8 md:p-12 border border-slate-100 transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <motion.div {...fadeUp(0.05)} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
@@ -661,18 +606,7 @@ const Partners = () => {
 
                 {/* ✅ LIEN CONDITIONS + CASE OBLIGATOIRE */}
                 <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                  <div className="text-sm text-slate-700 font-semibold mb-1">Conditions d’utilisation</div>
-                  <div className="text-xs text-slate-600 mb-3">
-                    Consultez le PDF officiel du programme partenaire :
-                    <a href={PROGRAM_TERMS_PDF}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="ml-1 underline font-semibold text-slate-900 hover:text-purple-700"
-                     title="En savoir plus - Digitalova">
-                      Ouvrir les Conditions (PDF)
-                    </a>
-                  </div>
-
+                  <div className="text-sm text-slate-700 font-semibold mb-3">Conditions d’utilisation</div>
                   <label className="flex items-start gap-3 text-sm text-slate-800">
                     <input
                       type="checkbox"
@@ -694,7 +628,7 @@ const Partners = () => {
 
                 {/* ✅ RGPD: INFORMATION + CASE OBLIGATOIRE */}
                 <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                  <div className="text-sm text-slate-700 font-semibold mb-1">Protection des données (RGPD)</div>
+                  <div className="text-sm text-slate-700 font-semibold mb-3">Protection des données (<a href="/rgpd" className="text-purple-700 hover:text-purple-900 underline" title="Aller à la page RGPD - Digitalova">RGPD</a>)</div>
                   <p className="text-xs text-slate-600 leading-relaxed">
                     Les informations envoyées via ce formulaire sont traitées par <strong>Digitalova</strong> afin de répondre à votre demande
                     d’adhésion au Programme Partenaires. Vous pouvez exercer vos droits (accès, rectification, suppression) en nous contactant.
@@ -715,13 +649,6 @@ const Partners = () => {
                   {formErrors.contactConsent ? (
                     <div className="mt-2 text-xs text-red-600">{formErrors.contactConsent}</div>
                   ) : null}
-
-                  <div className="mt-3 text-xs text-slate-500">
-                    Contact RGPD :{' '}
-                    <a href="mailto:contact@digitalova.be" className="underline font-semibold text-slate-700 hover:text-purple-700" title="En savoir plus - Digitalova">
-                      contact@digitalova.be
-                    </a>
-                  </div>
                 </div>
 
                 <div className="flex justify-center py-4">

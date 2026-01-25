@@ -78,24 +78,6 @@ const PortfolioContent = () => {
       ],
     },
     {
-      slug: 'digi-kitchen',
-      title: 'Site web pour un Cuisiniste à Mons',
-      subtitle: 'Cuisiniste Expert',
-      category: 'Artisanat & Design',
-      description: 'Site pour un cuisiniste expert, présentant réalisations, services sur-mesure et showroom.',
-      longDescription:
-        "Une vitrine numérique moderne pour un artisan cuisiniste, conçue pour inspirer et convertir. Le site propose une galerie de réalisations filtrable par style (moderne, rustique, industriel), un outil de demande de devis détaillé pour qualifier les prospects, et une visite virtuelle du showroom pour inciter au déplacement.",
-      tags: ['Cuisine', 'Sur-mesure', 'Showroom', 'Catalogue Filtrable', 'Génération de Leads'],
-      url: 'https://digikitchen.digitalova.be/',
-      images: [
-        'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/Affiche_de_portfolio_siteweb_cuisiniste_mons_6_11zon.webp',
-        'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/Cuisiniste_Mons_sectionhero_19_11zon.webp',
-        "https://horizons-cdn.hostinger.com/63fc4be4-0345-4e91-b9b7-ba4da148182f/b5c6733a53e1ed3a4089c2bada59400f.png",
-        "https://horizons-cdn.hostinger.com/63fc4be4-0345-4e91-b9b7-ba4da148182f/45eced3e5cc95fc9bdffb030c4c04551.png",
-        "https://horizons-cdn.hostinger.com/63fc4be4-0345-4e91-b9b7-ba4da148182f/80384d7f767c0c61dba8fc757ff28397.png",
-      ],
-    },
-     {
       slug: 'digi-comptabilité',
       title: "Site web d'un Cabinet de comptable du Hainaut",
       subtitle: "Cabinet d'Expertise Comptable",
@@ -113,6 +95,24 @@ const PortfolioContent = () => {
         'https://horizons-cdn.hostinger.com/63fc4be4-0345-4e91-b9b7-ba4da148182f/d98d9f0b7cb7b47ed592d4c2cd7c45b3.png',
         'https://horizons-cdn.hostinger.com/63fc4be4-0345-4e91-b9b7-ba4da148182f/a2255498a3e25f1a7edc500709707ef3.png',
         'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/Cabinet_comptable_footer.png',
+      ],
+    },
+    {
+      slug: 'digi-kitchen',
+      title: 'Site web pour un Cuisiniste à Mons',
+      subtitle: 'Cuisiniste Expert',
+      category: 'Artisanat & Design',
+      description: 'Site pour un cuisiniste expert, présentant réalisations, services sur-mesure et showroom.',
+      longDescription:
+        "Une vitrine numérique moderne pour un artisan cuisiniste, conçue pour inspirer et convertir. Le site propose une galerie de réalisations filtrable par style (moderne, rustique, industriel), un outil de demande de devis détaillé pour qualifier les prospects, et une visite virtuelle du showroom pour inciter au déplacement.",
+      tags: ['Cuisine', 'Sur-mesure', 'Showroom', 'Catalogue Filtrable', 'Génération de Leads'],
+      url: 'https://digikitchen.digitalova.be/',
+      images: [
+        'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/Affiche_de_portfolio_siteweb_cuisiniste_mons_6_11zon.webp',
+        'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/Cuisiniste_Mons_sectionhero_19_11zon.webp',
+        "https://horizons-cdn.hostinger.com/63fc4be4-0345-4e91-b9b7-ba4da148182f/b5c6733a53e1ed3a4089c2bada59400f.png",
+        "https://horizons-cdn.hostinger.com/63fc4be4-0345-4e91-b9b7-ba4da148182f/45eced3e5cc95fc9bdffb030c4c04551.png",
+        "https://horizons-cdn.hostinger.com/63fc4be4-0345-4e91-b9b7-ba4da148182f/80384d7f767c0c61dba8fc757ff28397.png",
       ],
     },
     {
@@ -246,7 +246,7 @@ const PortfolioContent = () => {
     <Dialog defaultOpen={project.slug === autoOpenProject}>
       <DialogTrigger asChild>
         {isLCPImage ? (
-          <article className="group cursor-pointer rounded-[28px] border border-white/10 bg-white/5 backdrop-blur overflow-hidden shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] hover:border-white/20 transition-colors">
+          <article className="group cursor-pointer rounded-[28px] border border-white/10 bg-white/5 backdrop-blur overflow-hidden shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">
             {/* Affiche libre */}
             <div className="relative bg-black/10">
               <div className="aspect-[16/10] sm:aspect-[16/9] bg-black/10">
@@ -293,7 +293,7 @@ const PortfolioContent = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="group cursor-pointer rounded-[28px] border border-white/10 bg-white/5 backdrop-blur overflow-hidden shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] hover:border-white/20 transition-colors"
+            className="group cursor-pointer rounded-[28px] border border-white/10 bg-white/5 backdrop-blur overflow-hidden shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20"
           >
             {/* Affiche libre */}
             <div className="relative bg-black/10">
@@ -692,7 +692,7 @@ const PortfolioContent = () => {
             viewport={{ once: true, amount: 0.25 }}
             className="mt-20 md:mt-28"
           >
-            <div className="relative overflow-hidden rounded-[34px] border border-white/10 bg-slate-950 text-white shadow-2xl">
+            <div className="relative overflow-hidden rounded-[34px] border border-white/10 bg-slate-950 text-white shadow-2xl transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20">
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute -top-24 -left-24 h-[520px] w-[520px] rounded-full bg-purple-600/20 blur-3xl" />
                 <div className="absolute -bottom-24 -right-24 h-[520px] w-[520px] rounded-full bg-pink-600/20 blur-3xl" />

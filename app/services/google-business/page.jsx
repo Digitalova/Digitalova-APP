@@ -198,8 +198,16 @@ const GoogleBusiness = () => {
     ]) }}
       />
 
-      <div className="pt-28 pb-20 bg-slate-50 min-h-screen relative overflow-hidden">
+      <div className="pt-28 pb-20 min-h-screen relative overflow-hidden bg-[#070B16]">
         <BackgroundBlobs />
+
+        <div className="absolute inset-0 pointer-events-none opacity-[0.7]">
+          <div className="absolute -top-24 -left-24 w-[520px] h-[520px] rounded-full bg-purple-600/10 blur-3xl" />
+          <div className="absolute -bottom-24 -right-24 w-[520px] h-[520px] rounded-full bg-pink-600/10 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.22]">
+            <div className="h-full w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:56px_56px]" />
+          </div>
+        </div>
 
         <div className="container mx-auto px-4 relative z-10">
           {/* =========================
@@ -214,15 +222,15 @@ const GoogleBusiness = () => {
                 transition={{ duration: 0.55, ease: 'easeOut' }}
                 className="text-center lg:text-left"
               >
-                <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 leading-[1.05]">
+                <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-white leading-[1.05]">
                   La fiche{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">
                     Google
                   </span>{' '}
                   qui transforme les recherches en clients
                 </h1>
 
-                <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                <p className="text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   Avant même votre site, votre fiche Google Business est souvent votre première impression :
                   note, avis, photos, horaires, bouton “Appeler”, itinéraire… Une fiche optimisée = plus d’actions locales comme des
                   appels, messages et visites.
@@ -237,7 +245,7 @@ const GoogleBusiness = () => {
                   <Link href="/contact" title="Aller à la page Contact - Digitalova">
                     <Button
                       size="lg"
-                      className="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white text-lg h-14 px-8 rounded-full shadow-xl transition-transform hover:scale-[1.03]"
+                      className="w-full sm:w-auto bg-white hover:bg-slate-100 text-slate-900 text-lg h-14 px-8 rounded-full shadow-xl transition-transform hover:scale-[1.03]"
                     >
                       Demander un audit gratuit
                       <ArrowRight className="ml-2 h-5 w-5" />
@@ -248,7 +256,7 @@ const GoogleBusiness = () => {
                     <Button
                       size="lg"
                       variant="outline"
-                      className="w-full sm:w-auto bg-white/85 text-slate-900 border-2 border-slate-200 hover:bg-slate-100 text-lg h-14 px-8 rounded-full transition-transform hover:scale-[1.03]"
+                      className="w-full sm:w-auto bg-white/5 text-white border-2 border-white/20 hover:bg-white/10 text-lg h-14 px-8 rounded-full transition-transform hover:scale-[1.03]"
                     >
                       Voir des résultats
                       <ArrowRight className="ml-2 h-5 w-5" />
@@ -264,7 +272,7 @@ const GoogleBusiness = () => {
                 transition={{ duration: 0.6, ease: 'easeOut' }}
                 className="relative"
               >
-                <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-2xl bg-white">
+                <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-white/5 backdrop-blur transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20">
                   <div className="relative aspect-[16/10] bg-slate-100">
                     <img
                       src={HERO_IMAGE}
@@ -282,12 +290,12 @@ const GoogleBusiness = () => {
                   <div className="p-5 md:p-6">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <p className="text-sm font-semibold text-slate-900">Optimisation de la fiche</p>
-                        <p className="text-xs text-slate-500">
+                        <p className="text-sm font-semibold text-white">Optimisation de la fiche</p>
+                        <p className="text-xs text-slate-400">
                           Catégories • services • photos • avis • posts • suivi
                         </p>
                       </div>
-                      <span className="text-xs font-semibold text-purple-700 bg-purple-50 border border-purple-100 px-3 py-1 rounded-full">
+                      <span className="text-xs font-semibold text-purple-200 bg-purple-500/20 border border-purple-500/30 px-3 py-1 rounded-full">
                         DIGITALOVA
                       </span>
                     </div>
@@ -297,7 +305,7 @@ const GoogleBusiness = () => {
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.25, duration: 0.5 }}
-                  className="hidden md:flex absolute -bottom-6 left-6 bg-white rounded-2xl shadow-xl border border-slate-200 p-4 items-center gap-3"
+                  className="hidden md:flex absolute -bottom-6 left-6 bg-white/10 backdrop-blur rounded-2xl shadow-xl border border-white/10 p-4 items-center gap-3"
                 >
                 </motion.div>
 
@@ -305,14 +313,14 @@ const GoogleBusiness = () => {
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.33, duration: 0.5 }}
-                  className="hidden md:flex absolute -top-6 right-6 bg-white rounded-2xl shadow-xl border border-slate-200 p-4 items-center gap-3"
+                  className="hidden md:flex absolute -top-6 right-6 bg-white/10 backdrop-blur rounded-2xl shadow-xl border border-white/10 p-4 items-center gap-3"
                 >
                   <div className="p-2 rounded-xl bg-purple-600">
                     <Star className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase text-slate-500">Confiance</p>
-                    <p className="text-sm font-semibold text-slate-900">Avis & note</p>
+                    <p className="text-xs font-bold uppercase text-slate-400">Confiance</p>
+                    <p className="text-sm font-semibold text-white">Avis & note</p>
                   </div>
                 </motion.div>
               </motion.div>
@@ -331,7 +339,7 @@ const GoogleBusiness = () => {
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ delay: index * 0.08, duration: 0.45, ease: 'easeOut' }}
                 whileHover={{ y: -6 }}
-                className="bg-slate-900 p-8 rounded-3xl text-center border border-white/10 shadow-lg"
+                className="bg-slate-900 p-8 rounded-3xl text-center border border-white/10 shadow-lg transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20"
               >
                 <div className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-3">
                   {stat.number}
@@ -347,18 +355,18 @@ const GoogleBusiness = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.45, ease: 'easeOut' }}
-            className="mb-20 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm max-w-6xl mx-auto"
+            className="mb-20 rounded-3xl border border-white/10 bg-white/5 backdrop-blur p-8 shadow-sm max-w-6xl mx-auto transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
           >
             <div className="flex flex-col md:flex-row md:items-center gap-6">
               <div className="flex items-start gap-3">
-                <div className="p-3 rounded-2xl bg-slate-900">
-                  <MapPin className="w-6 h-6 text-white" />
+                <div className="p-3 rounded-2xl bg-white/10">
+                  <MapPin className="w-6 h-6 text-purple-300" />
                 </div>
                 <div>
-                  <h2 className="text-xl md:text-2xl font-extrabold text-slate-900">
+                  <h2 className="text-xl md:text-2xl font-extrabold text-white">
                     La fiche Google = votre meilleur levier local “gratuit”
                   </h2>
-                  <p className="text-slate-600 mt-1">
+                  <p className="text-slate-300 mt-1">
                     Une fiche complète, active et cohérente aide Google à comprendre votre activité et à vous afficher
                     sur Maps quand des clients cherchent vos services autour de <span className="font-semibold">Mons</span>.
                   </p>
@@ -366,16 +374,16 @@ const GoogleBusiness = () => {
               </div>
 
               <div className="md:ml-auto flex flex-wrap gap-3">
-                <span className="px-3 py-2 rounded-full bg-slate-50 border border-slate-200 text-sm font-semibold text-slate-700">
+                <span className="px-3 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-semibold text-slate-200">
                   Catégories optimisées
                 </span>
-                <span className="px-3 py-2 rounded-full bg-slate-50 border border-slate-200 text-sm font-semibold text-slate-700">
+                <span className="px-3 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-semibold text-slate-200">
                   Photos & services
                 </span>
-                <span className="px-3 py-2 rounded-full bg-slate-50 border border-slate-200 text-sm font-semibold text-slate-700">
+                <span className="px-3 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-semibold text-slate-200">
                   Avis & réponses
                 </span>
-                <span className="px-3 py-2 rounded-full bg-slate-50 border border-slate-200 text-sm font-semibold text-slate-700">
+                <span className="px-3 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-semibold text-slate-200">
                   Posts réguliers
                 </span>
               </div>
@@ -394,7 +402,7 @@ const GoogleBusiness = () => {
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ delay: index * 0.08, duration: 0.45, ease: 'easeOut' }}
                 whileHover={{ y: -6 }}
-                className="rounded-3xl border border-slate-700 bg-[#0F172A] shadow-sm hover:shadow-xl transition-all overflow-hidden"
+                className="rounded-3xl border border-slate-700 bg-[#0F172A] shadow-sm overflow-hidden transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
               >
                 <div className="h-1.5 bg-gradient-to-r from-purple-600 to-pink-600" />
                 <div className="p-6">
@@ -417,13 +425,13 @@ const GoogleBusiness = () => {
                   viewport={{ once: true, margin: '-60px' }}
                   transition={{ delay: i * 0.08, duration: 0.45 }}
                   whileHover={{ y: -6 }}
-                  className="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm hover:shadow-lg transition-all"
+                  className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur p-6 shadow-sm transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-lg hover:border-purple-500/20"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2 rounded-2xl bg-slate-900">{v.icon}</div>
-                    <h3 className="text-base font-extrabold text-slate-900">{v.title}</h3>
+                    <div className="p-2 rounded-2xl bg-white/10">{v.icon}</div>
+                    <h3 className="text-base font-extrabold text-white">{v.title}</h3>
                   </div>
-                  <p className="text-slate-600 text-sm leading-relaxed">{v.text}</p>
+                  <p className="text-slate-300 text-sm leading-relaxed">{v.text}</p>
                 </motion.div>
               ))}
             </div>
@@ -433,7 +441,7 @@ const GoogleBusiness = () => {
               SERVICES
              ========================= */}
           <div className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
               Mes Prestations Google Business
             </h2>
 
@@ -446,7 +454,7 @@ const GoogleBusiness = () => {
                   viewport={{ once: true, margin: '-60px' }}
                   transition={{ delay: index * 0.06, duration: 0.45, ease: 'easeOut' }}
                   whileHover={{ y: -6 }}
-                  className="bg-[#0F172A] p-8 rounded-3xl border border-slate-700 shadow-sm hover:shadow-xl transition-all"
+                  className="bg-[#0F172A] p-8 rounded-3xl border border-slate-700 shadow-sm transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
                 >
                   <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
                   <p className="text-slate-300 mb-6 leading-relaxed">{service.description}</p>
@@ -464,18 +472,6 @@ const GoogleBusiness = () => {
           </div>
 
           {/* =========================
-              FAQ
-             ========================= */}
-          <div className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">Questions Fréquentes</h2>
-            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              {faqData.map((faq, index) => (
-                <FAQItem key={index} faq={faq} index={index} />
-              ))}
-            </div>
-          </div>
-
-          {/* =========================
               CTA
              ========================= */}
           <motion.div
@@ -483,7 +479,7 @@ const GoogleBusiness = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="text-center bg-slate-900 rounded-3xl p-12 md:p-20 relative overflow-hidden"
+            className="mb-20 text-center bg-white/5 border border-white/10 backdrop-blur rounded-3xl p-12 md:p-20 relative overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
               <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl -translate-y-1/2" />
@@ -522,6 +518,18 @@ const GoogleBusiness = () => {
               </div>
             </div>
           </motion.div>
+
+          {/* =========================
+              FAQ
+             ========================= */}
+          <div className="mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">Questions Fréquentes</h2>
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {faqData.map((faq, index) => (
+                <FAQItem key={index} faq={faq} index={index} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </>

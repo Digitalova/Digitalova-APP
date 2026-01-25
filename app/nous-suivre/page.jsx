@@ -404,14 +404,22 @@ const Social = () => {
           }]) }}
       />
 
-      <div className="pt-32 pb-20 bg-slate-50 relative overflow-hidden">
+      <div className="pt-32 pb-20 min-h-screen relative overflow-hidden bg-[#070B16]">
         <BackgroundBlobs />
+
+        <div className="absolute inset-0 pointer-events-none opacity-[0.7]">
+          <div className="absolute -top-24 -left-24 w-[520px] h-[520px] rounded-full bg-purple-600/10 blur-3xl" />
+          <div className="absolute -bottom-24 -right-24 w-[520px] h-[520px] rounded-full bg-pink-600/10 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.22]">
+            <div className="h-full w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:56px_56px]" />
+          </div>
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-black">
-              Rejoignez la Communauté <span className="gradient-text">DIGITALOVA</span>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+              Rejoignez la Communauté <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">DIGITALOVA</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             Suivez Digitalova sur les réseaux sociaux pour découvrir mes créations de sites web, conseils SEO et actualités digitales en Belgique.
             LinkedIn, Instagram, Facebook, TikTok et avis Google : restez connecté à votre agence web à Mons.
             </p>
@@ -428,12 +436,11 @@ const Social = () => {
               <motion.a
                 key={index}
                 variants={fadeUp}
-                whileHover={{ scale: 1.02 }}
                 href={social.url}
                 title={social.seoTitle}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex flex-col p-8 rounded-2xl hover:shadow-2xl ${social.colorClass} transition-shadow cursor-pointer`}
+                className={`flex flex-col p-8 rounded-2xl ${social.colorClass} cursor-pointer border border-transparent transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20`}
               >
                 <div className="flex items-center gap-4 mb-4">
                   {social.icon}
@@ -453,7 +460,7 @@ const Social = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-slate-900 rounded-[3rem] p-8 md:p-12 shadow-2xl relative overflow-hidden"
+              className="bg-slate-900 rounded-[3rem] p-8 md:p-12 shadow-2xl relative overflow-hidden border border-white/10 transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20"
             >
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl -translate-y-1/2"></div>
@@ -476,7 +483,7 @@ const Social = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6 }}
-                className="bg-white/5 p-8 md:p-12 rounded-2xl border border-white/10 backdrop-blur-sm relative z-10"
+                className="bg-white/5 p-8 md:p-12 rounded-2xl border border-white/10 backdrop-blur-sm relative z-10 transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
               >
                 {/* Section Google Review */}
                 <div className="mb-10 pb-10 border-b border-white/10">
@@ -523,10 +530,13 @@ const Social = () => {
               </motion.div>
             </motion.div>
           </div>
+
+          {/* FAQ */}
+          <div className="mt-20">
+            <FAQSection />
+          </div>
         </div>
       </div>
-
-      <FAQSection />
     </>
   );
 };

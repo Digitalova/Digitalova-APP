@@ -12,7 +12,7 @@ const FAQItem = ({ question, answer }) => {
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="border border-slate-700 rounded-xl overflow-hidden bg-[#0F172A] hover:bg-slate-900 transition-colors duration-300 shadow-lg"
+      className="border border-slate-700 rounded-xl overflow-hidden bg-[#0F172A] shadow-lg transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -86,20 +86,14 @@ const leftColumn = faqData.slice(0, half);
 const rightColumn = faqData.slice(half);
 
   return (
-    <section className="py-20 bg-slate-50 relative overflow-hidden">
-      {/* Décor */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-30">
-        <div className="absolute top-1/4 left-0 w-64 h-64 bg-purple-300 rounded-full blur-3xl -translate-x-1/2" />
-        <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-pink-300 rounded-full blur-3xl translate-x-1/2" />
-      </div>
-
+    <section className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-bold uppercase mb-4"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-200 text-xs font-bold uppercase mb-4"
           >
             <HelpCircle size={14} />
             FAQ
@@ -109,7 +103,7 @@ const rightColumn = faqData.slice(half);
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold mb-4 text-slate-900"
+            className="text-3xl md:text-4xl font-bold mb-4 text-white"
           >
             Vos questions fréquentes
           </motion.h2>

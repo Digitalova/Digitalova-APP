@@ -100,7 +100,8 @@ export const ServiceCardWF = ({
         'bg-[#0F172A]',
         'border border-white/10 ring-1',
         tone.ring,
-        'shadow-[0_18px_60px_-45px_rgba(0,0,0,0.65)]'
+        'shadow-[0_18px_60px_-45px_rgba(0,0,0,0.65)]',
+        'transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20'
       )}
     >
       <div className={cx('absolute inset-0 pointer-events-none opacity-90', `bg-gradient-to-br ${gradient}`)} />
@@ -166,7 +167,7 @@ export const ServiceCardWF = ({
         <p className="mt-4 text-slate-300 leading-relaxed">{description}</p>
 
         <div className="mt-6 grid sm:grid-cols-2 gap-4">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5 transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-lg hover:border-purple-500/20">
             <div className="text-xs font-black uppercase tracking-widest text-slate-300 mb-3">{featuresTitle}</div>
 
             <ul className="space-y-2.5">
@@ -179,7 +180,7 @@ export const ServiceCardWF = ({
             </ul>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5 transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-lg hover:border-purple-500/20">
             <div className="text-xs font-black uppercase tracking-widest text-slate-300 mb-3 flex items-center gap-2">
               <Zap className={tone.iconText} size={16} />
               <span>{benefitsTitle}</span>
@@ -330,7 +331,7 @@ export const ServicesCTA = () => {
       transition={{ duration: 0.55, ease }}
       className="mt-16"
     >
-      <div className="relative overflow-hidden rounded-[34px] border border-slate-200 bg-slate-950 text-white shadow-2xl">
+      <div className="relative overflow-hidden rounded-[34px] border border-slate-200 bg-slate-950 text-white shadow-2xl transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-24 -left-24 h-[520px] w-[520px] rounded-full bg-purple-600/20 blur-3xl" />
           <div className="absolute -bottom-24 -right-24 h-[520px] w-[520px] rounded-full bg-pink-600/20 blur-3xl" />

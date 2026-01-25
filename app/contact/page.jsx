@@ -225,14 +225,22 @@ const Contact = () => {
         ]) }}
       />
 
-      <div className="pt-32 pb-20 bg-slate-50 relative overflow-hidden">
+      <div className="pt-32 pb-20 min-h-screen relative overflow-hidden bg-[#070B16]">
         <BackgroundBlobs />
+
+        <div className="absolute inset-0 pointer-events-none opacity-[0.7]">
+          <div className="absolute -top-24 -left-24 w-[520px] h-[520px] rounded-full bg-purple-600/10 blur-3xl" />
+          <div className="absolute -bottom-24 -right-24 w-[520px] h-[520px] rounded-full bg-pink-600/10 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.22]">
+            <div className="h-full w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:56px_56px]" />
+          </div>
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-10">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-black">
-              Parlons de Votre <span className="gradient-text">Projet</span>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+              Parlons de Votre <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">Projet</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             Contactez Digitalova pour votre projet de création de site web, référencement SEO ou optimisation Google Business en Belgique.
             Demandez un devis gratuit pour un site vitrine, e-commerce ou une solution digitale sur mesure, avec réponse rapide garantie.
             </p>
@@ -243,7 +251,7 @@ const Contact = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3 }}
-            className="max-w-4xl mx-auto bg-slate-900 rounded-[3rem] p-8 md:p-12 shadow-2xl relative overflow-hidden mb-10"
+            className="max-w-4xl mx-auto bg-slate-900 rounded-[3rem] p-8 md:p-12 shadow-2xl relative overflow-hidden mb-10 border border-white/10 transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20"
           >
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
               <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl -translate-y-1/2"></div>
@@ -409,14 +417,6 @@ const Contact = () => {
                     <span className="text-pink-300 font-semibold"> *</span>
                   </label>
                 </div>
-
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  <span className="text-slate-300 font-semibold">Responsable :</span> DIGITALOVA •{' '}
-                  <span className="text-slate-300 font-semibold">Finalité :</span> traitement de votre demande •{' '}
-                  <span className="text-slate-300 font-semibold">Durée :</span> le temps nécessaire au suivi du projet •{' '}
-                  <span className="text-slate-300 font-semibold">Droits :</span> accès, rectification, suppression, opposition
-                  (contact : contact@digitalova.be).
-                </p>
               </div>
 
               <div className="text-center">
@@ -450,11 +450,11 @@ const Contact = () => {
             transition={{ delay: 0.35 }}
             className="max-w-4xl mx-auto mb-16"
           >
-            <div className="bg-white rounded-[2.25rem] border border-slate-200 shadow-sm p-8 text-center">
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+            <div className="rounded-[2.25rem] border border-white/10 bg-white/5 backdrop-blur shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] p-8 text-center transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">
+              <h2 className="text-2xl md:text-3xl font-bold text-white">
                 Réserver un appel pour discuter de votre projet
               </h2>
-              <p className="text-slate-600 mt-3 max-w-xl mx-auto">
+              <p className="text-slate-300 mt-3 max-w-xl mx-auto">
                 Choisissez directement un créneau d'appel via mon agenda en ligne.
               </p>
 
@@ -462,7 +462,7 @@ const Contact = () => {
                 <a href={CALENDLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full px-8 h-14 font-bold bg-slate-900 text-white hover:bg-slate-800 transition-transform hover:scale-105 shadow-lg"
+                  className="inline-flex items-center justify-center rounded-full px-8 h-14 font-bold bg-white text-slate-900 hover:bg-slate-100 transition-transform hover:scale-105 shadow-lg"
                  title="Choisir un créneau d'appel avec Digitalova sur Calendly">
                   Ouvrir Calendly
                 </a>
@@ -477,39 +477,42 @@ const Contact = () => {
             transition={{ delay: 0.4 }}
             className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto"
           >
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center min-w-[280px] flex-1">
-              <div className="bg-purple-100 p-3 rounded-full mb-4">
-                <Clock className="w-6 h-6 text-purple-600" />
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] p-6 flex flex-col items-center min-w-[280px] flex-1 transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">
+              <div className="bg-purple-500/20 p-3 rounded-full mb-4">
+                <Clock className="w-6 h-6 text-purple-300" />
               </div>
-              <h2 className="font-bold text-slate-900 mb-2">Horaires d'Appel</h2>
-              <p className="text-slate-600 text-sm">Semaine : 09h30 - 20h00</p>
-              <p className="text-slate-600 text-sm">Week-end : 13h30 - 18h00</p>
+              <h2 className="font-bold text-white mb-2">Horaires d'Appel</h2>
+              <p className="text-slate-300 text-sm">Semaine : 09h30 - 20h00</p>
+              <p className="text-slate-300 text-sm">Week-end : 13h30 - 18h00</p>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center min-w-[280px] flex-1">
-              <div className="bg-pink-100 p-3 rounded-full mb-4">
-                <MessageSquare className="w-6 h-6 text-pink-600" />
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] p-6 flex flex-col items-center min-w-[280px] flex-1 transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">
+              <div className="bg-pink-500/20 p-3 rounded-full mb-4">
+                <MessageSquare className="w-6 h-6 text-pink-300" />
               </div>
-              <h2 className="font-bold text-slate-900 mb-2">Disponibilité 24/7</h2>
-              <p className="text-slate-600 text-sm text-center">
+              <h2 className="font-bold text-white mb-2">Disponibilité 24/7</h2>
+              <p className="text-slate-300 text-sm text-center">
                 Disponible à tout moment via message ou email. <br />
                 Réponse rapide garantie.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center min-w-[280px] flex-1">
-              <div className="bg-blue-100 p-3 rounded-full mb-4">
-                <Phone className="w-6 h-6 text-blue-600" />
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] p-6 flex flex-col items-center min-w-[280px] flex-1 transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">
+              <div className="bg-blue-500/20 p-3 rounded-full mb-4">
+                <Phone className="w-6 h-6 text-blue-300" />
               </div>
-              <h2 className="font-bold text-slate-900 mb-2">Contact Direct</h2>
-              <p className="text-slate-600 text-sm">+32 471 58 67 08</p>
-              <p className="text-slate-600 text-sm">contact@digitalova.be</p>
+              <h2 className="font-bold text-white mb-2">Contact Direct</h2>
+              <p className="text-slate-300 text-sm">+32 471 58 67 08</p>
+              <p className="text-slate-300 text-sm">contact@digitalova.be</p>
             </div>
           </motion.div>
+
+          {/* FAQ */}
+          <div className="mt-20">
+            <FAQSection />
+          </div>
         </div>
       </div>
-
-      <FAQSection />
     </>
   );
 };

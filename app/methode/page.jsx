@@ -27,7 +27,8 @@ const StepCard = ({ icon, number, title, content, objective }) => (
     viewport={{ once: true }}
     className="rounded-2xl p-8 flex flex-col md:flex-row items-start gap-8
                border border-white/10 bg-white/5 backdrop-blur
-               shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)]"
+               shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)]
+               transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20"
   >
     <div className="flex-shrink-0 text-center md:text-left">
       <div className="relative inline-flex items-center justify-center w-24 h-24 rounded-full bg-white/5 border border-white/15 text-white">
@@ -180,7 +181,7 @@ const Method = () => {
 
             {/* STEP 3 */}
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <div className="rounded-2xl p-8 border border-white/10 bg-white/5 backdrop-blur shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)]">
+              <div className="rounded-2xl p-8 border border-white/10 bg-white/5 backdrop-blur shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">
                 <div className="flex flex-col md:flex-row items-start gap-8">
                   <div className="flex-shrink-0 text-center md:text-left">
                     <div className="relative inline-flex items-center justify-center w-24 h-24 rounded-full bg-white/5 border border-white/15 text-white">
@@ -215,7 +216,7 @@ const Method = () => {
 
             {/* STEP 4 */}
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <div className="rounded-2xl p-8 border border-white/10 bg-white/5 backdrop-blur shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)]">
+              <div className="rounded-2xl p-8 border border-white/10 bg-white/5 backdrop-blur shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">
                 <div className="flex flex-col md:flex-row items-start gap-8">
                   <div className="flex-shrink-0 text-center md:text-left">
                     <div className="relative inline-flex items-center justify-center w-24 h-24 rounded-full bg-white/5 border border-white/15 text-white">
@@ -284,7 +285,7 @@ const Method = () => {
           </div>
 
           {/* CTA */}
-          <div className="mt-20 text-center rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-2xl border border-white/10 bg-slate-950">
+          <div className="mt-20 text-center rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-2xl border border-white/10 bg-slate-950 transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20">
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
               <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl -translate-y-1/2" />
               <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-600/20 rounded-full blur-3xl translate-y-1/2" />
