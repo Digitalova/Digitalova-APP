@@ -420,8 +420,8 @@ const Contact = () => {
               </div>
 
               <div className="text-center">
-                <div className="flex justify-center py-4">
-                  <div ref={turnstileRef}></div>
+                <div className="flex justify-center py-4" suppressHydrationWarning>
+                  <div ref={turnstileRef} suppressHydrationWarning></div>
                 </div>
 
                 <Button

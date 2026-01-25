@@ -128,15 +128,8 @@ const Partners = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/4df9b535-5d6b-4510-b78b-1afe0f028db0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'partenaires/page.jsx:170',message:'handleSubmit entry',data:{formData,consents,supabaseClient:!!supabase},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A,B,C'})}).catch(()=>{});
-    // #endregion
-
     // ✅ block submit if legal not accepted
     if (!validateLegal()) {
-      // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/4df9b535-5d6b-4510-b78b-1afe0f028db0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'partenaires/page.jsx:175',message:'validation failed',data:{consents},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
-      // #endregion
       toast({
         title: 'Action requise',
         description: 'Veuillez cocher les cases obligatoires (RGPD + Conditions du programme).',
@@ -159,17 +152,8 @@ const Partners = () => {
       terms_accepted: !!consents.termsAccepted,
     };
 
-    // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/4df9b535-5d6b-4510-b78b-1afe0f028db0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'partenaires/page.jsx:195',message:'before supabase insert',data:{insertData,supabaseUrl:supabase?.supabaseUrl||'undefined'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A,B,D'})}).catch(()=>{});
-    // #endregion
-
     try {
-      console.log('Inserting data:', JSON.stringify(insertData, null, 2));
       const { error, data } = await supabase.from('partner_applications').insert([insertData]);
-
-      // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/4df9b535-5d6b-4510-b78b-1afe0f028db0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'partenaires/page.jsx:209',message:'supabase insert response',data:{error:error?{message:error.message,code:error.code,details:error.details,hint:error.hint}:null,hasData:!!data},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A,B,D'})}).catch(()=>{});
-      // #endregion
 
       if (error) {
         console.error('Supabase insert error:', error);
@@ -188,9 +172,6 @@ const Partners = () => {
       setFormErrors({ contactConsent: '', termsAccepted: '' });
     } catch (error) {
       console.error('Error submitting partnership:', error);
-      // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/4df9b535-5d6b-4510-b78b-1afe0f028db0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'partenaires/page.jsx:227',message:'catch block error',data:{error:error?.message,errorCode:error?.code,errorDetails:error?.details,errorHint:error?.hint,stack:error?.stack},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A,B,D'})}).catch(()=>{});
-      // #endregion
       toast({
         title: 'Erreur',
         description: error?.message ? `Erreur: ${error.message}` : 'Une erreur est survenue. Veuillez réessayer.',
@@ -651,8 +632,8 @@ const Partners = () => {
                   ) : null}
                 </div>
 
-                <div className="flex justify-center py-4">
-                  <div ref={turnstileRef}></div>
+                <div className="flex justify-center py-4" suppressHydrationWarning>
+                  <div ref={turnstileRef} suppressHydrationWarning></div>
                 </div>
 
                 <motion.button

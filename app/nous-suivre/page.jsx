@@ -272,8 +272,8 @@ const ReviewForm = () => {
         />
 
         {/* ✅ Turnstile (inchangé) */}
-        <div className="flex justify-center pt-2 pb-1">
-          <div ref={turnstileRef} />
+        <div className="flex justify-center pt-2 pb-1" suppressHydrationWarning>
+          <div ref={turnstileRef} suppressHydrationWarning />
         </div>
       </div>
 

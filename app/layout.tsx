@@ -155,7 +155,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr-BE">
+    <html lang="fr-BE" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://mzeisxseqdcxwgyjpajm.supabase.co" crossOrigin="anonymous" />
         {/* Preload image hero pour améliorer le LCP */}
