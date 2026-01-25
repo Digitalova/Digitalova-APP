@@ -73,8 +73,8 @@ const Contact = () => {
 
   const budgets = [
     'Moins de 500 € (SEO/GMB uniquement)',
-    '1 397€ - 3 000 €',
-    '3 000 € - 5 000 €',
+    '1 300€ - 2 500 €',
+    '2 500 € - 5 000 €',
     '5 000 € - 10 000 €',
     'Plus de 10 000 €',
     'Je ne sais pas',

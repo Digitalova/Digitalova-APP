@@ -329,17 +329,17 @@ const Home = () => {
       image:
         'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/Affiche_de_portfolio_siteweb_restaurant_italien_9_11zon.webp',
       tags: ['Site Vitrine', 'Réservation', 'Mons'],
-      url: '/portfolio?project=digi-gustavo',
+      url: '/portfolio/digi-gustavo',
       seoTitle: 'Voir le projet Digi-Gustavo : Site vitrine restaurant',
     },
     {
-      title: 'Site web pour un Cuisiniste à Mons',
-      category: 'Artisanat',
+      title: 'Site vitrine pour un Détaillant automobile',
+      category: 'Services Automobile',
       image:
-        'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/Affiche_de_portfolio_siteweb_cuisiniste_mons_6_11zon.webp',
-      tags: ['Catalogue', 'Showroom 3D', 'local'],
-      url: '/portfolio?project=digi-kitchen',
-      seoTitle: 'Voir le projet Digi-Kitchen : Site web catalogue pour cuisiniste à Mons',
+        'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/Affiche_de_portfolio_siteweb_AUTOLUXE.webp',
+      tags: ['Détaillant', 'Automobile', 'Booking', 'Dark Mode'],
+      url: '/portfolio/latelier-carbone',
+      seoTitle: 'Voir le projet de site web pour L\'atelier Carbone : Site vitrine pour un Détaillant automobile',
     },
     {
       title: "Site internet d'une Agence de location de voiture",
@@ -347,7 +347,7 @@ const Home = () => {
       image:
         'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/Affiche_de_portfolio_siteweb_agence_de_location_voiture_2_11zon%20(1).webp',
       tags: ['Location', 'Booking', 'Hainaut'],
-      url: '/portfolio?project=digi-location',
+      url: '/portfolio/digi-location',
       seoTitle: 'Voir le projet Digi-Location Hainaut : Site internet de réservation en ligne',
     },
   ];
