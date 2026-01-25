@@ -105,6 +105,17 @@ const Contact = () => {
       return;
     }
 
+    // ✅ Validation Turnstile (sécurité anti-spam)
+    const turnstileResponse = window.turnstile ? window.turnstile.getResponse() : null;
+    if (!turnstileResponse) {
+      toast({
+        variant: 'destructive',
+        title: 'Vérification requise',
+        description: 'Veuillez valider le captcha avant d\'envoyer.',
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -134,6 +145,9 @@ const Contact = () => {
           wants_meeting: false,
           privacy_consent: false,
         });
+
+        // Reset Turnstile pour permettre une nouvelle soumission
+        if (window.turnstile) window.turnstile.reset();
       }
     } catch (err) {
       console.error('Caught an unexpected error:', err);

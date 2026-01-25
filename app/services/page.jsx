@@ -10,8 +10,8 @@ const HERO_IMG =
   'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/IMagePourPortfoliog.jpeg';
 
 /* -------------------- Webflow-like primitives -------------------- */
-const Section = ({ className = '', children }) => (
-  <section className={`relative ${className}`}>{children}</section>
+const Section = ({ className = '', children, as: Tag = 'div' }) => (
+  <Tag className={`relative ${className}`}>{children}</Tag>
 );
 
 const Container = ({ className = '', children }) => (
