@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Send, Clock, MessageSquare, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,12 +11,12 @@ import { supabase } from '@/lib/customSupabaseClient';
 import { motion } from 'framer-motion';
 import FAQSection from '@/components/FAQSection';
 import BackgroundBlobs from '@/components/BackgroundBlobs';
+import TurnstileWidget, { getTurnstileResponse, resetTurnstile } from '@/components/TurnstileWidget';
 import Link from 'next/link';
 
 const CALENDLY_URL = 'https://calendly.com/admin-digitalova/30min';
 
 const Contact = () => {
-  const turnstileRef = useRef(null);
   const { toast } = useToast();
 
   const [formData, setFormData] = useState({
@@ -32,33 +32,6 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  useEffect(() => {
-    // ✅ Turnstile (inchangé)
-    const scriptId = 'cf-turnstile';
-    if (document.getElementById(scriptId)) return;
-
-    const script = document.createElement('script');
-    script.id = scriptId;
-    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-
-    script.onload = () => {
-      if (window.turnstile && turnstileRef.current) {
-        window.turnstile.render(turnstileRef.current, {
-          sitekey: '0x4AAAAAACJYRS0Pfd1Nn_0i',
-          theme: 'dark',
-        });
-      }
-    };
-
-    return () => {
-      // optionnel: si tu veux cleanup (souvent ok de laisser)
-      // if (document.body.contains(script)) document.body.removeChild(script);
-    };
-  }, []);
 
   const projectTypes = [
     'Site One Page (Landing Pro)',
@@ -106,7 +79,7 @@ const Contact = () => {
     }
 
     // ✅ Validation Turnstile (sécurité anti-spam)
-    const turnstileResponse = window.turnstile ? window.turnstile.getResponse() : null;
+    const turnstileResponse = getTurnstileResponse();
     if (!turnstileResponse) {
       toast({
         variant: 'destructive',
@@ -147,7 +120,7 @@ const Contact = () => {
         });
 
         // Reset Turnstile pour permettre une nouvelle soumission
-        if (window.turnstile) window.turnstile.reset();
+        resetTurnstile();
       }
     } catch (err) {
       console.error('Caught an unexpected error:', err);
@@ -434,8 +407,8 @@ const Contact = () => {
               </div>
 
               <div className="text-center">
-                <div className="flex justify-center py-4" suppressHydrationWarning>
-                  <div ref={turnstileRef} suppressHydrationWarning></div>
+                <div className="flex justify-center py-4">
+                  <TurnstileWidget />
                 </div>
 
                 <Button

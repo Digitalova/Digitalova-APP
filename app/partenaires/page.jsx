@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo, useState, useEffect, useRef } from 'react';
+import React, { useMemo, useState } from 'react';
 
 import { motion } from 'framer-motion';
 import {
@@ -22,6 +22,7 @@ import { supabase } from '@/lib/customSupabaseClient';
 import { useToast } from '@/components/ui/use-toast';
 import { Loader2 } from 'lucide-react';
 import BackgroundBlobs from '@/components/BackgroundBlobs';
+import TurnstileWidget, { getTurnstileResponse, resetTurnstile } from '@/components/TurnstileWidget';
 
 const PROGRAM_TERMS_PDF =
   'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Docs/Condition_utilisation_programme_partenaire%20(1).pdf';
@@ -78,29 +79,6 @@ const Partners = () => {
     contactConsent: '',
     termsAccepted: '',
   });
-
-  const turnstileRef = useRef(null);
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-
-    script.onload = () => {
-      if (window.turnstile && turnstileRef.current) {
-        window.turnstile.render(turnstileRef.current, {
-          sitekey: '0x4AAAAAACJYRS0Pfd1Nn_0i',
-          theme: 'dark',
-        });
-      }
-    };
-
-    return () => {
-      if (document.body.contains(script)) document.body.removeChild(script);
-    };
-  }, []);
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -632,8 +610,8 @@ const Partners = () => {
                   ) : null}
                 </div>
 
-                <div className="flex justify-center py-4" suppressHydrationWarning>
-                  <div ref={turnstileRef} suppressHydrationWarning></div>
+                <div className="flex justify-center py-4">
+                  <TurnstileWidget />
                 </div>
 
                 <motion.button

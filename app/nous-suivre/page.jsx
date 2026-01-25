@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 
 import { Star, Send, Briefcase } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
@@ -12,6 +12,7 @@ import { supabase } from '@/lib/customSupabaseClient';
 import { motion } from 'framer-motion';
 import FAQSection from '@/components/FAQSection';
 import BackgroundBlobs from '@/components/BackgroundBlobs';
+import TurnstileWidget, { getTurnstileResponse, resetTurnstile } from '@/components/TurnstileWidget';
 import Link from 'next/link';
 
 /* ========= VRAIS ICONES (SVG) ========= */
@@ -111,31 +112,9 @@ const ReviewForm = () => {
   const [hoverRating, setHoverRating] = useState(0);
   const [comment, setComment] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const turnstileRef = useRef(null);
 
   // ✅ RGPD
   const [privacyConsent, setPrivacyConsent] = useState(false);
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-
-    script.onload = () => {
-      if (window.turnstile && turnstileRef.current) {
-        window.turnstile.render(turnstileRef.current, {
-          sitekey: '0x4AAAAAACJYRS0Pfd1Nn_0i',
-          theme: 'dark',
-        });
-      }
-    };
-
-    return () => {
-      if (document.body.contains(script)) document.body.removeChild(script);
-    };
-  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -150,7 +129,7 @@ const ReviewForm = () => {
       return;
     }
 
-    const turnstileResponse = window.turnstile ? window.turnstile.getResponse() : null;
+    const turnstileResponse = getTurnstileResponse();
     if (!turnstileResponse) {
       toast({
         variant: 'destructive',
@@ -196,7 +175,7 @@ const ReviewForm = () => {
       setComment('');
       setPrivacyConsent(false);
 
-      if (window.turnstile) window.turnstile.reset();
+      resetTurnstile();
     } catch (error) {
       console.error('Error submitting review:', error);
       toast({
@@ -271,9 +250,9 @@ const ReviewForm = () => {
           required
         />
 
-        {/* ✅ Turnstile (inchangé) */}
-        <div className="flex justify-center pt-2 pb-1" suppressHydrationWarning>
-          <div ref={turnstileRef} suppressHydrationWarning />
+        {/* ✅ Turnstile */}
+        <div className="flex justify-center pt-2 pb-1">
+          <TurnstileWidget />
         </div>
       </div>
 
