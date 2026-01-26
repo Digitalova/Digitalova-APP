@@ -20,17 +20,18 @@ const nextConfig = {
       },
     ],
   },
-  // Headers de sécurité
+  
   async headers() {
     return [
       {
         source: '/:path*',
         headers: [
-          // Content Security Policy
+          // Content Security Policy (Optimisée pour Lighthouse et la sécurité)
           {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
+              // Script-src : inclut les Trusted Types et les services tiers nécessaires
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://challenges.cloudflare.com https://static.cloudflareinsights.com https://www.googletagmanager.com https://calendly.com",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "img-src 'self' data: blob: https: http:",
@@ -42,6 +43,8 @@ const nextConfig = {
               "form-action 'self'",
               "frame-ancestors 'self'",
               "upgrade-insecure-requests",
+              // Ajout pour corriger l'audit "Trusted Types" de Lighthouse
+              "require-trusted-types-for 'script'",
             ].join('; '),
           },
           // HSTS - Force HTTPS
@@ -59,17 +62,17 @@ const nextConfig = {
             key: 'X-Frame-Options',
             value: 'SAMEORIGIN',
           },
-          // X-Content-Type-Options
+          // X-Content-Type-Options - Empêche le sniffing de MIME type
           {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
           },
-          // Referrer Policy
+          // Referrer Policy - Contrôle les infos envoyées lors des clics sortants
           {
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
           },
-          // Permissions Policy
+          // Permissions Policy - Désactive les fonctions sensibles non utilisées
           {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=(self), interest-cohort=()',
@@ -78,7 +81,8 @@ const nextConfig = {
       },
     ];
   },
-  // Compatibilité avec l'alias @
+
+  // Configuration Webpack pour l'alias @ et résolution de chemins
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
