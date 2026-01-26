@@ -162,6 +162,35 @@ body {
   }
 }
 
+/* ============================================
+   OPTIMISATION DES ANIMATIONS SUR MOBILE
+   Évite le scintillement causé par l'Intersection Observer
+   ============================================ */
+
+/* Désactiver les animations de fond (blobs) sur mobile */
+@media (max-width: 768px) {
+  .animate-blob {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Respecter les préférences utilisateur pour les mouvements réduits */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-blob {
+    animation: none !important;
+  }
+}
+
 /* Custom override for Dialog Close button to make it white and larger */
 [role="dialog"]>button.absolute {
   color: white !important;

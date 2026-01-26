@@ -211,14 +211,23 @@ const MobileHeroRedesign = () => {
 const Home = () => {
   const [showDecor, setShowDecor] = useState(false);
   const [showFAQ, setShowFAQ] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Détection mobile pour optimiser les animations
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const mobile = window.matchMedia('(max-width: 768px)').matches;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    setIsMobile(mobile || reduceMotion);
+  }, []);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+    const mobile = window.matchMedia('(max-width: 767px)').matches;
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (isMobile || reduceMotion) return;
+    if (mobile || reduceMotion) return;
 
     const run = () => setShowDecor(true);
 
@@ -244,6 +253,23 @@ const Home = () => {
     const t = window.setTimeout(run, 1800);
     return () => window.clearTimeout(t);
   }, []);
+
+  // Helper pour animations optimisées mobile
+  const scrollAnim = (initialProps, delay = 0) => {
+    if (isMobile) {
+      return {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        transition: { duration: 0.3, delay: delay * 0.3 },
+      };
+    }
+    return {
+      initial: initialProps,
+      whileInView: { opacity: 1, y: 0, scale: 1 },
+      viewport: { once: true, margin: '-80px' },
+      transition: { duration: 0.5, delay },
+    };
+  };
 
   const belowFoldStyle = {
     contentVisibility: 'auto',

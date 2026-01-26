@@ -25,6 +25,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import BackgroundBlobs from '@/components/BackgroundBlobs';
+import { useIsMobile, getScrollAnimationProps } from '@/lib/useReducedMotion';
 
 const HERO_IMAGE =
   'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/AutoN8N.webp';
@@ -55,14 +56,15 @@ const TOOL_LOGOS = {
 /* =========================
    FAQ Item
 ========================= */
-const FAQItem = ({ faq }) => {
+const FAQItem = ({ faq, isMobile }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
     <motion.div
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.45, ease: 'easeOut' }}
+      {...getScrollAnimationProps(isMobile, {
+        initial: { opacity: 0, y: 18 },
+        animate: { opacity: 1, y: 0 },
+        delay: 0,
+      })}
       className="bg-[#0F172A] rounded-xl overflow-hidden border border-slate-700"
     >
       <button
@@ -179,7 +181,7 @@ const ToolsMarquee = () => {
 /* =========================
    Agent IA Example Section
 ========================= */
-const AgentExample = () => {
+const AgentExample = ({ isMobile }) => {
   const steps = [
     {
       icon: <Mail className="w-6 h-6 text-purple-300" />,
@@ -215,19 +217,21 @@ const AgentExample = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <motion.h2
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
+            {...getScrollAnimationProps(isMobile, {
+              initial: { opacity: 0, y: 14 },
+              animate: { opacity: 1, y: 0 },
+              delay: 0,
+            })}
             className="text-3xl md:text-4xl font-bold text-white"
           >
             Exemple concret d&apos;agent IA : tri intelligent des retours clients
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ delay: 0.08, duration: 0.45 }}
+            {...getScrollAnimationProps(isMobile, {
+              initial: { opacity: 0 },
+              animate: { opacity: 1 },
+              delay: 0.08,
+            })}
             className="mt-4 text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed"
           >
             Vous recevez beaucoup d’emails : la plupart sont juste positifs, mais certains cachent un vrai problème.
@@ -238,10 +242,11 @@ const AgentExample = () => {
         <div className="grid lg:grid-cols-2 gap-8 items-stretch">
           {/* Left: Steps */}
           <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
+            {...getScrollAnimationProps(isMobile, {
+              initial: { opacity: 0, y: 18 },
+              animate: { opacity: 1, y: 0 },
+              delay: 0,
+            })}
             className="bg-[#0F172A] rounded-3xl border border-slate-700 shadow-sm overflow-hidden transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
           >
             <div className="h-1.5 bg-gradient-to-r from-purple-600 to-pink-600" />
@@ -257,10 +262,11 @@ const AgentExample = () => {
                 {steps.map((s, i) => (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.06, duration: 0.35 }}
+                    {...getScrollAnimationProps(isMobile, {
+                      initial: { opacity: 0, y: 10 },
+                      animate: { opacity: 1, y: 0 },
+                      delay: i * 0.06,
+                    })}
                     className="flex gap-4 p-4 rounded-2xl bg-white/5 border border-white/10"
                   >
                     <div className="shrink-0 w-10 h-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
@@ -288,10 +294,11 @@ const AgentExample = () => {
 
           {/* Right: Mock preview (NEW LAYOUT) */}
           <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
+            {...getScrollAnimationProps(isMobile, {
+              initial: { opacity: 0, y: 18 },
+              animate: { opacity: 1, y: 0 },
+              delay: 0,
+            })}
             className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur shadow-sm overflow-hidden transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
           >
             <div className="p-7 md:p-8">
@@ -425,6 +432,7 @@ const AgentExample = () => {
    Page
 ========================= */
 const AIAutomation = () => {
+  const isMobile = useIsMobile();
   const benefits = [
     {
       icon: <Clock className="w-8 h-8 text-purple-300" />,
@@ -656,11 +664,12 @@ const AIAutomation = () => {
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ delay: index * 0.08, duration: 0.45, ease: 'easeOut' }}
-                whileHover={{ y: -6 }}
+                {...getScrollAnimationProps(isMobile, {
+                  initial: { opacity: 0, y: 18 },
+                  animate: { opacity: 1, y: 0 },
+                  delay: index * 0.08,
+                })}
+                whileHover={!isMobile ? { y: -6 } : undefined}
                 className="rounded-3xl border border-slate-700 bg-[#0F172A] shadow-sm overflow-hidden transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
               >
                 <div className="h-1.5 bg-gradient-to-r from-purple-600 to-pink-600" />
@@ -678,7 +687,7 @@ const AIAutomation = () => {
           </div>
 
           {/* Agent Example */}
-          <AgentExample />
+          <AgentExample isMobile={isMobile} />
 
           {/* Use Cases */}
           <div className="mb-20">
@@ -690,11 +699,12 @@ const AIAutomation = () => {
               {useCases.map((useCase, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-60px' }}
-                  transition={{ delay: index * 0.08, duration: 0.45, ease: 'easeOut' }}
-                  whileHover={{ y: -8 }}
+                  {...getScrollAnimationProps(isMobile, {
+                    initial: { opacity: 0, y: 18 },
+                    animate: { opacity: 1, y: 0 },
+                    delay: index * 0.08,
+                  })}
+                  whileHover={!isMobile ? { y: -8 } : undefined}
                   className="bg-[#0F172A] p-8 rounded-3xl border border-slate-700 shadow-sm transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
                 >
                   <div className="flex items-start justify-between gap-4 mb-6">
@@ -724,10 +734,11 @@ const AIAutomation = () => {
 
           {/* ✅ CTA (PLACÉ AVANT FAQ) */}
           <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
+            {...getScrollAnimationProps(isMobile, {
+              initial: { opacity: 0, y: 18 },
+              animate: { opacity: 1, y: 0 },
+              delay: 0,
+            })}
             className="text-center bg-slate-900 rounded-3xl p-12 md:p-20 relative overflow-hidden mb-20"
           >
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
@@ -761,7 +772,7 @@ const AIAutomation = () => {
             </h2>
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {faqData.map((faq, index) => (
-                <FAQItem key={index} faq={faq} index={index} />
+                <FAQItem key={index} faq={faq} isMobile={isMobile} />
               ))}
             </div>
           </div>

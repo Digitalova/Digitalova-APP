@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import { useIsMobile, getScrollAnimationProps } from '@/lib/useReducedMotion';
 
 /* -------------------- Helpers -------------------- */
 const cx = (...c) => c.filter(Boolean).join(' ');
@@ -34,6 +35,7 @@ export const ServiceCardWF = ({
   gradient = 'from-purple-600/16 via-pink-600/10 to-transparent',
   iconTone = 'purple',
   delay = 0,
+  isMobile = false,
 
   // ✅ NEW — Tarifs
   priceTitle,
@@ -90,11 +92,12 @@ export const ServiceCardWF = ({
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.55, ease, delay }}
-      whileHover={{ y: -6 }}
+      {...getScrollAnimationProps(isMobile, {
+        initial: { opacity: 0, y: 18 },
+        animate: { opacity: 1, y: 0 },
+        delay,
+      })}
+      whileHover={!isMobile ? { y: -6 } : undefined}
       className={cx(
         'group relative overflow-hidden rounded-[28px]',
         'bg-[#0F172A]',
@@ -232,10 +235,12 @@ export const ServiceCardWF = ({
 
 /* -------------------- Services Grid Client Component -------------------- */
 export const ServicesGrid = () => {
+  const isMobile = useIsMobile();
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
         <ServiceCardWF
+          isMobile={isMobile}
           icon={<Globe />}
           label="Web"
           iconTone="purple"
@@ -256,6 +261,7 @@ export const ServicesGrid = () => {
         />
 
         <ServiceCardWF
+          isMobile={isMobile}
           icon={<TrendingUp />}
           label="SEO"
           iconTone="pink"
@@ -276,6 +282,7 @@ export const ServicesGrid = () => {
         />
 
         <ServiceCardWF
+          isMobile={isMobile}
           icon={<MapPin />}
           label="Local"
           iconTone="emerald"
@@ -296,6 +303,7 @@ export const ServicesGrid = () => {
         />
 
         <ServiceCardWF
+          isMobile={isMobile}
           icon={<Bot />}
           label="IA"
           iconTone="amber"
@@ -321,14 +329,15 @@ export const ServicesGrid = () => {
 
 /* -------------------- CTA Client Component -------------------- */
 export const ServicesCTA = () => {
-  const ease = [0.22, 1, 0.36, 1];
+  const isMobile = useIsMobile();
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.55, ease }}
+      {...getScrollAnimationProps(isMobile, {
+        initial: { opacity: 0, y: 16 },
+        animate: { opacity: 1, y: 0 },
+        delay: 0,
+      })}
       className="mt-16"
     >
       <div className="relative overflow-hidden rounded-[34px] border border-slate-200 bg-slate-950 text-white shadow-2xl transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20">

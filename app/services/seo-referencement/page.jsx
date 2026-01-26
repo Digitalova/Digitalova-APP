@@ -18,18 +18,20 @@ import {
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import BackgroundBlobs from '@/components/BackgroundBlobs';
+import { useIsMobile, getScrollAnimationProps } from '@/lib/useReducedMotion';
 
 const HERO_IMAGE =
   'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/referencement-local-seo.webp';
 
-const FAQItem = ({ faq }) => {
+const FAQItem = ({ faq, isMobile }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
     <motion.div
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.45, ease: 'easeOut' }}
+      {...getScrollAnimationProps(isMobile, {
+        initial: { opacity: 0, y: 18 },
+        animate: { opacity: 1, y: 0 },
+        delay: 0,
+      })}
       className="bg-[#0F172A] rounded-xl overflow-hidden border border-slate-700"
     >
       <button
@@ -55,6 +57,7 @@ const FAQItem = ({ faq }) => {
 };
 
 const SEOOptimization = () => {
+  const isMobile = useIsMobile();
   const benefits = [
     {
       icon: <TrendingUp className="w-8 h-8 text-purple-300" />,
@@ -342,11 +345,12 @@ const SEOOptimization = () => {
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ delay: index * 0.08, duration: 0.45, ease: 'easeOut' }}
-                whileHover={{ y: -6 }}
+                {...getScrollAnimationProps(isMobile, {
+                  initial: { opacity: 0, y: 14 },
+                  animate: { opacity: 1, y: 0 },
+                  delay: index * 0.08,
+                })}
+                whileHover={!isMobile ? { y: -6 } : undefined}
                 className="bg-slate-900 p-8 rounded-3xl text-center border border-white/10 shadow-lg transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20"
               >
                 <div className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-3">
@@ -364,10 +368,11 @@ const SEOOptimization = () => {
             <div className="grid lg:grid-cols-12 gap-8 items-stretch">
               {/* Image panel */}
               <motion.div
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.5 }}
+                {...getScrollAnimationProps(isMobile, {
+                  initial: { opacity: 0, y: 18 },
+                  animate: { opacity: 1, y: 0 },
+                  delay: 0,
+                })}
                 className="lg:col-span-4"
               >
                 <div className="rounded-3xl overflow-hidden border border-white/10 shadow-xl bg-white/5 backdrop-blur h-full transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20">
@@ -399,11 +404,12 @@ const SEOOptimization = () => {
                   {benefits.map((benefit, index) => (
                     <motion.div
                       key={index}
-                      initial={{ opacity: 0, y: 18 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: '-60px' }}
-                      transition={{ delay: index * 0.08, duration: 0.45, ease: 'easeOut' }}
-                      whileHover={{ y: -6 }}
+                      {...getScrollAnimationProps(isMobile, {
+                        initial: { opacity: 0, y: 18 },
+                        animate: { opacity: 1, y: 0 },
+                        delay: index * 0.08,
+                      })}
+                      whileHover={!isMobile ? { y: -6 } : undefined}
                       className="rounded-3xl border border-slate-700 bg-[#0F172A] shadow-sm overflow-hidden transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
                     >
                       <div className="h-1.5 bg-gradient-to-r from-purple-600 to-pink-600" />
@@ -423,10 +429,11 @@ const SEOOptimization = () => {
 
                 {/* local SEO léger */}
                 <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true, margin: '-60px' }}
-                  transition={{ delay: 0.12, duration: 0.45 }}
+                  {...getScrollAnimationProps(isMobile, {
+                    initial: { opacity: 0 },
+                    animate: { opacity: 1 },
+                    delay: 0.12,
+                  })}
                   className="mt-6 rounded-3xl border border-white/10 bg-white/5 backdrop-blur p-6 shadow-sm transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
                 >
                   <p className="text-slate-300">
@@ -449,11 +456,12 @@ const SEOOptimization = () => {
               {seoProcess.map((step, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-60px' }}
-                  transition={{ duration: 0.45, ease: 'easeOut', delay: index * 0.06 }}
-                  whileHover={{ y: -6 }}
+                  {...getScrollAnimationProps(isMobile, {
+                    initial: { opacity: 0, y: 20 },
+                    animate: { opacity: 1, y: 0 },
+                    delay: index * 0.06,
+                  })}
+                  whileHover={!isMobile ? { y: -6 } : undefined}
                   className="bg-[#0F172A] p-8 rounded-3xl border border-slate-700 shadow-sm transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
                 >
                   <div className="mb-6">{step.icon}</div>
@@ -478,10 +486,11 @@ const SEOOptimization = () => {
 
           {/* CTA */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
+            {...getScrollAnimationProps(isMobile, {
+              initial: { opacity: 0, y: 20 },
+              animate: { opacity: 1, y: 0 },
+              delay: 0,
+            })}
             className="mb-20 text-center bg-white/5 border border-white/10 backdrop-blur rounded-3xl p-12 md:p-20 relative overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
@@ -513,7 +522,7 @@ const SEOOptimization = () => {
             </h2>
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {faqData.map((faq, index) => (
-                <FAQItem key={index} faq={faq} index={index} />
+                <FAQItem key={index} faq={faq} isMobile={isMobile} />
               ))}
             </div>
           </div>

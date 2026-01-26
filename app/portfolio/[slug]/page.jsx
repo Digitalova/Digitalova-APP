@@ -9,10 +9,12 @@ import { useToast } from '@/components/ui/use-toast';
 import { motion, AnimatePresence } from 'framer-motion';
 import BackgroundBlobs from '@/components/BackgroundBlobs';
 import { projects, getProjectBySlug } from '../projects-data';
+import { useIsMobile, getScrollAnimationProps } from '@/lib/useReducedMotion';
 
 export default function ProjectPage({ params }) {
   const { toast } = useToast();
   const [selectedImage, setSelectedImage] = useState(null);
+  const isMobile = useIsMobile();
   
   const project = getProjectBySlug(params.slug);
   
@@ -79,9 +81,11 @@ export default function ProjectPage({ params }) {
         <div className="container mx-auto px-4 relative z-10">
           {/* Retour au portfolio */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            {...getScrollAnimationProps(isMobile, {
+              initial: { opacity: 0, x: -20 },
+              animate: { opacity: 1, x: 0 },
+              delay: 0,
+            })}
             className="mb-8 mt-4"
           >
             <Link 
@@ -95,9 +99,11 @@ export default function ProjectPage({ params }) {
 
           {/* Affiche principale */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            {...getScrollAnimationProps(isMobile, {
+              initial: { opacity: 0, y: 20 },
+              animate: { opacity: 1, y: 0 },
+              delay: 0,
+            })}
             className={`relative rounded-3xl overflow-hidden ${project.url ? 'cursor-pointer' : ''} group`}
             onClick={() => project.url && handleMockupClick(project.url)}
           >
@@ -137,9 +143,11 @@ export default function ProjectPage({ params }) {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* À propos */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
+                {...getScrollAnimationProps(isMobile, {
+                  initial: { opacity: 0, y: 20 },
+                  animate: { opacity: 1, y: 0 },
+                  delay: 0.1,
+                })}
                 className="rounded-2xl border border-white/10 bg-white/5 p-6"
               >
                 <h2 className="text-xs font-black uppercase tracking-widest text-slate-300 mb-3 flex items-center gap-2">
@@ -152,9 +160,11 @@ export default function ProjectPage({ params }) {
 
               {/* Tags + Bouton */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                {...getScrollAnimationProps(isMobile, {
+                  initial: { opacity: 0, y: 20 },
+                  animate: { opacity: 1, y: 0 },
+                  delay: 0.2,
+                })}
                 className="rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col"
               >
                 <div className="flex-1">
@@ -198,9 +208,11 @@ export default function ProjectPage({ params }) {
             {/* Deuxième rangée: Images en grille 2x2 sur desktop */}
             {project.images.length > 1 && (
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                {...getScrollAnimationProps(isMobile, {
+                  initial: { opacity: 0, y: 20 },
+                  animate: { opacity: 1, y: 0 },
+                  delay: 0.3,
+                })}
                 className="rounded-2xl border border-white/10 bg-white/5 p-6"
               >
                 <h2 className="text-xs font-black uppercase tracking-widest text-slate-300 mb-4">

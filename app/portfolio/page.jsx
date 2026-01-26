@@ -8,10 +8,12 @@ import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import BackgroundBlobs from '@/components/BackgroundBlobs';
 import { projects } from './projects-data';
+import { useIsMobile, getScrollAnimationProps } from '@/lib/useReducedMotion';
 
 const PortfolioContent = () => {
   const searchParams = useSearchParams();
   const [query, setQuery] = useState('');
+  const isMobile = useIsMobile();
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -24,24 +26,36 @@ const PortfolioContent = () => {
     );
   }, [query]);
 
-  const inViewCard = {
-    hidden: { opacity: 0, y: 16, scale: 0.985 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
+  const getCardAnimationProps = (index) => {
+    if (isMobile) {
+      return {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        transition: { duration: 0.3, delay: index * 0.05 },
+      };
+    }
+    return {
+      initial: { opacity: 0, y: 16, scale: 0.985 },
+      whileInView: { opacity: 1, y: 0, scale: 1 },
+      viewport: { once: true, amount: 0.2 },
       transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
-    },
+    };
   };
 
-  const inViewCTA = {
-    hidden: { opacity: 0, y: 18, scale: 0.985 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
+  const getCTAAnimationProps = () => {
+    if (isMobile) {
+      return {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        transition: { duration: 0.3 },
+      };
+    }
+    return {
+      initial: { opacity: 0, y: 18, scale: 0.985 },
+      whileInView: { opacity: 1, y: 0, scale: 1 },
+      viewport: { once: true, amount: 0.2 },
       transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
-    },
+    };
   };
 
   /**
@@ -102,10 +116,7 @@ const PortfolioContent = () => {
           </article>
         ) : (
           <motion.article
-            variants={inViewCard}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            {...getCardAnimationProps(index)}
             className="group cursor-pointer rounded-[28px] border border-white/10 bg-white/5 backdrop-blur overflow-hidden shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20"
           >
             {cardContent}
@@ -210,10 +221,7 @@ const PortfolioContent = () => {
 
           {/* CTA */}
           <motion.div
-            variants={inViewCTA}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            {...getCTAAnimationProps()}
             className="mt-16"
           >
             <div className="relative overflow-hidden rounded-[34px] border border-white/10 bg-white/5 backdrop-blur shadow-2xl transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20">

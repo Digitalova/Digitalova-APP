@@ -14,6 +14,7 @@ import FAQSection from '@/components/FAQSection';
 import BackgroundBlobs from '@/components/BackgroundBlobs';
 import TurnstileWidget, { getTurnstileResponse, resetTurnstile } from '@/components/TurnstileWidget';
 import Link from 'next/link';
+import { useIsMobile, getScrollAnimationProps } from '@/lib/useReducedMotion';
 
 /* ========= VRAIS ICONES (SVG) ========= */
 const InstagramIcon = ({ className = 'w-10 h-10' }) => (
@@ -99,7 +100,7 @@ const GoogleIcon = ({ className = 'w-7 h-7' }) => (
 );
 
 /* ========= ANIMS ========= */
-const fadeUp = {
+const fadeUpVariants = {
   hidden: { opacity: 0, y: 18 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
 };
@@ -300,6 +301,7 @@ const ReviewForm = () => {
 };
 
 const Social = () => {
+  const isMobile = useIsMobile();
   const socialLinks = [
     {
       name: 'LinkedIn',
@@ -405,16 +407,28 @@ const Social = () => {
           </div>
 
           <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ staggerChildren: 0.08 }}
+            {...(isMobile ? {
+              initial: { opacity: 0 },
+              animate: { opacity: 1 },
+              transition: { duration: 0.3 }
+            } : {
+              initial: "hidden",
+              whileInView: "show",
+              viewport: { once: true, amount: 0.2 },
+              transition: { staggerChildren: 0.08 }
+            })}
             className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8"
           >
             {socialLinks.map((social, index) => (
               <motion.a
                 key={index}
-                variants={fadeUp}
+                {...(isMobile ? {
+                  initial: { opacity: 0 },
+                  animate: { opacity: 1 },
+                  transition: { duration: 0.3, delay: index * 0.05 }
+                } : {
+                  variants: fadeUpVariants
+                })}
                 href={social.url}
                 title={social.seoTitle}
                 target="_blank"
@@ -435,10 +449,11 @@ const Social = () => {
 
           <div className="max-w-5xl mx-auto mt-16 md:mt-20">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              {...getScrollAnimationProps(isMobile, {
+                initial: { opacity: 0, y: 20 },
+                animate: { opacity: 1, y: 0 },
+                delay: 0,
+              })}
               className="bg-slate-900 rounded-[3rem] p-8 md:p-12 shadow-2xl relative overflow-hidden border border-white/10 transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20"
             >
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
@@ -458,10 +473,11 @@ const Social = () => {
               </div>
 
               <motion.div
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6 }}
+                {...getScrollAnimationProps(isMobile, {
+                  initial: { opacity: 0, y: 18 },
+                  animate: { opacity: 1, y: 0 },
+                  delay: 0,
+                })}
                 className="bg-white/5 p-8 md:p-12 rounded-2xl border border-white/10 backdrop-blur-sm relative z-10 transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
               >
                 {/* Section Google Review */}
@@ -489,10 +505,11 @@ const Social = () => {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.55 }}
+                {...getScrollAnimationProps(isMobile, {
+                  initial: { opacity: 0, y: 14 },
+                  animate: { opacity: 1, y: 0 },
+                  delay: 0,
+                })}
                 className="mt-10 pt-7 border-t border-white/10 text-center relative z-10"
               >
                 <p className="text-slate-400 text-sm mb-3">Vous êtes un professionnel satisfait ?</p>

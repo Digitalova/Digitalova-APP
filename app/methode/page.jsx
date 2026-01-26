@@ -16,15 +16,18 @@ import {
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import BackgroundBlobs from '@/components/BackgroundBlobs';
+import { useIsMobile, getScrollAnimationProps } from '@/lib/useReducedMotion';
 
 /* -----------------------------
    Cards
 ------------------------------ */
-const StepCard = ({ icon, number, title, content, objective }) => (
+const StepCard = ({ icon, number, title, content, objective, isMobile }) => (
   <motion.div
-    initial={{ opacity: 0, x: -20 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    viewport={{ once: true }}
+    {...getScrollAnimationProps(isMobile, {
+      initial: { opacity: 0, x: -20 },
+      animate: { opacity: 1, x: 0 },
+      delay: 0,
+    })}
     className="rounded-2xl p-8 flex flex-col md:flex-row items-start gap-8
                border border-white/10 bg-white/5 backdrop-blur
                shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)]
@@ -64,6 +67,7 @@ const SolutionCard = ({ problem, solution, impact }) => (
 );
 
 const Method = () => {
+  const isMobile = useIsMobile();
   const problemsList = [
     'Absence de site web ou site obsolète',
     'Design non responsive ou trop lent',
@@ -169,6 +173,7 @@ const Method = () => {
               title="Analyse Approfondie de Votre Entreprise"
               content="Je commence par comprendre votre ADN : votre secteur, vos valeurs, vos produits/services. J'étudie votre marché et votre clientèle cible pour adapter la stratégie digitale à leurs attentes."
               objective="Poser les bases d'une stratégie alignée avec votre réalité business."
+              isMobile={isMobile}
             />
 
             <StepCard
@@ -177,10 +182,11 @@ const Method = () => {
               title="Audit de Positionnement Concurrentiel"
               content="J'évalue votre place sur le marché par rapport à vos concurrents. J'analyse leur présence en ligne (sites, réseaux sociaux, SEO) et j'identifie vos forces ainsi que les opportunités de différenciation."
               objective="Comprendre comment vous démarquer et capter l'attention de votre audience."
+              isMobile={isMobile}
             />
 
             {/* STEP 3 */}
-            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+            <motion.div {...getScrollAnimationProps(isMobile, { initial: { opacity: 0, x: -20 }, animate: { opacity: 1, x: 0 }, delay: 0 })}>
               <div className="rounded-2xl p-8 border border-white/10 bg-white/5 backdrop-blur shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">
                 <div className="flex flex-col md:flex-row items-start gap-8">
                   <div className="flex-shrink-0 text-center md:text-left">
@@ -215,7 +221,7 @@ const Method = () => {
             </motion.div>
 
             {/* STEP 4 */}
-            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+            <motion.div {...getScrollAnimationProps(isMobile, { initial: { opacity: 0, x: -20 }, animate: { opacity: 1, x: 0 }, delay: 0 })}>
               <div className="rounded-2xl p-8 border border-white/10 bg-white/5 backdrop-blur shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">
                 <div className="flex flex-col md:flex-row items-start gap-8">
                   <div className="flex-shrink-0 text-center md:text-left">
@@ -281,6 +287,7 @@ const Method = () => {
               title="Plan d'Action Personnalisé & Suivi Continu"
               content="Je vous présente un plan d'action priorisé pour un impact maximal. Je mets en œuvre les solutions et assure un suivi régulier des résultats (trafic, clients, référencement) avec des ajustements continus."
               objective="Vous accompagner dans la durée pour une croissance durable et mesurable."
+              isMobile={isMobile}
             />
           </div>
 

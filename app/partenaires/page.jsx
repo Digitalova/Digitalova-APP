@@ -23,6 +23,7 @@ import { useToast } from '@/components/ui/use-toast';
 import { Loader2 } from 'lucide-react';
 import BackgroundBlobs from '@/components/BackgroundBlobs';
 import TurnstileWidget, { getTurnstileResponse, resetTurnstile } from '@/components/TurnstileWidget';
+import { useIsMobile, getScrollAnimationProps } from '@/lib/useReducedMotion';
 
 const PROGRAM_TERMS_PDF =
   'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Docs/Condition_utilisation_programme_partenaire%20(1).pdf';
@@ -30,19 +31,19 @@ const PROGRAM_TERMS_PDF =
 /* -------------------- Animations (premium, clean) -------------------- */
 const ease = [0.22, 1, 0.36, 1];
 
-const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 18 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.22 },
-  transition: { duration: 0.7, ease, delay },
-});
+const fadeUp = (delay = 0, isMobile = false) => 
+  getScrollAnimationProps(isMobile, {
+    initial: { opacity: 0, y: 18 },
+    animate: { opacity: 1, y: 0 },
+    delay,
+  });
 
-const fadeDown = (delay = 0) => ({
-  initial: { opacity: 0, y: -14 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.22 },
-  transition: { duration: 0.7, ease, delay },
-});
+const fadeDown = (delay = 0, isMobile = false) => 
+  getScrollAnimationProps(isMobile, {
+    initial: { opacity: 0, y: -14 },
+    animate: { opacity: 1, y: 0 },
+    delay,
+  });
 
 const stagger = {
   hidden: {},
@@ -60,6 +61,7 @@ const hoverLift = {};
 const Partners = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const isMobile = useIsMobile();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -257,7 +259,7 @@ const Partners = () => {
                   Un système de rémunération transparent, rapide et cumulable avec des services offerts pour votre propre activité.
                 </p>
 
-                <motion.div {...fadeUp(0.2)} className="flex justify-center gap-4">
+                <motion.div {...fadeUp(0.2, isMobile)} className="flex justify-center gap-4">
                   <motion.a
                     href="#partner-form"
                     className="px-8 py-4 bg-white text-slate-900 rounded-xl font-bold hover:bg-slate-100 transition-all shadow-xl flex items-center gap-2"
@@ -281,12 +283,12 @@ const Partners = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-14">
-                <motion.h2 {...fadeUp(0.08)} className="text-3xl md:text-4xl font-bold">
+                <motion.h2 {...fadeUp(0.08, isMobile)} className="text-3xl md:text-4xl font-bold">
                   Développons Digitalova,{' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">ensemble</span>
                 </motion.h2>
 
-                <motion.p {...fadeUp(0.15)} className="text-slate-300 max-w-3xl mx-auto mt-4 text-lg">
+                <motion.p {...fadeUp(0.15, isMobile)} className="text-slate-300 max-w-3xl mx-auto mt-4 text-lg">
                   Le programme Partenaires aide la croissance de Digitalova… et récompense celles et ceux qui participent à cette croissance.
                   Le but : faire connaître et recommander Digitalova dans votre cercle perso/pro à toute personne qui a besoin d’un site web,
                   de SEO avancé ou d’automatisations. <strong className="text-white">Tout le monde peut participer.</strong>
@@ -347,7 +349,7 @@ const Partners = () => {
 
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-6xl mx-auto">
-              <motion.div {...fadeUp(0)} className="text-center mb-12">
+              <motion.div {...fadeUp(0, isMobile)} className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-white mb-4">Les commissions</h2>
                 <p className="text-slate-300">Plus vous performez, plus votre part augmente.</p>
               </motion.div>
@@ -376,7 +378,7 @@ const Partners = () => {
               </motion.div>
 
               <motion.div
-                {...fadeUp(0.12)}
+                {...fadeUp(0.12, isMobile)}
                 className="mt-8 bg-[#0F172A] rounded-xl p-4 text-center text-slate-200 text-sm border border-slate-700 flex items-center justify-center gap-2 shadow-lg"
               >
                 <Gift className="w-4 h-4 text-pink-300" />
@@ -393,7 +395,7 @@ const Partners = () => {
         <section className="relative overflow-hidden text-white pt-10 pb-12 md:pt-12 md:pb-16">
 
           <div className="container mx-auto px-4 relative z-10">
-            <motion.div {...fadeUp(0)} className="text-center mb-12 md:mb-14">
+            <motion.div {...fadeUp(0, isMobile)} className="text-center mb-12 md:mb-14">
               <span className="text-purple-300 font-bold tracking-wider uppercase text-sm mb-2 block">Système de Crédits</span>
               <h2 className="text-3xl font-bold mb-4">Échangez vos succès contre des services</h2>
               <p className="text-slate-300 max-w-2xl mx-auto">
@@ -435,7 +437,7 @@ const Partners = () => {
         <section className="relative overflow-hidden py-12">
 
           <div className="container mx-auto px-4 relative z-10 pb-10 md:pb-14">
-            <motion.div {...fadeUp(0)} className="max-w-5xl mx-auto bg-[#0F172A] rounded-3xl p-7 md:p-10 shadow-2xl text-white relative overflow-hidden border border-white/10 transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">
+            <motion.div {...fadeUp(0, isMobile)} className="max-w-5xl mx-auto bg-[#0F172A] rounded-3xl p-7 md:p-10 shadow-2xl text-white relative overflow-hidden border border-white/10 transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">
               <motion.div
                 aria-hidden
                 className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"
@@ -489,14 +491,14 @@ const Partners = () => {
         <section id="partner-form" className="relative overflow-hidden py-12 text-white">
 
           <div className="container mx-auto px-4 relative z-10">
-            <motion.div {...fadeUp(0)} className="max-w-2xl mx-auto text-center mb-10">
+            <motion.div {...fadeUp(0, isMobile)} className="max-w-2xl mx-auto text-center mb-10">
               <h2 className="text-3xl font-bold mb-3">Postuler au programme</h2>
               <p className="text-slate-300">Remplissez ce formulaire pour activer votre compte Partenaire.</p>
             </motion.div>
 
-            <motion.div {...fadeUp(0.08)} className="max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl p-8 md:p-12 border border-slate-100 transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20">
+            <motion.div {...fadeUp(0.08, isMobile)} className="max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl p-8 md:p-12 border border-slate-100 transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20">
               <form onSubmit={handleSubmit} className="space-y-6">
-                <motion.div {...fadeUp(0.05)} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <motion.div {...fadeUp(0.05, isMobile)} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-semibold text-[#1E293B]">Nom complet du partenaire *</label>
                     <input
@@ -523,7 +525,7 @@ const Partners = () => {
                   </div>
                 </motion.div>
 
-                <motion.div {...fadeUp(0.08)} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <motion.div {...fadeUp(0.08, isMobile)} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-semibold text-[#1E293B]">Email professionnel *</label>
                     <input
@@ -550,7 +552,7 @@ const Partners = () => {
                   </div>
                 </motion.div>
 
-                <motion.div {...fadeUp(0.1)} className="space-y-2">
+                <motion.div {...fadeUp(0.1, isMobile)} className="space-y-2">
                   <label className="text-sm font-semibold text-[#1E293B]">Message ou Motivation *</label>
                   <textarea
                     name="message"
@@ -635,7 +637,7 @@ const Partners = () => {
                   )}
                 </motion.button>
 
-                <motion.div {...fadeUp(0.15)} className="text-xs text-slate-500 pt-2 text-center">
+                <motion.div {...fadeUp(0.15, isMobile)} className="text-xs text-slate-500 pt-2 text-center">
                   En envoyant ce formulaire, vous confirmez votre demande d’adhésion au programme et acceptez d’être recontacté par DIGITALOVA.
                 </motion.div>
               </form>

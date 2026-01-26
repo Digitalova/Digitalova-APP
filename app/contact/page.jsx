@@ -13,11 +13,13 @@ import FAQSection from '@/components/FAQSection';
 import BackgroundBlobs from '@/components/BackgroundBlobs';
 import TurnstileWidget, { getTurnstileResponse, resetTurnstile } from '@/components/TurnstileWidget';
 import Link from 'next/link';
+import { useIsMobile, getScrollAnimationProps } from '@/lib/useReducedMotion';
 
 const CALENDLY_URL = 'https://calendly.com/admin-digitalova/30min';
 
 const Contact = () => {
   const { toast } = useToast();
+  const isMobile = useIsMobile();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -235,9 +237,11 @@ const Contact = () => {
 
           {/* ✅ Formulaire */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3 }}
+            {...getScrollAnimationProps(isMobile, {
+              initial: { opacity: 0, scale: 0.95 },
+              animate: { opacity: 1, scale: 1 },
+              delay: 0.3,
+            })}
             className="max-w-4xl mx-auto bg-slate-900 rounded-[3rem] p-8 md:p-12 shadow-2xl relative overflow-hidden mb-10 border border-white/10 transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20"
           >
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
@@ -432,9 +436,11 @@ const Contact = () => {
 
           {/* ✅ Bouton Calendly uniquement (aucun script chargé) */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35 }}
+            {...getScrollAnimationProps(isMobile, {
+              initial: { opacity: 0, y: 10 },
+              animate: { opacity: 1, y: 0 },
+              delay: 0.35,
+            })}
             className="max-w-4xl mx-auto mb-16"
           >
             <div className="rounded-[2.25rem] border border-white/10 bg-white/5 backdrop-blur shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] p-8 text-center transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">
@@ -459,9 +465,11 @@ const Contact = () => {
 
           {/* ✅ Cards */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
+            {...getScrollAnimationProps(isMobile, {
+              initial: { opacity: 0, y: 10 },
+              animate: { opacity: 1, y: 0 },
+              delay: 0.4,
+            })}
             className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto"
           >
             <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] p-6 flex flex-col items-center min-w-[280px] flex-1 transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">

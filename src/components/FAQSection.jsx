@@ -3,15 +3,20 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, HelpCircle } from 'lucide-react';
+import { useIsMobile, getScrollAnimationProps } from '@/lib/useReducedMotion';
 
-const FAQItem = ({ question, answer }) => {
+const FAQItem = ({ question, answer, isMobile, index = 0 }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const animationProps = getScrollAnimationProps(isMobile, {
+    initial: { opacity: 0, y: 15 },
+    animate: { opacity: 1, y: 0 },
+    delay: index * 0.05,
+  });
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      {...animationProps}
       className="border border-slate-700 rounded-xl overflow-hidden bg-[#0F172A] shadow-lg transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
     >
       <button
@@ -38,6 +43,7 @@ const FAQItem = ({ question, answer }) => {
 };
 
 const FAQSection = () => {
+  const isMobile = useIsMobile();
   const faqData = [
     {
       question: "Combien coûte la création d'un site internet à Mons ?",
@@ -85,14 +91,23 @@ const FAQSection = () => {
 const leftColumn = faqData.slice(0, half);
 const rightColumn = faqData.slice(half);
 
+  const headerBadgeProps = getScrollAnimationProps(isMobile, {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+  });
+  
+  const headerTitleProps = getScrollAnimationProps(isMobile, {
+    initial: { opacity: 0, scale: 0.95 },
+    animate: { opacity: 1, scale: 1 },
+    delay: 0.1,
+  });
+
   return (
     <section className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            {...headerBadgeProps}
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-200 text-xs font-bold uppercase mb-4"
           >
             <HelpCircle size={14} />
@@ -100,9 +115,7 @@ const rightColumn = faqData.slice(half);
           </motion.div>
 
           <motion.h2
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            {...headerTitleProps}
             className="text-3xl md:text-4xl font-bold mb-4 text-white"
           >
             Vos questions fréquentes
@@ -112,12 +125,12 @@ const rightColumn = faqData.slice(half);
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           <div className="space-y-4">
             {leftColumn.map((faq, i) => (
-              <FAQItem key={i} {...faq} />
+              <FAQItem key={i} {...faq} isMobile={isMobile} index={i} />
             ))}
           </div>
           <div className="space-y-4">
             {rightColumn.map((faq, i) => (
-              <FAQItem key={i + 3} {...faq} />
+              <FAQItem key={i + half} {...faq} isMobile={isMobile} index={i + half} />
             ))}
           </div>
         </div>

@@ -18,18 +18,20 @@ import {
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import BackgroundBlobs from '@/components/BackgroundBlobs';
+import { useIsMobile, getScrollAnimationProps } from '@/lib/useReducedMotion';
 
 const HERO_IMAGE =
   'https://mzeisxseqdcxwgyjpajm.supabase.co/storage/v1/object/public/Brand/WebP/1637335605565.webp';
 
-const FAQItem = ({ faq }) => {
+const FAQItem = ({ faq, isMobile }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
     <motion.div
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.45, ease: 'easeOut' }}
+      {...getScrollAnimationProps(isMobile, {
+        initial: { opacity: 0, y: 18 },
+        animate: { opacity: 1, y: 0 },
+        delay: 0,
+      })}
       className="bg-[#0F172A] rounded-xl overflow-hidden border border-slate-700"
     >
       <button onClick={() => setIsOpen(!isOpen)} className="w-full px-6 py-5 flex items-center justify-between text-left">
@@ -52,6 +54,7 @@ const FAQItem = ({ faq }) => {
 };
 
 const GoogleBusiness = () => {
+  const isMobile = useIsMobile();
   const benefits = [
     {
       icon: <MapPin className="w-8 h-8 text-purple-300" />,
@@ -334,11 +337,12 @@ const GoogleBusiness = () => {
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ delay: index * 0.08, duration: 0.45, ease: 'easeOut' }}
-                whileHover={{ y: -6 }}
+                {...getScrollAnimationProps(isMobile, {
+                  initial: { opacity: 0, y: 14 },
+                  animate: { opacity: 1, y: 0 },
+                  delay: index * 0.08,
+                })}
+                whileHover={!isMobile ? { y: -6 } : undefined}
                 className="bg-slate-900 p-8 rounded-3xl text-center border border-white/10 shadow-lg transition-all duration-500 hover:shadow-purple-500/20 hover:border-purple-500/20"
               >
                 <div className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-3">
@@ -351,10 +355,11 @@ const GoogleBusiness = () => {
 
           {/* Petit bloc “Pourquoi la fiche est critique” */}
           <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.45, ease: 'easeOut' }}
+            {...getScrollAnimationProps(isMobile, {
+              initial: { opacity: 0, y: 14 },
+              animate: { opacity: 1, y: 0 },
+              delay: 0,
+            })}
             className="mb-20 rounded-3xl border border-white/10 bg-white/5 backdrop-blur p-8 shadow-sm max-w-6xl mx-auto transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
           >
             <div className="flex flex-col md:flex-row md:items-center gap-6">
@@ -397,11 +402,12 @@ const GoogleBusiness = () => {
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ delay: index * 0.08, duration: 0.45, ease: 'easeOut' }}
-                whileHover={{ y: -6 }}
+                {...getScrollAnimationProps(isMobile, {
+                  initial: { opacity: 0, y: 18 },
+                  animate: { opacity: 1, y: 0 },
+                  delay: index * 0.08,
+                })}
+                whileHover={!isMobile ? { y: -6 } : undefined}
                 className="rounded-3xl border border-slate-700 bg-[#0F172A] shadow-sm overflow-hidden transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
               >
                 <div className="h-1.5 bg-gradient-to-r from-purple-600 to-pink-600" />
@@ -420,11 +426,12 @@ const GoogleBusiness = () => {
               {valueAdds.map((v, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-60px' }}
-                  transition={{ delay: i * 0.08, duration: 0.45 }}
-                  whileHover={{ y: -6 }}
+                  {...getScrollAnimationProps(isMobile, {
+                    initial: { opacity: 0, y: 18 },
+                    animate: { opacity: 1, y: 0 },
+                    delay: i * 0.08,
+                  })}
+                  whileHover={!isMobile ? { y: -6 } : undefined}
                   className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur p-6 shadow-sm transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-lg hover:border-purple-500/20"
                 >
                   <div className="flex items-center gap-3 mb-3">
@@ -449,11 +456,12 @@ const GoogleBusiness = () => {
               {services.map((service, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-60px' }}
-                  transition={{ delay: index * 0.06, duration: 0.45, ease: 'easeOut' }}
-                  whileHover={{ y: -6 }}
+                  {...getScrollAnimationProps(isMobile, {
+                    initial: { opacity: 0, y: 18 },
+                    animate: { opacity: 1, y: 0 },
+                    delay: index * 0.06,
+                  })}
+                  whileHover={!isMobile ? { y: -6 } : undefined}
                   className="bg-[#0F172A] p-8 rounded-3xl border border-slate-700 shadow-sm transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl hover:border-purple-500/20"
                 >
                   <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
@@ -475,10 +483,11 @@ const GoogleBusiness = () => {
               CTA
              ========================= */}
           <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
+            {...getScrollAnimationProps(isMobile, {
+              initial: { opacity: 0, y: 18 },
+              animate: { opacity: 1, y: 0 },
+              delay: 0,
+            })}
             className="mb-20 text-center bg-white/5 border border-white/10 backdrop-blur rounded-3xl p-12 md:p-20 relative overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
@@ -526,7 +535,7 @@ const GoogleBusiness = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">Questions Fréquentes</h2>
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {faqData.map((faq, index) => (
-                <FAQItem key={index} faq={faq} index={index} />
+                <FAQItem key={index} faq={faq} isMobile={isMobile} />
               ))}
             </div>
           </div>
