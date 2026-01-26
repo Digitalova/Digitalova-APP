@@ -10,7 +10,7 @@ import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Création de Sites Internet à Mons - DIGITALOVA',
+    default: 'Création de Sites Web à Mons - DIGITALOVA',
     template: '%s - DIGITALOVA',
   },
   description: "Augmentez votre visibilité locale avec un site internet performant ? Je crée votre site web, blog ou boutique en ligne. Design adapté à votre image de marque et UX intuitif. Devis gratuit sans engagement à Mons.",
