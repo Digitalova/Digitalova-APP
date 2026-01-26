@@ -24,17 +24,18 @@ import { useIsMobile, getScrollAnimationProps } from '@/lib/useReducedMotion';
 const StepCard = ({ icon, number, title, content, objective, isMobile }) => (
   <motion.div
     {...getScrollAnimationProps(isMobile, {
-      initial: { opacity: 0, x: -20 },
-      animate: { opacity: 1, x: 0 },
+      initial: { opacity: 0, y: 20 },
+      animate: { opacity: 1, y: 0 },
       delay: 0,
     })}
-    className="rounded-2xl p-8 flex flex-col md:flex-row items-start gap-8
+    className="rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8
                border border-white/10 bg-white/5 backdrop-blur
                shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)]
-               transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20"
+               transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20
+               w-full mx-auto"
   >
-    <div className="flex-shrink-0 text-center md:text-left">
-      <div className="relative inline-flex items-center justify-center w-24 h-24 rounded-full bg-white/5 border border-white/15 text-white">
+    <div className="flex-shrink-0 text-center">
+      <div className="relative inline-flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/5 border border-white/15 text-white">
         {icon}
         <span className="absolute -top-2 -right-2 flex items-center justify-center w-8 h-8 rounded-full bg-pink-700 text-white font-bold text-sm">
           {number}
@@ -42,10 +43,10 @@ const StepCard = ({ icon, number, title, content, objective, isMobile }) => (
       </div>
     </div>
 
-    <div>
-      <h2 className="text-2xl font-bold mb-3 text-white">{title}</h2>
-      <p className="text-slate-300 mb-4 leading-relaxed">{content}</p>
-      <p className="font-semibold text-purple-200 italic">🎯 Objectif : {objective}</p>
+    <div className="text-center md:text-left">
+      <h2 className="text-xl md:text-2xl font-bold mb-3 text-white">{title}</h2>
+      <p className="text-slate-300 mb-4 leading-relaxed text-sm md:text-base">{content}</p>
+      <p className="font-semibold text-purple-200 italic text-sm md:text-base">🎯 Objectif : {objective}</p>
     </div>
   </motion.div>
 );
@@ -153,7 +154,7 @@ const Method = () => {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 relative z-10 max-w-6xl">
+        <div className="container mx-auto px-3 md:px-4 relative z-10 max-w-6xl">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-white tracking-tight">
               Votre Projet Web <span className="text-white">en 5 Étapes</span>
@@ -186,11 +187,11 @@ const Method = () => {
             />
 
             {/* STEP 3 */}
-            <motion.div {...getScrollAnimationProps(isMobile, { initial: { opacity: 0, x: -20 }, animate: { opacity: 1, x: 0 }, delay: 0 })}>
-              <div className="rounded-2xl p-8 border border-white/10 bg-white/5 backdrop-blur shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">
-                <div className="flex flex-col md:flex-row items-start gap-8">
-                  <div className="flex-shrink-0 text-center md:text-left">
-                    <div className="relative inline-flex items-center justify-center w-24 h-24 rounded-full bg-white/5 border border-white/15 text-white">
+            <motion.div {...getScrollAnimationProps(isMobile, { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, delay: 0 })}>
+              <div className="rounded-2xl p-6 md:p-8 border border-white/10 bg-white/5 backdrop-blur shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20 w-full">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8">
+                  <div className="flex-shrink-0 text-center">
+                    <div className="relative inline-flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/5 border border-white/15 text-white">
                       <MonitorX size={48} />
                       <span className="absolute -top-2 -right-2 flex items-center justify-center w-8 h-8 rounded-full bg-pink-700 text-white font-bold text-sm">
                         3
@@ -198,20 +199,20 @@ const Method = () => {
                     </div>
                   </div>
 
-                  <div>
-                    <h2 className="text-2xl font-bold mb-4 text-white">Diagnostic de Présence En Ligne</h2>
-                    <p className="text-slate-300 mb-6">Je détecte les freins à votre croissance digitale :</p>
+                  <div className="text-center md:text-left">
+                    <h2 className="text-xl md:text-2xl font-bold mb-4 text-white">Diagnostic de Présence En Ligne</h2>
+                    <p className="text-slate-300 mb-6 text-sm md:text-base">Je détecte les freins à votre croissance digitale :</p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
                       {problemsList.map((item, i) => (
-                        <div key={i} className="flex items-start gap-3 text-slate-200/90">
+                        <div key={i} className="flex items-start gap-3 text-slate-200/90 text-sm md:text-base">
                           <XCircle size={20} className="text-red-400 mt-1 flex-shrink-0" />
                           <span>{item}</span>
                         </div>
                       ))}
                     </div>
 
-                    <p className="font-semibold text-purple-200 italic mt-6">
+                    <p className="font-semibold text-purple-200 italic mt-6 text-sm md:text-base">
                       🎯 Objectif : Identifier précisément ce qui vous fait perdre des clients potentiels ET du temps
                       précieux.
                     </p>
@@ -221,11 +222,11 @@ const Method = () => {
             </motion.div>
 
             {/* STEP 4 */}
-            <motion.div {...getScrollAnimationProps(isMobile, { initial: { opacity: 0, x: -20 }, animate: { opacity: 1, x: 0 }, delay: 0 })}>
-              <div className="rounded-2xl p-8 border border-white/10 bg-white/5 backdrop-blur shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20">
-                <div className="flex flex-col md:flex-row items-start gap-8">
-                  <div className="flex-shrink-0 text-center md:text-left">
-                    <div className="relative inline-flex items-center justify-center w-24 h-24 rounded-full bg-white/5 border border-white/15 text-white">
+            <motion.div {...getScrollAnimationProps(isMobile, { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, delay: 0 })}>
+              <div className="rounded-2xl p-6 md:p-8 border border-white/10 bg-white/5 backdrop-blur shadow-[0_25px_90px_-70px_rgba(0,0,0,0.80)] transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20 w-full">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8">
+                  <div className="flex-shrink-0 text-center">
+                    <div className="relative inline-flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/5 border border-white/15 text-white">
                       <Lightbulb size={48} />
                       <span className="absolute -top-2 -right-2 flex items-center justify-center w-8 h-8 rounded-full bg-pink-700 text-white font-bold text-sm">
                         4
@@ -233,13 +234,13 @@ const Method = () => {
                     </div>
                   </div>
 
-                  <div>
-                    <h2 className="text-2xl font-bold mb-4 text-white">Solutions Concrètes Pour Votre Croissance</h2>
-                    <p className="text-slate-300 mb-6">
+                  <div className="text-center md:text-left">
+                    <h2 className="text-xl md:text-2xl font-bold mb-4 text-white">Solutions Concrètes Pour Votre Croissance</h2>
+                    <p className="text-slate-300 mb-6 text-sm md:text-base">
                       Je transforme chaque problème identifié en opportunité de croissance grâce à mes solutions :
                     </p>
 
-                    <div className="space-y-6 text-slate-200/90">
+                    <div className="space-y-6 text-slate-200/90 text-left">
                       <SolutionCard
                         problem="Vous êtes invisible en ligne ?"
                         solution="Je crée votre site web professionnel (vitrine, e-commerce, blog)."
@@ -272,7 +273,7 @@ const Method = () => {
                       />
                     </div>
 
-                    <p className="font-semibold text-purple-200 italic mt-6">
+                    <p className="font-semibold text-purple-200 italic mt-6 text-sm md:text-base">
                       🎯 Objectif : Chaque solution que je propose résout UN problème concret qui bloque votre
                       croissance.
                     </p>

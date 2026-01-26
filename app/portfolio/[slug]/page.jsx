@@ -82,8 +82,8 @@ export default function ProjectPage({ params }) {
           {/* Retour au portfolio */}
           <motion.div
             {...getScrollAnimationProps(isMobile, {
-              initial: { opacity: 0, x: -20 },
-              animate: { opacity: 1, x: 0 },
+              initial: { opacity: 0, y: 10 },
+              animate: { opacity: 1, y: 0 },
               delay: 0,
             })}
             className="mb-8 mt-4"

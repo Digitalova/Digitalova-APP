@@ -3,8 +3,7 @@
 import { useState, useEffect } from 'react';
 
 /**
- * Hook pour détecter si on est sur mobile
- * Sur mobile : animations d'entrée simplifiées, pas de whileInView
+ * Hook pour détecter si on est sur mobile ou si l'utilisateur préfère réduire les mouvements
  */
 export function useIsMobile() {
   const [isMobile, setIsMobile] = useState(false);
@@ -35,8 +34,10 @@ export function useIsMobile() {
 
 /**
  * Retourne les props d'animation optimisés
- * - Desktop : animation whileInView complète
- * - Mobile : animation d'entrée simple (fade-in), pas de whileInView
+ * - Desktop : animation whileInView complète (au scroll)
+ * - Mobile : animation d'entrée simple (fade-in uniquement, pas de translation)
+ * 
+ * IMPORTANT: Sur mobile, on NE DOIT PAS utiliser whileInView car ça cause le scintillement
  */
 export function getScrollAnimationProps(isMobile, { 
   initial = { opacity: 0, y: 20 }, 
@@ -45,11 +46,12 @@ export function getScrollAnimationProps(isMobile, {
   delay = 0 
 } = {}) {
   if (isMobile) {
-    // Mobile : animation d'entrée simple, pas de whileInView
+    // Mobile : animation d'entrée simple au montage (pas de whileInView)
+    // On ignore les translations (x, y) pour éviter les décalages
     return {
       initial: { opacity: 0 },
       animate: { opacity: 1 },
-      transition: { duration: 0.3, delay: delay * 0.5 },
+      transition: { duration: 0.4, delay: Math.min(delay, 0.3) },
     };
   }
   
@@ -61,9 +63,3 @@ export function getScrollAnimationProps(isMobile, {
     transition: { ...transition, delay },
   };
 }
-
-/**
- * Composant wrapper pour simplifier l'usage
- */
-export const mobileSimpleTransition = { duration: 0.3 };
-export const desktopTransition = { duration: 0.5, ease: [0.22, 1, 0.36, 1] };

@@ -439,9 +439,9 @@ const WebDevelopment = () => {
                 <motion.div
                   key={index}
                   {...getScrollAnimationProps(isMobile, {
-                    initial: { opacity: 0, x: -20 },
-                    animate: { opacity: 1, x: 0 },
-                    delay: index * 0.15,
+                    initial: { opacity: 0, y: 20 },
+                    animate: { opacity: 1, y: 0 },
+                    delay: index * 0.1,
                   })}
                   className="relative"
                 >
