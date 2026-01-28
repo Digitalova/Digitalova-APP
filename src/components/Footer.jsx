@@ -4,6 +4,7 @@ import React, { useEffect, useId, useState } from 'react';
 import Link from 'next/link';
 import { Mail, Phone, MapPin, ArrowUpRight, ChevronUp, HeartHandshake, Heart } from 'lucide-react';
 import BackgroundBlobs from '@/components/BackgroundBlobs';
+import AgencyMap from '@/components/AgencyMap';
 
 /* ---------- ICONES ---------- */
 const FacebookBrandIcon = (props) => (
@@ -179,10 +180,10 @@ const Footer = () => {
                 </p>
                 <div className="pt-3 flex flex-col gap-2">
                   <a
-                    href="https://www.google.com/search?q=DIGITALOVA+-+Cr%C3%A9ation+de+Sites+Web+%C3%A0+Mons"
+                    href="https://maps.app.goo.gl/B6X61NEAdCrzCvKe8"
                     target="_blank"
                     rel="noopener noreferrer"
-                    title="Voir notre fiche Google My Business"
+                    title="Voir notre fiche établissement sur Google Maps"
                     className="inline-flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors text-xs"
                   >
                     <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none">
@@ -201,6 +202,9 @@ const Footer = () => {
                     Sitemap.xml <ArrowUpRight className="w-3 h-3" />
                   </a>
                 </div>
+              </div>
+              <div className="mt-4">
+                <AgencyMap variant="footer" className="max-w-sm" />
               </div>
             </div>
 
@@ -278,7 +282,7 @@ const Footer = () => {
           </div>
 
           {/* BOTTOM */}
-          <div className="mt-10 pt-6 border-t border-white/10 text-xs text-slate-400 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div className="mt-6 pt-6 border-t border-white/10 text-xs text-slate-400 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <p>© 2026 DIGITALOVA</p>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
               <span className="inline-flex items-center">TVA : BE1028.668.667</span>

@@ -37,7 +37,7 @@ const nextConfig = {
               "img-src 'self' data: blob: https: http:",
               "font-src 'self' https://fonts.gstatic.com https://mzeisxseqdcxwgyjpajm.supabase.co",
               "connect-src 'self' https://mzeisxseqdcxwgyjpajm.supabase.co https://challenges.cloudflare.com https://cloudflareinsights.com https://calendly.com",
-              "frame-src 'self' https://challenges.cloudflare.com https://calendly.com",
+              "frame-src 'self' https://challenges.cloudflare.com https://calendly.com https://www.google.com https://maps.google.com https://www.openstreetmap.org",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self'",

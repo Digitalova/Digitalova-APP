@@ -646,65 +646,7 @@ const Home = () => {
 
         </section>
 
-        {/* 4. MÉTHODE */}
-        <section className="py-20 relative text-white overflow-hidden" style={belowFoldStyle}>
-
-          <div className="container mx-auto px-4 relative z-10">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={itemVariants}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-                Ma Méthode en{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                  4 Étapes Claires
-                </span>
-              </h2>
-              <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-                Voici un aperçu de ma méthode de création web pour vous livrer un site web performant qui convient à vos besoins
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {processSteps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="relative p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20 group"
-                >
-                  <span className="text-5xl font-black text-white/5 absolute top-2 right-4 pointer-events-none select-none">
-                    {step.number}
-                  </span>
-                  <div className="relative z-10">
-                    <h3 className="text-xl font-bold mb-3 text-white">{step.title}</h3>
-                    <p className="text-slate-400 text-sm leading-relaxed">{step.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-              <div className="text-center mt-12">
-                <Link href="/methode" title="Aller à la page Methode - Digitalova">
-                <Button
-                  size="lg"
-                  className="bg-white text-slate-900 hover:bg-slate-200 text-lg px-8 py-6 font-bold shadow-lg shadow-purple-900/20"
-                >
-                  Voir ma méthode complète
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-
-        </section>
-
-        {/* 5. PORTFOLIO */}
+        {/* 5. PORTFOLIO - Mes Dernières Réalisations Web */}
         <section className="py-24 relative" style={belowFoldStyle}>
 
           <div className="container mx-auto px-4 relative z-10">
@@ -792,6 +734,64 @@ const Home = () => {
               </Link>
             </div>
           </div>
+        </section>
+
+        {/* 4. MÉTHODE - Ma Méthode en 4 Étapes Claires */}
+        <section className="py-20 relative text-white overflow-hidden" style={belowFoldStyle}>
+
+          <div className="container mx-auto px-4 relative z-10">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={itemVariants}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+                Ma Méthode en{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                  4 Étapes Claires
+                </span>
+              </h2>
+              <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+                Voici un aperçu de ma méthode de création web pour vous livrer un site web performant qui convient à vos besoins
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {processSteps.map((step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="relative p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-2xl hover:border-purple-500/20 group"
+                >
+                  <span className="text-5xl font-black text-white/5 absolute top-2 right-4 pointer-events-none select-none">
+                    {step.number}
+                  </span>
+                  <div className="relative z-10">
+                    <h3 className="text-xl font-bold mb-3 text-white">{step.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{step.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+              <div className="text-center mt-12">
+                <Link href="/methode" title="Aller à la page Methode - Digitalova">
+                <Button
+                  size="lg"
+                  className="bg-white text-slate-900 hover:bg-slate-200 text-lg px-8 py-6 font-bold shadow-lg shadow-purple-900/20"
+                >
+                  Voir ma méthode complète
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+
         </section>
 
         {/* ✅ 2) REMPLACE ta section OFFRES par celle-ci (entre Réalisations et CTA) */}

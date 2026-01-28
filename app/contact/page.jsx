@@ -11,6 +11,7 @@ import { supabase } from '@/lib/customSupabaseClient';
 import { motion } from 'framer-motion';
 import FAQSection from '@/components/FAQSection';
 import BackgroundBlobs from '@/components/BackgroundBlobs';
+import AgencyMap from '@/components/AgencyMap';
 import TurnstileWidget, { getTurnstileResponse, resetTurnstile } from '@/components/TurnstileWidget';
 import Link from 'next/link';
 import { useIsMobile, getScrollAnimationProps } from '@/lib/useReducedMotion';
@@ -506,6 +507,24 @@ const Contact = () => {
           <div className="mt-20">
             <FAQSection />
           </div>
+
+          {/* Carte & fiche Google (sous la FAQ) */}
+          <motion.div
+            {...getScrollAnimationProps(isMobile, {
+              initial: { opacity: 0, y: 10 },
+              animate: { opacity: 1, y: 0 },
+              delay: 0.2,
+            })}
+            className="mt-20 max-w-4xl mx-auto"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 text-center">
+              Où nous trouver
+            </h2>
+            <p className="text-slate-300 text-center max-w-xl mx-auto mb-6">
+              Siège social de l&apos;agence DIGITALOVA – Place de la Gare 1, 7380 Quiévrain (Belgique).
+            </p>
+            <AgencyMap variant="contact" />
+          </motion.div>
         </div>
       </div>
     </>
