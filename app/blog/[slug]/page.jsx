@@ -123,9 +123,12 @@ export default function ArticlePage({ params }) {
               src={article.image}
               alt={article.imageAlt || article.title}
               title={article.imageTitle || article.title}
+              fetchPriority="high"
+              decoding="async"
               className="w-full aspect-video object-cover"
-              width="1200"
-              height="630"
+              width={1200}
+              height={630}
+              sizes="(max-width: 768px) 100vw, 768px"
             />
           </motion.div>
 

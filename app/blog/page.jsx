@@ -147,8 +147,10 @@ const BlogContent = () => {
                             title={article.imageTitle || article.title}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                             loading={index < 2 ? 'eager' : 'lazy'}
-                            width="400"
-                            height="250"
+                            decoding="async"
+                            width={400}
+                            height={250}
+                            sizes="(max-width: 768px) 100vw, 256px"
                           />
                         </div>
                       </div>

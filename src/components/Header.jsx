@@ -173,6 +173,7 @@ const Header = () => {
               height={497}
               loading="eager"
               decoding="async"
+              fetchPriority="high"
               className="h-12 md:h-14 w-auto transition-transform hover:scale-105 drop-shadow-sm"
             />
           </Link>
