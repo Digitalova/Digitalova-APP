@@ -143,6 +143,9 @@ const Footer = () => {
                   <Link href="/contact" title="Voir la page de contact de Digitalova - Agence Web" className="block text-slate-300 hover:text-purple-300 transition-colors">
                     Contact
                   </Link>
+                  <Link href="/blog" title="Articles SEO et conseils web - Blog Digitalova Mons" className="block text-slate-300 hover:text-purple-300 transition-colors">
+                    Blog
+                  </Link>
                 </nav>
               </div>
 

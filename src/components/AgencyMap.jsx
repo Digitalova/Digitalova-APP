@@ -22,10 +22,10 @@ const AgencyMap = ({ variant = 'contact', className = '' }) => {
     <div className={className}>
       <div className="rounded-2xl overflow-hidden border border-white/10 bg-slate-900/50 shadow-lg">
         <div className="p-3 md:p-4 border-b border-white/10 bg-white/5">
-          <h3 className="font-bold text-white flex items-center gap-2">
+          <p className="font-bold text-white flex items-center gap-2">
             <MapPin className="w-4 h-4 text-purple-400 flex-shrink-0" aria-hidden />
             Emplacement légal – DIGITALOVA
-          </h3>
+          </p>
           <p className="text-sm text-slate-300 mt-1">
             {LEGAL_ADDRESS.street}, {LEGAL_ADDRESS.postalCode} {LEGAL_ADDRESS.locality}, {LEGAL_ADDRESS.country}
           </p>

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { articles } from "../blog/articles-data";
 
 export async function GET() {
   const baseUrl = "https://digitalova.be";
@@ -14,6 +15,8 @@ export async function GET() {
     "/services/google-business",
     "/services/automatisation-ia",
     "/portfolio",
+    "/blog",
+    ...articles.map((a) => `/blog/${a.slug}`),
     "/methode",
     "/contact",
     "/nous-suivre",

@@ -45,6 +45,7 @@ const Header = () => {
       { name: 'Portfolio', path: '/portfolio', title: 'Découvrez mes réalisations de sites web à Mons' },
       { name: 'Ma Méthode', path: '/methode', title: 'Mon processus de création de site internet, SEO & Automatisation' },
       { name: 'Contact', path: '/contact', title: 'Contactez-moi pour lancer votre projet digital' },
+      { name: 'Blog', path: '/blog', title: 'Articles SEO et conseils web pour booster votre visibilité à Mons' },
     ],
     []
   );

@@ -523,7 +523,7 @@ const Home = () => {
             <div className="mt-20 lg:mt-24 mb-8">
               <div className="flex items-center gap-4">
                 <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-                <span className="text-xs text-slate-500 font-medium uppercase tracking-widest">Outils</span>
+                <span className="text-xs text-slate-500 font-medium uppercase tracking-widest">Agence Marketing</span>
                 <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
               </div>
             </div>
